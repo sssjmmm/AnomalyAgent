@@ -1,0 +1,6 @@
+bottle+broken_large
+bottle+broken_small
+bottle+contamination
+cable+bent_wire
+cable+cable_swap
+cable+combined

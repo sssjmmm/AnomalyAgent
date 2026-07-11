@@ -1,0 +1,13 @@
+{
+  "api_key": "",
+  "base_url": "",
+  "model": "gemini-3.1-flash-image-preview",
+  "model_prompt": "gemini-3.1-pro-preview",
+  "model_eval": "gemini-3.1-pro-preview",
+  "thinking_level": "low",
+  "aspect_ratio": "1:1",
+  "image_size": "1K",
+  "output_dir": "outputs/images",
+  "timeout": 120
+}
+
