@@ -1,0 +1,275 @@
+% A0 conference poster for AnomalyAgent
+% Build once: ./render_poster.sh --once | Live rebuild: ./render_poster.sh
+\documentclass[final]{beamer}
+
+\usepackage[orientation=portrait,size=a0,scale=0.92]{beamerposter}
+\usetheme{gemini}
+\usecolortheme{nott}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+\usepackage{anyfontsize}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{tikz}
+
+% ==================== Visual identity ====================
+\definecolor{agentnavy}{HTML}{10263B}
+\definecolor{agentcyan}{HTML}{00A6C8}
+\definecolor{agentorange}{HTML}{F28C28}
+\definecolor{agentlight}{HTML}{EEF8FA}
+\definecolor{agentwarm}{HTML}{FFF4E8}
+
+\setbeamercolor{headline}{fg=agentnavy,bg=white}
+\setbeamercolor{headline rule}{bg=agentcyan}
+\setbeamercolor{block title}{fg=white,bg=agentnavy}
+\setbeamercolor{block separator}{bg=agentcyan}
+\setbeamercolor{block alerted title}{fg=agentnavy,bg=agentwarm}
+\setbeamercolor{block alerted separator}{bg=agentorange}
+\setbeamercolor{block alerted body}{fg=black,bg=agentwarm}
+\setbeamercolor{block example title}{fg=agentnavy,bg=agentlight}
+\setbeamercolor{block example separator}{bg=agentcyan}
+\setbeamercolor{block example body}{fg=black,bg=agentlight}
+\setbeamercolor{item}{fg=agentcyan}
+
+\setbeamerfont{headline title}{size=\fontsize{50}{57},series=\bfseries}
+\setbeamerfont{headline author}{size=\fontsize{26}{31}}
+\setbeamerfont{headline institute}{size=\fontsize{19}{23}}
+\setbeamerfont{block title}{size=\fontsize{44}{50},series=\bfseries}
+\setbeamerfont{block body}{size=\fontsize{36}{45}}
+\setbeamerfont{block alerted body}{size=\fontsize{30}{37}}
+\setbeamerfont{block example body}{size=\fontsize{30}{37}}
+\setbeamerfont{caption}{size=\fontsize{17}{20}}
+\setbeamerfont{footline}{size=\fontsize{26}{32}}
+
+% White-on-navy section bands with a restrained offset shadow.
+% The band uses the existing width: figure sizes and table scales are unchanged.
+\setbeamertemplate{block begin}{%
+  \par\noindent
+  \begin{tikzpicture}
+    \path[fill=agentnavy!35,rounded corners=0.18cm]
+      (0,-0.16cm) rectangle (\linewidth,2.04cm);
+    \path[fill=agentnavy,rounded corners=0.18cm]
+      (0,0) rectangle (\linewidth,2.2cm);
+    \path[fill=agentcyan] (0.3cm,0.4cm) rectangle (0.42cm,1.8cm);
+    \node[anchor=west,text=white,inner sep=0pt]
+      at (0.85cm,1.1cm) {\usebeamerfont{block title}\insertblocktitle};
+  \end{tikzpicture}\par
+  \vspace{0.7cm}
+  \usebeamerfont{block body}
+  \begin{beamercolorbox}{block body}
+  \setlength{\parskip}{0.45cm}}
+\setbeamertemplate{block end}{\end{beamercolorbox}\vspace{0.8cm}}
+\newcommand{\lead}[1]{{\color{agentnavy}\bfseries #1}}
+
+% ==================== Asymmetric 1+2 column grid ====================
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\newlength{\twocolwidth}
+\newlength{\widewidth}
+\setlength{\sepwidth}{0.0125\paperwidth}
+\setlength{\colwidth}{0.3166667\paperwidth}
+\setlength{\twocolwidth}{0.6458333\paperwidth}
+\setlength{\widewidth}{0.975\paperwidth}
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0.3em}\setlength{\parskip}{0pt}}
+
+\pdfmapfile{+libertine.map}
+\input{poster_localization.tex}
+
+% ==================== Title ====================
+\title{AnomalyAgent: Agentic Industrial Anomaly Synthesis\\[-0.1em]
+via Tool-Augmented Reinforcement Learning}
+
+\author{Jiaming Su\inst{1} \and Tengchao Yang\inst{2} \and Ruikang Zhang\inst{3}\\[0.15cm]
+Zhengan Yan\inst{4} \and Haoyu Sun\inst{1} \and Linfeng Zhang\inst{4}}
+
+\institute{\inst{1} Fudan University \quad
+\inst{2} Tongji University\\[0.1cm]
+\inst{3} Peking University \quad
+\inst{4} Shanghai Jiao Tong University}
+
+\logoleft{\includegraphics[width=17cm]{figures/LOGO-ACM-2026-V2.png}}
+\logoright{%
+  \begingroup
+  \setlength{\fboxsep}{0.15cm}%
+  \colorbox{white}{%
+    \begin{minipage}{22.2cm}
+      \centering
+      \includegraphics[height=5.1cm]{logos/sjtu-emblem.pdf}\hspace{0.45cm}%
+      \includegraphics[height=5.1cm,trim=0 221bp 367bp 0,clip]{logos/fudan-emblem.pdf}\hspace{0.45cm}%
+      \includegraphics[height=5.1cm,trim=42bp 111bp 337bp 110bp,clip]{logos/tongji-logo.pdf}\hspace{0.45cm}%
+      \includegraphics[height=5.1cm,trim=0 329bp 0 0,clip]{logos/pku-emblem.pdf}
+    \end{minipage}}
+  \endgroup}
+
+% Give the two-line title its own full-width band. The second band balances
+% the compact conference mark, author information, and larger university seals.
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \vskip0.7cm
+    \hbox to \paperwidth{\hfil
+      \begin{minipage}{0.95\paperwidth}
+        \centering\usebeamerfont{headline title}\inserttitle\par
+      \end{minipage}\hfil}
+    \vskip0.45cm
+    \hbox to \paperwidth{\hspace{1.6cm}%
+      \begin{minipage}[c]{17cm}\centering\insertlogoleft\end{minipage}\hfill
+      \begin{minipage}[c]{39cm}
+        \centering
+        {\fontsize{30}{36}\selectfont\insertauthor\par}
+        \vspace{0.25cm}
+        {\fontsize{24}{30}\selectfont\insertinstitute\par}
+      \end{minipage}\hfill
+      \begin{minipage}[c]{23cm}\centering\insertlogoright\end{minipage}%
+      \hspace{1.6cm}}
+    \vskip0.45cm
+    \begin{beamercolorbox}[wd=\paperwidth,ht=0.12cm]{headline rule}\end{beamercolorbox}
+  \end{beamercolorbox}}
+
+\footercontent{%
+  \textbf{ACM Multimedia 2026} \hfill
+  \href{https://github.com/sssjmmm/AnomalyAgent}{github.com/sssjmmm/AnomalyAgent} \hfill
+  \href{mailto:jiamingsu08@gmail.com}{jiamingsu08@gmail.com}}
+
+\begin{document}
+\begin{frame}[t]
+% Equal-height images: portrait motivation and landscape overview.
+\begin{columns}[t]
+\separatorcolumn
+\begin{column}{0.258\paperwidth}
+\begin{block}{1. Introduction}
+\centering
+\includegraphics[height=29.6cm]{motivation.pdf}\par
+\vspace{0.7cm}
+\raggedright
+% Paper: Introduction, paragraphs 1--4.
+\lead{The challenge.} Real defects are scarce and highly diverse.\par
+\lead{Few-shot:} limited defect coverage.\\
+\lead{Zero-shot:} often lack semantic realism.\par
+\lead{Our idea.} Use feedback to guide iterative synthesis and self-refinement.
+\end{block}
+\end{column}
+\separatorcolumn
+\begin{column}{0.7045\paperwidth}
+\begin{block}{2. Method}
+\centering
+\includegraphics[height=29.6cm]{overview.pdf}\par
+\vspace{0.7cm}
+\raggedright
+% Paper: Overview of AnomalyAgent; SFT; Agentic RL / Reward Design.
+\lead{Adaptive tool use.} Given a normal image, its object category, and a target defect,
+the agent dynamically selects among five tools to generate an anomaly image and its pixel-level mask.\par
+\lead{Closed-loop refinement.} Quality scores and semantic feedback guide prompt
+revision, with knowledge retrieval when needed. Tool selection adapts to the current state, not a fixed sequence.\par
+\lead{Two-stage training.} SFT learns structured tool use from synthetic trajectories.
+GRPO then optimizes long-horizon decision-making with \textbf{task, reflection, and behavior rewards.}
+\end{block}
+\end{column}
+\separatorcolumn
+\end{columns}
+\vspace{0.4cm}
+\begin{columns}[t]
+\separatorcolumn
+\begin{column}{\widewidth}
+\begin{block}{3. Results}
+% Measure both originals and use one shared height without stretching either.
+\input{poster_localization_full.tex}
+\newsavebox{\resulttablebox}
+\newsavebox{\resultimagebox}
+\sbox{\resulttablebox}{\FullLocalizationTable}
+\sbox{\resultimagebox}{\includegraphics{vis_comparison.pdf}}
+\pgfmathsetmacro{\resulttableratio}{\wd\resulttablebox/(\ht\resulttablebox+\dp\resulttablebox)}
+\pgfmathsetmacro{\resultimageratio}{\wd\resultimagebox/(\ht\resultimagebox+\dp\resultimagebox)}
+\pgfmathsetlengthmacro{\resultheight}{0.98*\linewidth/(\resulttableratio+\resultimageratio)}
+\pgfmathsetlengthmacro{\resulttablewidth}{\resultheight*\resulttableratio}
+\pgfmathsetlengthmacro{\resultimagewidth}{\resultheight*\resultimageratio}
+\typeout{RESULTS: height=\resultheight, table width=\resulttablewidth, image width=\resultimagewidth}
+\pgfmathsetmacro{\resultscale}{\resultheight/(\ht\resulttablebox+\dp\resulttablebox)}
+
+% Tighten this section only; preserve the aligned table/image dimensions.
+\vspace{-1.1cm}
+\noindent
+\begin{minipage}[t]{\resulttablewidth}
+\vspace{0pt}
+\resizebox*{!}{\resultheight}{\usebox{\resulttablebox}}\par
+\vspace{0.8cm}
+\raggedright
+% Paper: Main Results / Anomaly Detection Results and Table localization.
+\lead{Localization on MVTec-AD.} Best mean performance across all six metrics.\par
+\textbf{98.0 pixel AUC / 98.5 image AUC.}
+Pixel AP rises from 72.9 to \textbf{74.2} over AnoHybrid, providing more accurate spatial supervision for downstream detection.
+\end{minipage}\hfill
+\begin{minipage}[t]{\resultimagewidth}
+\vspace{0pt}
+\centering
+\includegraphics[height=\resultheight]{vis_comparison.pdf}\par
+\vspace{0.8cm}
+\raggedright
+% Paper: Visualization Results.
+\lead{Realistic defects. Precise masks.}\par
+Iterative tool-driven refinement reduces semantic drift and incoherent defect boundaries.\par
+\end{minipage}
+\par\vspace{0.7cm}
+% Same text size as localization; adjust row spacing, never font size,
+% to align the two tables and the training curves at both edges.
+\input{poster_results_extra.tex}
+\newsavebox{\generationbox}
+\newsavebox{\classificationbox}
+\def\classificationstretch{1}
+\sbox{\generationbox}{\PosterGeneration}
+\sbox{\classificationbox}{\PosterClassification}
+\pgfmathsetmacro{\classificationstretch}{1+((\ht\generationbox+\dp\generationbox)-(\ht\classificationbox+\dp\classificationbox))/(7*10.8)}
+\sbox{\classificationbox}{\PosterClassification}
+\pgfmathsetlengthmacro{\extrarowheight}{\resultscale*(\ht\generationbox+\dp\generationbox)}
+\typeout{EXTRA RESULTS: scale=\resultscale, height=\extrarowheight}
+\newsavebox{\trainingbox}
+\sbox{\trainingbox}{\includegraphics[height=\extrarowheight]{training_results.pdf}}
+\pgfmathsetlengthmacro{\resultnotewidth}{\linewidth-\resultscale*(\wd\generationbox+\wd\classificationbox)-\wd\trainingbox-2.5cm}
+\noindent\hbox to \linewidth{\scalebox{\resultscale}{\usebox{\generationbox}}\hspace{0.8cm}%
+\scalebox{\resultscale}{\usebox{\classificationbox}}\hspace{0.8cm}%
+\raisebox{-\resultscale\dp\generationbox}{\usebox{\trainingbox}}\hspace{0.8cm}%
+\raisebox{-\resultscale\dp\generationbox}{%
+\begin{minipage}[b][\extrarowheight][t]{\resultnotewidth}
+% Paper: Main Results and Training Dynamics. All gains are percentage points.
+\raggedright\fontsize{34}{42}\selectfont
+\lead{Generation quality}\par
+\textbf{2.10 IS}; joint-best \textbf{0.33 IC-L}.\par
+\vspace{0.35cm}
+\lead{Classification}\par
+\textbf{57.0\%} accuracy; \textbf{+4.4 points} over AnoHybrid.\par
+\vspace{0.35cm}
+\lead{Training dynamics}\par
+SFT loss converges; GRPO reward rises from \textbf{0.42 to 0.79}.
+\end{minipage}}\hfil}\par
+\end{block}
+\end{column}
+\separatorcolumn
+\end{columns}
+\vspace{0.3cm}
+\begin{columns}[t]
+\separatorcolumn
+\begin{column}{\widewidth}
+\begin{block}{4. Conclusion}
+% The final block needs less trailing padding than inter-section blocks.
+\setbeamertemplate{block end}{\end{beamercolorbox}\vspace{0.3cm}}
+% Paper: Conclusion (including the stated future direction).
+{\centering\fontsize{40}{49}\selectfont\lead{Anomaly synthesis as multi-turn decision-making.}\par}
+\justifying
+\fontsize{36}{42}\selectfont
+AnomalyAgent integrates \textbf{structured tool use and iterative reasoning} for controllable,
+semantically consistent anomaly generation beyond single-step pipelines. \textbf{SFT on synthetic
+trajectories} teaches tool-use strategies, while \textbf{agentic RL} optimizes long-horizon decisions.
+Experiments demonstrate \textbf{improved generation quality} and \textbf{stronger downstream classification
+and localization} over existing zero-shot methods. Future work will scale to more complex
+industrial scenarios and broader multimodal generation tasks.
+\end{block}
+\end{column}
+\separatorcolumn
+\end{columns}
+\end{frame}
+\end{document}

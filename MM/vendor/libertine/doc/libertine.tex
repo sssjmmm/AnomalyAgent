@@ -1,0 +1,714 @@
+\documentclass[11pt]{article}
+\usepackage[textwidth=5.5in,textheight=8.5in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[osf,proportional]{libertine}
+\usepackage{lettrine}
+\renewcommand{\ttfamily}{\fontencoding{OT1}\fontfamily{cmtt}\selectfont}
+\PassOptionsToPackage{urlcolor=black,colorlinks}{hyperref}
+\RequirePackage{hyperref}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{multicol}
+\newcommand{\typeone}{Type~\liningnums{1}}
+\begin{document}
+\title{\LaTeX\ Support for Linux Libertine and Biolinum Fonts}
+\author{Bob Tennent\\
+\small\url{rdt@cs.queensu.ca}}
+\date{\today}
+\maketitle 
+\thispagestyle{empty}
+\begin{small}
+\tableofcontents
+\end{small}
+\sloppy
+\clearpage
+\section{Introduction}
+
+This package provides support for use of the Linux Libertine and Linux
+Biolinum families of fonts in \LaTeX.
+Most features 
+are usable
+with \LaTeX\ and \verb|dvips|, pdf\LaTeX, xe\LaTeX\ and lua\LaTeX;
+the features in Section~\ref{OpenType} are only usable with xe\LaTeX\ or lua\LaTeX. 
+This package compatibly replaces several earlier packages (\texttt{libertine-type1},
+\texttt{biolinum-type1}, \texttt{libertine}) and should provide partial compatibility with
+the obsolete \texttt{libertineotf} and \texttt{libertine-legacy} packages.
+
+\section{Installation}
+
+To install this package on a TDS-compliant \TeX\ system, download the
+file 
+\begin{list}{}{}\item \verb\tex-archive/install/fonts/libertine.tds.zip\ 
+\end{list}
+and unzip at the root of an appropriate
+\verb\texmf\ tree, likely a personal or local tree. If necessary, update
+the file-name database (e.g., \verb\texhash texmf\). Update the font-map files by
+enabling the Map file \verb\libertine.map\.
+
+
+\section{Basic Usage}
+
+For most purposes, simply add
+
+\begin{list}{}{}\item
+\verb|\usepackage{libertine}|
+\end{list}
+to the preamble of your document. This will activate Libertine as
+the main (seriffed) text font, Biolinum as the sans font,
+and (from January~2013) LibertineMono as the monospaced font. 
+It is
+recommended that the font encoding be set to \verb\T1\ or \verb\LY1\ but the default
+\verb\OT1\  encoding is also supported. Available shapes in all series (except \texttt{tt}, which
+only has \texttt{it}) include:
+\begin{list}{}{}\item
+\begin{tabular}{ll}
+\texttt{it} &               italic\\
+\texttt{sc} &            small caps\\
+\texttt{scit} &            italic small caps
+\end{tabular}
+\end{list}
+Slanted variants are not supported; the designed italic variants will be
+automatically substituted. The exceptions are the monospaced font and the bold series of Biolinum,
+for which designed italics are not currently available. Artificially
+slanted variants have been generated and treated as if they were italic.
+
+To activate Libertine (without Biolinum), use the \texttt{libertine} (or \texttt{rm})
+option. Similarly, to activate Biolinum (without Libertine) use the
+\texttt{biolinum} (or \texttt{sf} or \texttt{ss}) option. To use Biolinum as the main text font (as
+well as the sans font), use the option \texttt{sfdefault}.
+Use the \verb|mono=false| (or \verb|tt=false|) option to suppress
+activating LibertineMono. 
+To activate single font families,
+use one or more of
+\begin{list}{}{}
+\item \verb|\usepackage{libertineRoman}|
+\item \verb|\usepackage{libertineMono}|
+\item \verb|\usepackage{biolinum}|
+\end{list}
+
+
+\section{Advanced Usage}
+
+Lua\LaTeX\ and xe\LaTeX\ users who might prefer to use Type~1 fonts or who
+wish to avoid \texttt{fontspec} may use the \texttt{type1} (or \texttt{nofontspec}) option.
+The \verb\libertine-type1.sty\,
+\verb\biolinum-type1.sty\ and \verb\libertineMono-type1.sty\ packages provide
+compatibility
+with older packages. For legacy documents that use only basic
+facilities of \verb\libertineotf\, a wrapper package \verb\libertineotf.sty\ is provided.
+The following features of the original \verb|libertine| or \verb|libertineotf|
+packages are
+\emph{not} supported:
+\begin{itemize}
+
+ \item font-features such as \texttt{Ligatures} or \texttt{Scale} as option parameters
+
+ \item the Outline or Shadow fonts 
+
+ \item commands \verb|\Lnnum|, \verb|\Lpnum|, \verb|\Lcnum|, etc.
+
+ \item environments \texttt{Ltable} and \texttt{libertineenumerate} 
+\end{itemize}
+If your documents use any of the features listed above,
+you may have to continue to use the \verb\libertineotf\ package (which is still available from
+CTAN) or access the OpenType fonts directly using \texttt{fontspec}.
+
+
+The following options are available in all styles (except monospaced):
+\begin{list}{}{}\item
+\begin{tabular}{ll}
+\texttt{oldstyle} (\texttt{osf}) &  old-style figures\\
+\texttt{lining} (\texttt{nf}, \texttt{lf}) &  lining figures\\
+\texttt{proportional} (\texttt{p})&  varying-width figures\\
+\texttt{tabular} (\texttt{t}) &     fixed-width figures\\
+\end{tabular}
+\end{list}
+The defaults (from January~2013) are \texttt{lining} and \texttt{tabular}. These apply to both Libertine
+and Biolinum;
+to change the default figure style of just the Biolinum (sans)
+fonts, use options
+\begin{list}{}{}\item
+\texttt{sflining} (\texttt{sflf}) or \texttt{sfoldstyle} (\texttt{sfosf}, \texttt{osfss})
+\item
+\texttt{sftabular} (\texttt{sft}) or \texttt{sfproportional} (\texttt{sfp}) 
+\end{list}
+
+The \texttt{semibold} (\texttt{sb}) option will enable use of the
+semi-bold series of Libertine; this has no effect on the Biolinum fonts,
+for which there is no semi-bold variant. The options \verb|scale=|<\emph{number}> (or
+\verb|scaled=|<\emph{number}>) will scale the Biolinum fonts but have no effect on the
+Libertine fonts. Similarly, the options 
+\verb|llscale=|<\emph{number}> (or  \verb|llscaled=|<\emph{number}>)
+and
+\verb|ttscale=|<\emph{number}> (or  \verb|ttscaled=|<\emph{number}>)
+will scale the LinuxLibertine and LibertineMono fonts, respectively.  
+Any of the ``Boolean'' options, such as \texttt{osf}, may 
+also be used
+in the form \verb|osf=true| or \verb|osf=false|.
+
+The option \verb\defaultfeatures=...\ allows the user to add default OpenType
+features; for example, \verb\defaultfeatures={Variant=01}\ will force use of the Stylistic~Set~1
+variant glyphs.
+
+Commands \verb|\oldstylenums{|\ldots\verb|}| and \verb|\oldstylenumsf{|\ldots\verb|}| are defined to
+allow for local use of old-style figures in Libertine and Biolinum,
+respectively, if lining figures is the default, and similarly
+\verb|\liningnums{|\ldots\verb|}| and \verb|\liningnumsf{|\ldots\verb|}|.
+
+Similarly, commands \verb|\tabularnums{|\ldots\verb|}| and \verb|\tabularnumsf{|\ldots\verb|}| are defined
+to allow local use of monospaced figures in Libertine or Biolinum,
+respectively, if proportional figures is the default, and similarly
+\verb|\proportionalnums{|\ldots\verb|}| and \verb|\proportionalnumsf{|\ldots\verb|}|.
+
+Superior numbers (for footnote markers) are available using \verb|\sufigures|
+or \verb|\textsu{|\ldots\verb|}|.
+
+
+Command \verb|\useosf| switches the default figure style for Libertine and Biolinum to old-style figures; this is
+primarily for use \emph{after} calling a math package (such as \verb|newtxmath| with the
+\verb|libertine| option) with lining figures as the default.
+
+The following macros select the font family indicated:
+\begin{center}
+\begin{tabular}{ll}
+\verb|\libertine| & Libertine \\
+\verb|\libertineSB|& Libertine with semibold \\
+\verb|\libertineOsF| & Libertine with oldstyle figures \\
+\verb|\libertineLF| & Libertine with lining figures \\
+\verb|\libertineDisplay| & Libertine Display \\
+\verb|\libmono| & Libertine Monospaced \\
+\verb|\libertineInitial| & Libertine Initials \\
+\verb|\biolinum| & Biolinum \\
+\verb|\biolinumOsF|& Biolinum with oldstyle figures \\
+\verb|\biolinumLF| & Biolinum with lining figures \\
+\end{tabular}
+\end{center}
+Macro \verb|\libertineInitialGlyph{|\ldots\verb|}| produces a glyph in the Libertine Initial font;
+Appendix~\ref{InitialGlyphs} has a table of some of the glyphs.
+
+\section{OpenType Fonts}
+\label{OpenType}
+
+The features in this section are only available to xe\LaTeX\ and lua\LaTeX\ users.
+
+Macros \verb|\libertineGlyph{|\ldots\verb|}| and \verb|\biolinumGlyph{|\ldots\verb|}| produce the
+glyph named in the argument in the Libertine or Biolinum font,
+respectively; for example, in regular-weight and upright-shape,
+\verb|\libertineGlyph{seven.cap}| and \verb|\libertineGlyph{uniE10F}| both produce a
+lining~7 that matches the height of capital letters, as in
+\begin{list}{}{}\item
+K\libertineGlyph{seven.cap}L~\libertineGlyph{three.cap}N\libertineGlyph{six.cap}
+\end{list} 
+Similarly, \verb|\biolinumKeyGlyph{|\ldots\verb|}| produces the named glyph
+in the Biolinum Keyboard font; for example: \verb|\biolinumKeyGlyph{seven}| produces \biolinumKeyGlyph{seven}.
+A large number of macros of the form \verb|\LKey|\ldots or \verb|\LMouse|\ldots
+are provided to simplify production of glyphs in the Biolinum Keyboard font;
+see Appendix~\ref{LKey}. Appendix~\ref{KeyboardGlyphs} has a table of the entire
+Linux Biolinum Keyboard font, with corresponding glyph name and codepoint.
+
+
+The directory
+\verb|/fonts/opentype/public/libertine| 
+has the fonts used for these features, as follows:
+\begin{list}{}{}\item\small
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\bf File name} & \multicolumn{1}{c}{\bf Internal name} & \multicolumn{1}{c}{\bf Description} \\
+\hline
+\verb|LinBiolinum_RBO.otf|  & \verb|LinBiolinumOBO|  & sans serif bold italic (oblique) \\
+\verb|LinBiolinum_RB.otf|  & \verb|LinBiolinumOB| & sans serif bold \\
+\verb|LinBiolinum_RI.otf|  & \verb|LinBiolinumOI| & sans serif italic \\
+\verb|LinBiolinum_R.otf|  & \verb|LinBiolinumO| & sans serif regular \\
+\verb|LinLibertine_RBI.otf|  & \verb|LinLibertineOBI| & bold italic \\
+\verb|LinLibertine_RB.otf|  & \verb|LinLibertineOB| & bold \\
+\verb|LinLibertine_RI.otf|  & \verb|LinLibertineOI| & italic \\
+\verb|LinLibertine_R.otf|  & \verb|LinLibertineO| & regular \\
+\verb|LinLibertine_RZI.otf|  & \verb|LinLibertineOZI| & semibold italic \\
+\verb|LinLibertine_RZ.otf|  & \verb|LinLibertineOZ| & semibold \\
+\verb|LinLibertine_MBO.otf| & \verb|LinLibertineMOBO| & mono bold italic (oblique) \\
+\verb|LinLibertine_MB.otf| & \verb|LinLibertineMOB| & mono bold \\
+\verb|LinLibertine_MO.otf| & \verb|LinLibertineMOO| & mono italic (oblique) \\
+\verb|LinLibertine_M.otf| & \verb|LinLibertineMO| & mono \\
+\verb|LinBiolinum_K.otf|  & \verb|LinBiolinumOKb| & keyboard \\
+\verb|LinLibertine_I.otf|  & \verb|LinLibertineIO| &   decorative capitals \\
+\verb|LinLibertine_DR.otf| & \verb|LinLibertineDisplayO| &   a display (titling) font  \\
+\end{tabular}
+\end{list}
+
+\section{Concluding Remarks}
+
+
+For compatible mathematics, it is recommended to use
+\begin{verbatim}
+  \usepackage[libertine]{newtxmath}
+\end{verbatim}
+with pdf\LaTeX\ and
+\begin{verbatim}
+  \usepackage{unicode-math}
+  \setmathfont[Scale=MatchUppercase]{libertinusmath-regular.otf}
+\end{verbatim}
+with xe\LaTeX\ or lua\LaTeX.
+
+The original OpenType fonts were created by Philipp H. Poll 
+(\url{gillian@linuxlibertine.org}) and are licensed under the terms of the GNU General
+Public License (Version~2, with font exception) and under the terms of
+the Open Font License. For details look into the \verb|doc| directory of the
+distribution or at
+\begin{list}{}{}\item
+\url{http://www.linuxlibertine.org/}
+\end{list}
+The Glyph and KeyCap support was adapted from the original \verb\libertine\
+package by Michael Niedermair.
+
+Three of the Libertine fonts were modified by Michael Sharpe (\url{msharpe@ucsd.edu}) using 
+\texttt{fontforge} to correct minor problems, including adding
+three missing ligatures (\emph{\bfseries fl, ffl, ffi}) to the bold-italic font.
+
+The \typeone\ fonts were created using \verb|cfftot1| or \verb|fontforge|. 
+The internal font-family names of the \typeone\ 
+fonts have been changed to \verb|Linux Libertine T| and \verb|Linux Biolinum T| to avoid
+interfering with xe\LaTeX\ users who access system fonts. 
+
+The support
+files were created using \verb|autoinst|. The support files are licensed under
+the terms of the LaTeX Project Public License.  
+See Appendix~\ref{impl} for more detailed discussion of the implementation.
+
+Thanks to Herbert Voss, Patrick Gundlach, Silke Hofstra, Marc Penninga, Michael Sharpe,
+Denis Bitouz\'{e}, and Khaled Hosny for their assistance.
+The maintainer of this
+package is Bob Tennent (\url{rdt@cs.queensu.ca})
+
+\clearpage
+
+\appendix
+
+\setlength{\fboxrule}{0.1pt}
+\section{Biolinum KeyCap Macros}\small\tt
+\label{LKey}
+
+\subsection{Special Keys}
+\begin{longtable}[l]{lll}
+Tux         & \verb|\LKeyTux|      & \LARGE\strut\fbox{\LKeyTux} \\
+Win         & \verb|\LKeyWin|      & \LARGE\strut\fbox{\LKeyWin} \\
+Menu        & \verb|\LKeyMenu|     & \LARGE\strut\fbox{\LKeyMenu} \\
+Strg        & \verb|\LKeyStrg|     & \LARGE\strut\fbox{\LKeyStrg} \\
+Ctrl        & \verb|\LKeyCtrl|     & \LARGE\strut\fbox{\LKeyCtrl} \\
+Alt         & \verb|\LKeyAlt|      & \LARGE\strut\fbox{\LKeyAlt} \\
+AltGr       & \verb|\LKeyAltGr|    & \LARGE\strut\fbox{\LKeyAltGr} \\
+Shift       & \verb|\LKeyShift|    & \LARGE\strut\fbox{\LKeyShift} \\
+Enter       & \verb|\LKeyEnter|    & \LARGE\strut\fbox{\LKeyEnter} \\
+Tab         & \verb|\LKeyTab|      & \LARGE\strut\fbox{\LKeyTab} \\
+CapsLock    & \verb|\LKeyCapsLock| & \LARGE\strut\fbox{\LKeyCapsLock} \\
+Pos         & \verb|\LKeyPos|      & \LARGE\strut\fbox{\LKeyPos} \\
+Entf        & \verb|\LKeyEntf|     & \LARGE\strut\fbox{\LKeyEntf} \\
+Einf        & \verb|\LKeyEinf|     & \LARGE\strut\fbox{\LKeyEinf} \\
+Leer        & \verb|\LKeyLeer|     & \LARGE\strut\fbox{\LKeyLeer} \\
+Esc         & \verb|\LKeyEsc|      & \LARGE\strut\fbox{\LKeyEsc} \\
+Ende        & \verb|\LKeyEnde|     & \LARGE\strut\fbox{\LKeyEnde} \\
+Back        & \verb|\LKeyBack|     & \LARGE\strut\fbox{\LKeyBack} \\
+Up          & \verb|\LKeyUp|       & \LARGE\strut\fbox{\LKeyUp} \\
+Dwon        & \verb|\LKeyDown|     & \LARGE\strut\fbox{\LKeyDown} \\
+Left        & \verb|\LKeyLeft|     & \LARGE\strut\fbox{\LKeyLeft} \\
+Right       & \verb|\LKeyRight|    & \LARGE\strut\fbox{\LKeyRight} \\
+PgUp        & \verb|\LKeyPgUp|     & \LARGE\strut\fbox{\LKeyPgUp} \\
+PgDown      & \verb|\LKeyPgDown|   & \LARGE\strut\fbox{\LKeyPgDown} \\
+At          & \verb|\LKeyAt|       & \LARGE\strut\fbox{\LKeyAt} \\
+Fn          & \verb|\LKeyFn|       & \LARGE\strut\fbox{\LKeyFn} \\
+Home        & \verb|\LKeyHome|     & \LARGE\strut\fbox{\LKeyHome} \\
+Del         & \verb|\LKeyDel|      & \LARGE\strut\fbox{\LKeyDel} \\
+Space       & \verb|\LKeySpace|    & \LARGE\strut\fbox{\LKeySpace} \\
+ScreenUp    & \verb|\LKeyScreenUp| & \LARGE\strut\fbox{\LKeyScreenUp} \\
+ScreenDown  & \verb|\LKeyScreenDown| & \LARGE\strut\fbox{\LKeyScreenDown} \\
+Ins         & \verb|\LKeyIns|      & \LARGE\strut\fbox{\LKeyIns} \\
+End         & \verb|\LKeyEnd|      & \LARGE\strut\fbox{\LKeyEnd} \\
+GNU         & \verb|\LKeyGNU|      & \LARGE\strut\fbox{\LKeyGNU} \\
+PageUp      & \verb|\LKeyPageUp|   & \LARGE\strut\fbox{\LKeyPageUp} \\
+PageDown    & \verb|\LKeyPageDown| & \LARGE\strut\fbox{\LKeyPageDown} \\
+Command     & \verb|\LKeyCommand| & \LARGE\strut\fbox{\LKeyCommand} \\
+OptionKey   & \verb|\LKeyOptionKey| & \LARGE\strut\fbox{\LKeyOptionKey} \\
+%
+F1          & \verb|\LKeyF{1}|     & \LARGE\strut\fbox{\LKeyF{1}} \\
+F2          & \verb|\LKeyF{2}|     & \LARGE\strut\fbox{\LKeyF{2}} \\
+F3          & \verb|\LKeyF{3}|     & \LARGE\strut\fbox{\LKeyF{3}} \\
+F4          & \verb|\LKeyF{4}|     & \LARGE\strut\fbox{\LKeyF{4}} \\
+F5          & \verb|\LKeyF{5}|     & \LARGE\strut\fbox{\LKeyF{5}} \\
+F6          & \verb|\LKeyF{6}|     & \LARGE\strut\fbox{\LKeyF{6}} \\
+F7          & \verb|\LKeyF{7}|     & \LARGE\strut\fbox{\LKeyF{7}} \\
+F8          & \verb|\LKeyF{8}|     & \LARGE\strut\fbox{\LKeyF{8}} \\
+F9          & \verb|\LKeyF{9}|     & \LARGE\strut\fbox{\LKeyF{9}} \\
+F10         & \verb|\LKeyF{10}|    & \LARGE\strut\fbox{\LKeyF{10}} \\
+F11         & \verb|\LKeyF{11}|    & \LARGE\strut\fbox{\LKeyF{11}} \\
+F12         & \verb|\LKeyF{12}|    & \LARGE\strut\fbox{\LKeyF{12}} \\
+F13         & \verb|\LKeyF{13}|    & \LARGE\strut\fbox{\LKeyF{13}} \\
+F14         & \verb|\LKeyF{14}|    & \LARGE\strut\fbox{\LKeyF{14}} \\
+F15         & \verb|\LKeyF{15}|    & \LARGE\strut\fbox{\LKeyF{15}} \\
+F16         & \verb|\LKeyF{16}|    & \LARGE\strut\fbox{\LKeyF{16}} \\
+%
+PAD0        & \verb|\LKeyPad{1}|     & \LARGE\strut\fbox{\LKeyPad{0}} \\
+PAD1        & \verb|\LKeyPad{1}|     & \LARGE\strut\fbox{\LKeyPad{1}} \\
+PAD2        & \verb|\LKeyPad{2}|     & \LARGE\strut\fbox{\LKeyPad{2}} \\
+PAD3        & \verb|\LKeyPad{3}|     & \LARGE\strut\fbox{\LKeyPad{3}} \\
+PAD4        & \verb|\LKeyPad{4}|     & \LARGE\strut\fbox{\LKeyPad{4}} \\
+PAD5        & \verb|\LKeyPad{5}|     & \LARGE\strut\fbox{\LKeyPad{5}} \\
+PAD6        & \verb|\LKeyPad{6}|     & \LARGE\strut\fbox{\LKeyPad{6}} \\
+PAD7        & \verb|\LKeyPad{7}|     & \LARGE\strut\fbox{\LKeyPad{7}} \\
+PAD8        & \verb|\LKeyPad{8}|     & \LARGE\strut\fbox{\LKeyPad{8}} \\
+PAD9        & \verb|\LKeyPad{9}|     & \LARGE\strut\fbox{\LKeyPad{9}} \\
+PAD10       & \verb|\LKeyPad{10}|    & \LARGE\strut\fbox{\LKeyPad{10}} \\
+PAD11       & \verb|\LKeyPad{11}|    & \LARGE\strut\fbox{\LKeyPad{11}} \\
+PAD12       & \verb|\LKeyPad{12}|    & \LARGE\strut\fbox{\LKeyPad{12}} \\
+PAD13       & \verb|\LKeyPad{13}|    & \LARGE\strut\fbox{\LKeyPad{13}} \\
+PAD14       & \verb|\LKeyPad{14}|    & \LARGE\strut\fbox{\LKeyPad{14}} \\
+\end{longtable}
+
+\clearpage
+\subsection{General Keyboard}
+\begin{longtable}[l]{lll}
+0           & \verb|\LKey{zero}|,\verb|\LKey{0}|    & \LARGE\strut\fbox{\LKey{0}} \\
+9           & \verb|\LKey{nine}|,\verb|\LKey{9}|   & \LARGE\strut\fbox{\LKey{nine}} \\
+A           & \verb|\LKey{A}|      & \LARGE\strut\fbox{\LKey{A}} \\
+Z           & \verb|\LKey{Z}|      & \LARGE\strut\fbox{\LKey{Z}} \\
+\end{longtable}
+
+\subsection{Keyboard Shortcuts}
+\begin{longtable}[l]{lll}
+Strg-A           & \verb|\LKeyStrgX{A}|       & \LARGE\strut\fbox{\LKeyStrgX{A}} \\
+Ctrl-A           & \verb|\LKeyCtrlX{A}|       & \LARGE\strut\fbox{\LKeyCtrlX{A}} \\
+Shift-A          & \verb|\LKeyShiftX{A}|      & \LARGE\strut\fbox{\LKeyShiftX{A}} \\
+Alt-A            & \verb|\LKeyAltX{A}|        & \LARGE\strut\fbox{\LKeyAltX{A}} \\
+AltGr-A          & \verb|\LKeyAltGrX{A}|      & \LARGE\strut\fbox{\LKeyAltGrX{A}} \\
+Shift-Strg-A     & \verb|\LKeyShiftStrgX{A}|  & \LARGE\strut\fbox{\LKeyShiftStrgX{A}} \\
+Shift-Ctrl-A     & \verb|\LKeyShiftCtrlX{A}|  & \LARGE\strut\fbox{\LKeyShiftCtrlX{A}} \\
+Shift-Alt-A      & \verb|\LKeyShiftAltX{A}|   & \LARGE\strut\fbox{\LKeyShiftAltX{A}} \\
+Shift-AltGr-A    & \verb|\LKeyShiftAltGrX{A}| & \LARGE\strut\fbox{\LKeyShiftAltGrX{A}} \\
+Strg-Alt-A       & \verb|\LKeyStrgAltX{A}|    & \LARGE\strut\fbox{\LKeyStrgAltX{A}} \\
+Strg-Alt-Entf    & \verb|\LKeyStrgAltEnt|     & \LARGE\strut\fbox{\LKeyStrgAltEnt} \\
+Strg-Alt-Entf    & \verb|\LKeyReset|          & \LARGE\strut\fbox{\LKeyReset} \\
+Ctrl-Alt-A       & \verb|\LKeyCtrlAltX{A}|    & \LARGE\strut\fbox{\LKeyCtrlAltX{A}} \\
+Ctrl-Alt-Entf    & \verb|\LKeyCtrlAltEnt|     & \LARGE\strut\fbox{\LKeyCtrlAltEnt} \\
+%
+Alt-F1           & \verb|\LKeyAltF{1}|        & \LARGE\strut\fbox{\LKeyAltF{1}} \\
+Alt-F2           & \verb|\LKeyAltF{2}|        & \LARGE\strut\fbox{\LKeyAltF{2}} \\
+Alt-F3           & \verb|\LKeyAltF{3}|        & \LARGE\strut\fbox{\LKeyAltF{3}} \\
+Alt-F4           & \verb|\LKeyAltF{4}|        & \LARGE\strut\fbox{\LKeyAltF{4}} \\
+Alt-F5           & \verb|\LKeyAltF{5}|        & \LARGE\strut\fbox{\LKeyAltF{5}} \\
+Alt-F6           & \verb|\LKeyAltF{6}|        & \LARGE\strut\fbox{\LKeyAltF{6}} \\
+Alt-F7           & \verb|\LKeyAltF{7}|        & \LARGE\strut\fbox{\LKeyAltF{7}} \\
+Alt-F8           & \verb|\LKeyAltF{8}|        & \LARGE\strut\fbox{\LKeyAltF{8}} \\
+Alt-F9           & \verb|\LKeyAltF{9}|        & \LARGE\strut\fbox{\LKeyAltF{9}} \\
+Alt-F10          & \verb|\LKeyAltF{10}|       & \LARGE\strut\fbox{\LKeyAltF{10}} \\
+Alt-F11          & \verb|\LKeyAltF{11}|       & \LARGE\strut\fbox{\LKeyAltF{11}} \\
+Alt-F12          & \verb|\LKeyAltF{12}|       & \LARGE\strut\fbox{\LKeyAltF{12}} \\
+Alt-F13          & \verb|\LKeyAltF{13}|       & \LARGE\strut\fbox{\LKeyAltF{13}} \\
+Alt-F14          & \verb|\LKeyAltF{14}|       & \LARGE\strut\fbox{\LKeyAltF{14}} \\
+Alt-F15          & \verb|\LKeyAltF{15}|       & \LARGE\strut\fbox{\LKeyAltF{15}} \\
+Alt-F16          & \verb|\LKeyAltF{16}|       & \LARGE\strut\fbox{\LKeyAltF{16}} \\
+%
+Strg-Alt-F1           & \verb|\LKeyStrgAltF{1}|        & \LARGE\strut\fbox{\LKeyStrgAltF{1}} \\
+Strg-Alt-F2           & \verb|\LKeyStrgAltF{2}|        & \LARGE\strut\fbox{\LKeyStrgAltF{2}} \\
+Strg-Alt-F3           & \verb|\LKeyStrgAltF{3}|        & \LARGE\strut\fbox{\LKeyStrgAltF{3}} \\
+Strg-Alt-F4           & \verb|\LKeyStrgAltF{4}|        & \LARGE\strut\fbox{\LKeyStrgAltF{4}} \\
+Strg-Alt-F5           & \verb|\LKeyStrgAltF{5}|        & \LARGE\strut\fbox{\LKeyStrgAltF{5}} \\
+Strg-Alt-F6           & \verb|\LKeyStrgAltF{6}|        & \LARGE\strut\fbox{\LKeyStrgAltF{6}} \\
+Strg-Alt-F7           & \verb|\LKeyStrgAltF{7}|        & \LARGE\strut\fbox{\LKeyStrgAltF{7}} \\
+Strg-Alt-F8           & \verb|\LKeyStrgAltF{8}|        & \LARGE\strut\fbox{\LKeyStrgAltF{8}} \\
+Strg-Alt-F9           & \verb|\LKeyStrgAltF{9}|        & \LARGE\strut\fbox{\LKeyStrgAltF{9}} \\
+Strg-Alt-F10          & \verb|\LKeyStrgAltF{10}|       & \LARGE\strut\fbox{\LKeyStrgAltF{10}} \\
+Strg-Alt-F11          & \verb|\LKeyStrgAltF{11}|       & \LARGE\strut\fbox{\LKeyStrgAltF{11}} \\
+Strg-Alt-F12          & \verb|\LKeyStrgAltF{12}|       & \LARGE\strut\fbox{\LKeyStrgAltF{12}} \\
+Strg-Alt-F13          & \verb|\LKeyStrgAltF{13}|       & \LARGE\strut\fbox{\LKeyStrgAltF{13}} \\
+Strg-Alt-F14          & \verb|\LKeyStrgAltF{14}|       & \LARGE\strut\fbox{\LKeyStrgAltF{14}} \\
+Strg-Alt-F15          & \verb|\LKeyStrgAltF{15}|       & \LARGE\strut\fbox{\LKeyStrgAltF{15}} \\
+Strg-Alt-F16          & \verb|\LKeyStrgAltF{16}|       & \LARGE\strut\fbox{\LKeyStrgAltF{16}} \\
+Ctrl-Alt-F1           & \verb|\LKeyCtrlAltF{1}|        & \LARGE\strut\fbox{\LKeyCtrlAltF{1}} \\
+Ctrl-Alt-F2           & \verb|\LKeyCtrlAltF{2}|        & \LARGE\strut\fbox{\LKeyCtrlAltF{2}} \\
+Ctrl-Alt-F3           & \verb|\LKeyCtrlAltF{3}|        & \LARGE\strut\fbox{\LKeyCtrlAltF{3}} \\
+Ctrl-Alt-F4           & \verb|\LKeyCtrlAltF{4}|        & \LARGE\strut\fbox{\LKeyCtrlAltF{4}} \\
+Ctrl-Alt-F5           & \verb|\LKeyCtrlAltF{5}|        & \LARGE\strut\fbox{\LKeyCtrlAltF{5}} \\
+Ctrl-Alt-F6           & \verb|\LKeyCtrlAltF{6}|        & \LARGE\strut\fbox{\LKeyCtrlAltF{6}} \\
+Ctrl-Alt-F7           & \verb|\LKeyCtrlAltF{7}|        & \LARGE\strut\fbox{\LKeyCtrlAltF{7}} \\
+Ctrl-Alt-F8           & \verb|\LKeyCtrlAltF{8}|        & \LARGE\strut\fbox{\LKeyCtrlAltF{8}} \\
+Ctrl-Alt-F9           & \verb|\LKeyCtrlAltF{9}|        & \LARGE\strut\fbox{\LKeyCtrlAltF{9}} \\
+Ctrl-Alt-F10          & \verb|\LKeyCtrlAltF{10}|       & \LARGE\strut\fbox{\LKeyCtrlAltF{10}} \\
+Ctrl-Alt-F11          & \verb|\LKeyCtrlAltF{11}|       & \LARGE\strut\fbox{\LKeyCtrlAltF{11}} \\
+Ctrl-Alt-F12          & \verb|\LKeyCtrlAltF{12}|       & \LARGE\strut\fbox{\LKeyCtrlAltF{12}} \\
+Ctrl-Alt-F13          & \verb|\LKeyCtrlAltF{13}|       & \LARGE\strut\fbox{\LKeyCtrlAltF{13}} \\
+Ctrl-Alt-F14          & \verb|\LKeyCtrlAltF{14}|       & \LARGE\strut\fbox{\LKeyCtrlAltF{14}} \\
+Ctrl-Alt-F15          & \verb|\LKeyCtrlAltF{15}|       & \LARGE\strut\fbox{\LKeyCtrlAltF{15}} \\
+Ctrl-Alt-F16          & \verb|\LKeyCtrlAltF{16}|       & \LARGE\strut\fbox{\LKeyCtrlAltF{16}} \\
+\end{longtable}
+
+\clearpage
+\subsection{Mouse Buttons (Three-Button Mice)}
+\begin{longtable}[l]{lll}
+Empty        & \verb|\LMouseEmpty|   & \LARGE\strut\fbox{\LMouseEmpty} \\
+No           & \verb|\LMouseN|       & \LARGE\strut\fbox{\LMouseN} \\
+Left         & \verb|\LMouseL|       & \LARGE\strut\fbox{\LMouseL} \\
+Middle       & \verb|\LMouseM|       & \LARGE\strut\fbox{\LMouseM} \\
+Right        & \verb|\LMouseR|      & \LARGE\strut\fbox{\LMouseR} \\
+LeftRight    & \verb|\LMouseLR|      & \LARGE\strut\fbox{\LMouseLR} \\
+\end{longtable}
+
+\subsection{Mouse Buttons (Two-Button Mice)}
+\begin{longtable}[l]{lll}
+Empty        & \verb|\LMouseIIEmpty|   & \LARGE\strut\fbox{\LMouseIIEmpty} \\
+No           & \verb|\LMouseIIN|       & \LARGE\strut\fbox{\LMouseIIN} \\
+Left         & \verb|\LMouseIIL|       & \LARGE\strut\fbox{\LMouseIIL} \\
+Right        & \verb|\LMouseIIR|       & \LARGE\strut\fbox{\LMouseIIR} \\
+LeftRight    & \verb|\LMouseIILR|      & \LARGE\strut\fbox{\LMouseIILR} \\
+\end{longtable}
+
+
+\clearpage
+\section{Linux Biolinum Keyboard Glyphs}\small\tt
+\label{KeyboardGlyphs}
+\renewcommand\DeclareTextGlyphY[3]{\makebox[2.5cm]{\LARGE\strut\fbox{\biolinumKeyGlyph{#2}}} #2\\}%
+\catcode`\_=12%
+\begin{multicols}{2}
+\par\noindent
+\input{LinBiolinum_K}
+\end{multicols}
+
+
+\clearpage
+\section{Selected Libertine Initials}\tt
+\label{InitialGlyphs}
+\renewcommand\DeclareTextGlyphY[3]{\makebox[2.0cm]{\LARGE\strut\fbox{\libertineInitialGlyph{#2}}} #2\\}%
+\catcode`\_=12%
+\begin{multicols}{4}
+\par\noindent
+\DeclareTextGlyphY{LinLibertine_I}{zero}{48}
+\DeclareTextGlyphY{LinLibertine_I}{one}{49}
+\DeclareTextGlyphY{LinLibertine_I}{two}{50}
+\DeclareTextGlyphY{LinLibertine_I}{three}{51}
+\DeclareTextGlyphY{LinLibertine_I}{four}{52}
+\DeclareTextGlyphY{LinLibertine_I}{five}{53}
+\DeclareTextGlyphY{LinLibertine_I}{six}{54}
+\DeclareTextGlyphY{LinLibertine_I}{seven}{55}
+\DeclareTextGlyphY{LinLibertine_I}{eight}{56}
+\DeclareTextGlyphY{LinLibertine_I}{nine}{57}
+\DeclareTextGlyphY{LinLibertine_I}{A}{65}
+\DeclareTextGlyphY{LinLibertine_I}{B}{66}
+\DeclareTextGlyphY{LinLibertine_I}{C}{67}
+\DeclareTextGlyphY{LinLibertine_I}{D}{68}
+\DeclareTextGlyphY{LinLibertine_I}{E}{69}
+\DeclareTextGlyphY{LinLibertine_I}{F}{70}
+\DeclareTextGlyphY{LinLibertine_I}{G}{71}
+\DeclareTextGlyphY{LinLibertine_I}{H}{72}
+\DeclareTextGlyphY{LinLibertine_I}{I}{73}
+\DeclareTextGlyphY{LinLibertine_I}{J}{74}
+\DeclareTextGlyphY{LinLibertine_I}{K}{75}
+\DeclareTextGlyphY{LinLibertine_I}{L}{76}
+\DeclareTextGlyphY{LinLibertine_I}{M}{77}
+\DeclareTextGlyphY{LinLibertine_I}{N}{78}
+\DeclareTextGlyphY{LinLibertine_I}{O}{79}
+\DeclareTextGlyphY{LinLibertine_I}{P}{80}
+\DeclareTextGlyphY{LinLibertine_I}{Q}{81}
+\DeclareTextGlyphY{LinLibertine_I}{R}{82}
+\DeclareTextGlyphY{LinLibertine_I}{S}{83}
+\DeclareTextGlyphY{LinLibertine_I}{T}{84}
+\DeclareTextGlyphY{LinLibertine_I}{U}{85}
+\DeclareTextGlyphY{LinLibertine_I}{V}{86}
+\DeclareTextGlyphY{LinLibertine_I}{W}{87}
+\DeclareTextGlyphY{LinLibertine_I}{X}{88}
+\DeclareTextGlyphY{LinLibertine_I}{Y}{89}
+\DeclareTextGlyphY{LinLibertine_I}{Z}{90}
+\end{multicols}
+
+
+% To generate a table of all the glyphs, uncomment the following lines:
+%
+%\begin{multicols}{2}
+%\par\noindent
+%\input{LinLibertine_I}
+%\end{multicols}
+
+\clearpage
+\section{Implementation Notes}\rm
+\label{impl}
+
+\subsection{Aims}
+
+Modern OpenType and TrueType fonts are not directly usable with traditional
+typesetting engines such as \LaTeX\ or pdf\LaTeX.  On the other hand, many documents
+that use traditional font-selection mechanisms cannot be processed by
+emerging new technologies such as xe\LaTeX\ and lua\LaTeX.  The primary aim
+of the \texttt{libertine} package is, as much as possible, to allow documents
+to use Linux Libertine and Biolinum fonts compatibly with \emph{all} current \LaTeX\
+engines.  Another aim is maintainability: it should be possible to update
+the package easily when updated fonts become available.
+
+\subsection{The Fonts}
+
+OpenType Linux Libertine and Biolinum fonts (with \texttt{otf} extensions) may be downloaded from 
+\url{http://sourceforge.net/projects/linuxlibertine/files/linuxlibertine/}.
+There are a few problems with the current versions of the fonts (5.3.0).
+\begin{itemize}
+\item 
+Currently, there is no bold-italic variant of the Biolinum family; an \emph{ad hoc}
+solution is to use \texttt{fontforge} to generate an artificially slanted
+version of the bold variant.  Note that the most recent version of \texttt{fontforge}
+must be used on Biolinum fonts; an earlier version will generate fonts with incorrect \texttt{ex}-height.
+\item Slanted (oblique) variants are not available
+from the upstream site.  These could be
+generated easily but we have decided not to attempt to support slanted
+variants for the fonts; the italic (or fake-italic) variants will be silently substituted.
+\item
+The bold-italic variant of the Libertine family is missing
+several ligatures; the ligatures would be taken from the
+regular-weight italic variant, which is unacceptable.
+Michael Sharpe (\url{msharpe@ucsd.edu}) has generated
+the missing glyphs  (\emph{\bfseries fl, ffl, ffi})  and added them to the \texttt{otf}
+file.
+
+\item Currently, Libertine Monospaced does not have bold, italic or bold-italic
+variants; \texttt{fontforge} has been used to generate artificially emboldened and/or slanted
+variants.
+
+\item
+When several of the fonts are opened in \texttt{fontforge}, warning
+messages are generated about errors in the glyph programs.  Some of
+these are sufficient to cause failures or even crashes when conversion
+to \typeone\ format is attempted using \texttt{cfftot1}. Michael
+Sharpe has corrected the most serious of these.  In some cases, 
+\texttt{fontforge}
+has been used to convert the format, as it is less sensitive than \texttt{cfftot1}
+to faulty glyph programs.
+\end{itemize}
+
+In some \TeX\ distributions, the OpenType and \typeone\ fonts are installed as system fonts,
+and xe\LaTeX\ or lua\LaTeX\ users may attempt to select the OpenType fonts directly by 
+their Postscript FontName.  If \typeone\ versions with the \emph{same} FontName
+have been installed, the latter may be selected by the system font-selection
+mechanism.  To avoid this, it is appropriate to modify the
+FontNames of the \texttt{otf} fonts before converting to \typeone\ 
+format (but not \emph{distribute} these re-named \texttt{otf} fonts).
+The \typeone\  Libertine and Biolinum fonts distributed in this
+package have had the \texttt{O} (for Opentype) in their FontNames replaced by 
+\texttt{T} 
+(for Type~\liningnums{1}) using \texttt{fontforge}.  This font-renaming
+must be done \emph{before} generating the \LaTeX-support files, or else
+\texttt{dvi2ps} will fail.
+
+
+\subsection{Generation of Support Files}
+
+The \texttt{otftotfm} tool of the \texttt{lcdftypetools}
+package and the \texttt{autoinst} script of the \texttt{fontools} package are convenient tools
+for generating \LaTeX\ support files for OpenType families. 
+To generate a \texttt{texmf} tree for the \texttt{libertine}
+package on a Unix-like system, one puts all the \texttt{otf} files to be supported for \LaTeX\ or
+pdf\LaTeX\footnote{Currently, all of the OpenType fonts except the Keyboard font are supported
+for \LaTeX\ and pdf\LaTeX.} into a directory, creates a \texttt{texmf} sub-directory  and executes
+\begin{verbatim}
+    autoinst -target=./texmf -encoding=OT1,T1,LY1,TS1 \
+      -vendor=public -typeface=libertine -noupdmap    \
+      -noswash -notitling -noornaments                \
+      *.otf
+\end{verbatim}
+Then move to the \texttt{texmf} directory and do
+\begin{verbatim}
+    rm -rf fonts/pl fonts/vpl fonts/truetype fonts/type42
+    mv fonts/enc/dvips/public fonts/enc/dvips/libertine
+    mv fonts/map/dvips/public fonts/map/dvips/libertine
+\end{verbatim}
+to delete irrelevant sub-directories and re-name directories as required by
+TeXLive.
+
+A few additional steps are needed.
+
+\subsubsection{Renaming of the Encoding Files}
+\texttt{otftotfm} generates encoding files with filenames of the form \verb|a_xxxxxx|;
+to avoid filename conflicts with other packages, the files have been re-named
+to have a distinctive prefix using the
+command
+\begin{verbatim}
+    rename_enc libertine lbtn
+\end{verbatim}
+executed in the \texttt{texmf} directory, where
+\verb|rename_enc| is a PERL script in 
+\begin{verbatim}
+    doc/fonts/libertine
+\end{verbatim}
+Then in \verb|fonts/map/dvips/libertine|, 
+the map files can be concatenated into a single file \verb|libertine.map| and
+all instances of \verb|a_| changed to \verb|lbtn_|; the 
+original \verb|map| files have been deleted.
+
+\subsubsection{Installation of the Fonts}
+
+The \texttt{otf} files after corrections (but before re-naming) are
+installed into the \texttt{texmf} tree in the following sub-directory:
+\begin{verbatim}
+    fonts/OpenType/public/libertine/
+\end{verbatim}
+The \texttt{autoinst} script will normally use \texttt{cfftot1}
+to create \verb|pfb| files with appropriate internal names
+and filenames; but if more than one font family has been processed
+or if \texttt{cfftot1} runs into trouble, this may not happen.  In that
+case, one must do the conversion font-by-font using either \texttt{cfftot1}
+or \texttt{fontforge}; the appropriate internal names and filenames are as specified in 
+\verb|libertine.map|. 
+The \texttt{pfb} files are installed into the \texttt{texmf} tree in the following
+sub-directory:
+\begin{verbatim}
+    fonts/type1/public/libertine/
+\end{verbatim}
+
+\subsubsection{The \texttt{fd} Files}
+The \texttt{autoinst} script generates a large number of files with
+\verb|.fd| extensions in the \verb|tex/latex/libertine/| directory.
+Recent versions will generate ``silent substitution''
+rules for mapping \texttt{sl} to \texttt{it} and \texttt{bx} to \texttt{b};
+if not, these have to be added by hand.
+
+\subsubsection{The \texttt{sty} Files}
+The \texttt{autoinst} script generates files with \verb|.sty| extensions 
+in the \verb|tex/latex/libertine/| directory for each of the font families;
+but these are useless for xe\LaTeX\ and lua\LaTeX\ users and have been deleted.
+A \verb|libertine.sty| file has been generated ``by hand'' and is discussed in Section~\ref{sty}.
+
+\subsection{\texttt{libertine.sty}}
+\label{sty}
+This file implements the support for both \typeone\ and OpenType usage; the choice
+is initially determined by the processing engine, but as some xe\LaTeX\  and lua\LaTeX\ 
+users may prefer to avoid \texttt{fontspec}, a \texttt{type1} (or \texttt{nofontspec}) option
+is provided to change this.
+
+The \verb\...@scale\ commands are invoked in the \verb\fd\ files or when
+specifying fonts with \texttt{fontspec}; only the scale factors for Biolinum and
+Libertine Mono are adjustable using option parameters.
+
+If the \texttt{sfdefault} option has been used, the \verb|\familydefault|
+is set to the \emph{current} value of \verb|\sfdefault| (with no change to
+\verb|\rmdefault|).
+
+The use of \verb|\newfontfamily| rather than \verb|\addfontfeatures| avoids
+problems in the implementation of the latter for some fonts (including, unfortunately,
+Libertine).
+
+For the Mono and Keyboard font families, the Ligature and SmallCap features must be turned off.
+
+Commands to switch locally to oldstyle/lining/proportional/tabular numbers 
+are defined; the definitions of \verb|\oldstylenums| must deal with possible
+pre-existing definitions.
+
+To implement the \verb|\...Glyph| commands, it is necessary to, essentially, iterate
+through all the \emph{defined} glyphs in the relevant OpenType font.  This is implemented
+by creating files \verb|LinLibertine_R.tex|, \verb|\LinBiolinum_R.tex|,
+\verb|LinBiolinum_K.tex| and \verb|LinLibertine_I.tex| which declare the glyph name (when available),
+unicode code point, and glyph index for every defined glyph.
+These files are created by using \texttt{fontforge} to generate
+a ``glyph map'' file (extension \verb|.g2n|) for the relevant font and then the small \texttt{C} program
+\verb|doc/fonts/libertine/g2ntotex.c| will convert this into the required \verb|.tex| file.
+
+The final step in \verb|libertine.sty| is to remove all default font features
+in \texttt{fontspec} in case other fonts will be activated by the user.
+
+\subsection{Additional \texttt{sty} Files}
+The \verb|tex/latex/libertine/| directory also contains three ``front-end'' files
+\verb|libertineotf.sty|, \verb|libertine-type1.sty|, and \verb|biolinum-type1.sty|,
+which provide partial compatibility with obsolete packages, primarily for legacy
+documents.  
+
+\end{document}

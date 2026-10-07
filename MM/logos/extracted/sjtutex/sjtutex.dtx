@@ -1,0 +1,6236 @@
+% \iffalse meta-comment
+%
+% Copyright (C) SJTUG
+%   2018--2026 Weijian Wu   <alexarawu@outlook.com>
+%   2022--2026 Zilong Li    <logcreative@outlook.com>
+%   2024--2026 Boshi Yuan   <nemoyuan2008@outlook.com>
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   https://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008 or later.
+%
+%<*internal>
+\iffalse
+%</internal>
+%
+%<*internal>
+\fi
+\begingroup
+  \def\NameOfLaTeXe{LaTeX2e}
+\expandafter\endgroup\ifx\NameOfLaTeXe\fmtname\else
+\csname fi\endcsname
+%</internal>
+%
+%<*install>
+\input ctxdocstrip.tex
+\keepsilent
+\askforoverwritefalse
+
+\preamble
+
+    Copyright (C) SJTUG
+      2018--2026 Weijian Wu   <alexarawu@outlook.com>
+      2022--2026 Zilong Li    <logcreative@outlook.com>
+      2024--2026 Boshi Yuan   <nemoyuan2008@outlook.com>
+
+    This work may be distributed and/or modified under the
+    conditions of the LaTeX Project Public License, either version 1.3c
+    of this license or (at your option) any later version.
+    The latest version of this license is in
+      https://www.latex-project.org/lppl.txt
+    and version 1.3c or later is part of all distributions of LaTeX
+    version 2008 or later.
+
+\endpreamble
+
+\generate{
+  \usedir{tex/latex/sjtutex}
+    \file{sjtuarticle.cls}              {\from{\jobname.dtx}{class,article}}
+    \file{sjtureport.cls}               {\from{\jobname.dtx}{class,report}}
+    \file{sjtuthesis.cls}               {\from{\jobname.dtx}{class,thesis}}
+    \file{sjtu-article-preset-base.def} {\from{\jobname.dtx}{preset,article}}
+    \file{sjtu-report-preset-base.def}  {\from{\jobname.dtx}{preset,report}}
+    \file{sjtu-thesis-preset-base.def}  {\from{\jobname.dtx}{preset,thesis}}
+    \file{sjtu-lang-zh.def}             {\from{\jobname.dtx}{lang,zh}}
+    \file{sjtu-lang-en.def}             {\from{\jobname.dtx}{lang,en}}
+    \file{sjtu-lang-de.def}             {\from{\jobname.dtx}{lang,de}}
+    \file{sjtu-lang-ja.def}             {\from{\jobname.dtx}{lang,ja}}
+    \file{sjtu-scheme-zh.def}           {\from{\jobname.dtx}{scheme,zh}}
+    \file{sjtu-scheme-en.def}           {\from{\jobname.dtx}{scheme,en}}
+    \file{sjtu-scheme-de.def}           {\from{\jobname.dtx}{scheme,de}}
+    \file{sjtu-scheme-ja.def}           {\from{\jobname.dtx}{scheme,ja}}
+    \file{sjtu-text-font-newtx.def}     {\from{\jobname.dtx}{font,text,type1,newtx}}
+    \file{sjtu-text-font-newpx.def}     {\from{\jobname.dtx}{font,text,type1,newpx}}
+    \file{sjtu-text-font-lm.def}        {\from{\jobname.dtx}{font,text,type1,lm}}
+    \file{sjtu-text-font-times.def}     {\from{\jobname.dtx}{font,text,type1,times}}
+    \file{sjtu-text-font-libertinus.def}{\from{\jobname.dtx}{font,text,libertinus}}
+    \file{sjtu-text-font-stixtwo.def}   {\from{\jobname.dtx}{font,text,stixtwo}}
+    \file{sjtu-text-font-cambria.def}   {\from{\jobname.dtx}{font,text,otf,cambria}}
+    \file{sjtu-text-font-newcm.def}     {\from{\jobname.dtx}{font,text,otf,newcm}}
+    \file{sjtu-text-font-xits.def}      {\from{\jobname.dtx}{font,text,otf,xits}}
+    \file{sjtu-math-font-newtx.def}     {\from{\jobname.dtx}{font,math,type1,newtx}}
+    \file{sjtu-math-font-newpx.def}     {\from{\jobname.dtx}{font,math,type1,newpx}}
+    \file{sjtu-math-font-lm.def}        {\from{\jobname.dtx}{font,math,type1,lm}}
+    \file{sjtu-math-font-times.def}     {\from{\jobname.dtx}{font,math,type1,times}}
+    \file{sjtu-math-font-libertinus.def}{\from{\jobname.dtx}{font,math,libertinus}}
+    \file{sjtu-math-font-stixtwo.def}   {\from{\jobname.dtx}{font,math,stixtwo}}
+    \file{sjtu-math-font-cambria.def}   {\from{\jobname.dtx}{font,math,otf,cambria}}
+    \file{sjtu-math-font-newcm.def}     {\from{\jobname.dtx}{font,math,otf,newcm}}
+    \file{sjtu-math-font-xits.def}      {\from{\jobname.dtx}{font,math,otf,xits}}
+    \file{sjtu-cjk-font-windows.def}    {\from{\jobname.dtx}{font,cjk,windows}}
+    \file{sjtu-cjk-font-mac.def}        {\from{\jobname.dtx}{font,cjk,mac}}
+    \file{sjtu-cjk-font-ubuntu.def}     {\from{\jobname.dtx}{font,cjk,ubuntu}}
+    \file{sjtu-cjk-font-adobe.def}      {\from{\jobname.dtx}{font,cjk,adobe}}
+    \file{sjtu-cjk-font-fandol.def}     {\from{\jobname.dtx}{font,cjk,fandol}}
+    \file{sjtu-cjk-font-founder.def}    {\from{\jobname.dtx}{font,cjk,founder}}
+    \file{sjtu-cjk-font-hanyi.def}      {\from{\jobname.dtx}{font,cjk,hanyi}}
+%</install>
+%<*internal>
+  \usedir{source/latex/sjtutex}
+    \file{\jobname.ins}                 {\from{\jobname.dtx}{install}}
+%</internal>
+%<*install>
+}
+
+\obeyspaces
+\Msg{*************************************************************}
+\Msg{*                                                           *}
+\Msg{* To finish the installation you have to move the following *}
+\Msg{* files into a directory searched by TeX:                   *}
+\Msg{*                                                           *}
+\Msg{* The recommended directory is TDS:tex/latex/sjtutex        *}
+\Msg{*                                                           *}
+\Msg{*     sjtuarticle.cls                                       *}
+\Msg{*     sjtureport.cls                                        *}
+\Msg{*     sjtuthesis.cls                                        *}
+\Msg{*     sjtu-article-preset-base.def                          *}
+\Msg{*     sjtu-report-preset-base.def                           *}
+\Msg{*     sjtu-thesis-preset-base.def                           *}
+\Msg{*     sjtu-lang-de.def                                      *}
+\Msg{*     sjtu-lang-en.def                                      *}
+\Msg{*     sjtu-lang-ja.def                                      *}
+\Msg{*     sjtu-lang-zh.def                                      *}
+\Msg{*     sjtu-scheme-de.def                                    *}
+\Msg{*     sjtu-scheme-en.def                                    *}
+\Msg{*     sjtu-scheme-ja.def                                    *}
+\Msg{*     sjtu-scheme-zh.def                                    *}
+\Msg{*     sjtu-text-font-cambria.def                            *}
+\Msg{*     sjtu-text-font-libertinus.def                         *}
+\Msg{*     sjtu-text-font-lm.def                                 *}
+\Msg{*     sjtu-text-font-newcm.def                              *}
+\Msg{*     sjtu-text-font-newpx.def                              *}
+\Msg{*     sjtu-text-font-newtx.def                              *}
+\Msg{*     sjtu-text-font-stixtwo.def                            *}
+\Msg{*     sjtu-text-font-times.def                              *}
+\Msg{*     sjtu-text-font-xits.def                               *}
+\Msg{*     sjtu-math-font-cambria.def                            *}
+\Msg{*     sjtu-math-font-libertinus.def                         *}
+\Msg{*     sjtu-math-font-lm.def                                 *}
+\Msg{*     sjtu-math-font-newcm.def                              *}
+\Msg{*     sjtu-math-font-newpx.def                              *}
+\Msg{*     sjtu-math-font-newtx.def                              *}
+\Msg{*     sjtu-math-font-stixtwo.def                            *}
+\Msg{*     sjtu-math-font-times.def                              *}
+\Msg{*     sjtu-math-font-xits.def                               *}
+\Msg{*     sjtu-cjk-font-adobe.def                               *}
+\Msg{*     sjtu-cjk-font-fandol.def                              *}
+\Msg{*     sjtu-cjk-font-founder.def                             *}
+\Msg{*     sjtu-cjk-font-hanyi.def                               *}
+\Msg{*     sjtu-cjk-font-mac.def                                 *}
+\Msg{*     sjtu-cjk-font-ubuntu.def                              *}
+\Msg{*     sjtu-cjk-font-windows.def                             *}
+\Msg{*     sjtu-vi-badge-cor-red.pdf                             *}
+\Msg{*     sjtu-vi-badge-reg-red.pdf                             *}
+\Msg{*     sjtu-vi-logo-eng-h-cor-red.pdf                        *}
+\Msg{*     sjtu-vi-logo-eng-h-reg-red.pdf                        *}
+\Msg{*     sjtu-vi-logo-std-c-cor-red.pdf                        *}
+\Msg{*     sjtu-vi-logo-std-c-reg-red.pdf                        *}
+\Msg{*     sjtu-vi-logo-std-h-cor-red.pdf                        *}
+\Msg{*     sjtu-vi-logo-std-h-reg-red.pdf                        *}
+\Msg{*     sjtu-vi-logo-std-v-cor-red.pdf                        *}
+\Msg{*     sjtu-vi-logo-std-v-reg-red.pdf                        *}
+\Msg{*                                                           *}
+\Msg{* To produce the documentation, run the file sjtutex.dtx    *}
+\Msg{* through XeLaTeX.                                          *}
+\Msg{*                                                           *}
+\Msg{* Happy TeXing!                                             *}
+\Msg{*                                                           *}
+\Msg{*************************************************************}
+
+\endbatchfile
+%</install>
+%
+%<*internal>
+\fi
+%</internal>
+%
+%<*class>
+\NeedsTeXFormat{LaTeX2e}[2024-06-01]
+\providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
+\IfFormatAtLeastTF{2024-06-01}{}
+ {\PackageError{sjtutex}
+   {Your LaTeX format is outdated!\MessageBreak\MessageBreak
+    Release '2024-06-01' or newer is required to\MessageBreak
+    compile this document.\MessageBreak\MessageBreak
+    Please update your TeX distribution}{}}
+%</class>
+%<*!(driver|install)>
+%<+!driver>\GetIdInfo$Id: sjtutex.dtx 19925b2 2026-02-26 23:13:21 +0800 Alexara Wu <alexarawu@outlook.com> $
+%<class&article>  {Article document class for Shanghai Jiao Tong University (SJTUTeX)}
+%<class&article>\ProvidesExplClass{sjtuarticle}
+%<class&report>  {Report document class for Shanghai Jiao Tong University (SJTUTeX)}
+%<class&report>\ProvidesExplClass{sjtureport}
+%<class&thesis>  {Thesis document class for Shanghai Jiao Tong University (SJTUTeX)}
+%<class&thesis>\ProvidesExplClass{sjtuthesis}
+%<preset&article>  {Article document preset for Shanghai Jiao Tong University (SJTUTeX)}
+%<preset&article>\ProvidesExplFile{sjtu-article-preset-base.def}
+%<preset&report>  {Report document preset for Shanghai Jiao Tong University (SJTUTeX)}
+%<preset&report>\ProvidesExplFile{sjtu-report-preset-base.def}
+%<preset&thesis>  {Thesis document preset for Shanghai Jiao Tong University (SJTUTeX)}
+%<preset&thesis>\ProvidesExplFile{sjtu-thesis-preset-base.def}
+%<lang&zh>  {Chinese specific definition (SJTUTeX)}
+%<lang&zh>\ProvidesExplFile{sjtu-lang-zh.def}
+%<lang&en>  {English specific definition (SJTUTeX)}
+%<lang&en>\ProvidesExplFile{sjtu-lang-en.def}
+%<lang&de>  {German specific definition (SJTUTeX)}
+%<lang&de>\ProvidesExplFile{sjtu-lang-de.def}
+%<lang&ja>  {Japanese specific definition (SJTUTeX)}
+%<lang&ja>\ProvidesExplFile{sjtu-lang-ja.def}
+%<scheme&zh>  {Chinese scheme (SJTUTeX)}
+%<scheme&zh>\ProvidesExplFile{sjtu-scheme-zh.def}
+%<scheme&en>  {English scheme (SJTUTeX)}
+%<scheme&en>\ProvidesExplFile{sjtu-scheme-en.def}
+%<scheme&de>  {German scheme (SJTUTeX)}
+%<scheme&de>\ProvidesExplFile{sjtu-scheme-de.def}
+%<scheme&ja>  {Japanese scheme (SJTUTeX)}
+%<scheme&ja>\ProvidesExplFile{sjtu-scheme-ja.def}
+%<font&text&newtx>  {New TX text fonts definition (SJTUTeX)}
+%<font&text&newtx>\ProvidesExplFile{sjtu-text-font-newtx.def}
+%<font&text&newpx>  {New PX text fonts definition (SJTUTeX)}
+%<font&text&newpx>\ProvidesExplFile{sjtu-text-font-newpx.def}
+%<font&text&lm>  {Latin Modern text fonts definition (SJTUTeX)}
+%<font&text&lm>\ProvidesExplFile{sjtu-text-font-lm.def}
+%<font&text&times>  {Times text fonts definition (SJTUTeX)}
+%<font&text&times>\ProvidesExplFile{sjtu-text-font-times.def}
+%<font&text&stixtwo>  {STIX Two text fonts definition (SJTUTeX)}
+%<font&text&stixtwo>\ProvidesExplFile{sjtu-text-font-stixtwo.def}
+%<font&text&libertinus>  {Libertinus text fonts definition (SJTUTeX)}
+%<font&text&libertinus>\ProvidesExplFile{sjtu-text-font-libertinus.def}
+%<font&text&cambria>  {Cambria text fonts definition (SJTUTeX)}
+%<font&text&cambria>\ProvidesExplFile{sjtu-text-font-cambria.def}
+%<font&text&newcm>  {New Computer Modern text fonts definition (SJTUTeX)}
+%<font&text&newcm>\ProvidesExplFile{sjtu-text-font-newcm.def}
+%<font&text&xits>  {XITS text fonts definition (SJTUTeX)}
+%<font&text&xits>\ProvidesExplFile{sjtu-text-font-xits.def}
+%<font&math&newtx>  {New TX math fonts definition (SJTUTeX)}
+%<font&math&newtx>\ProvidesExplFile{sjtu-math-font-newtx.def}
+%<font&math&newpx>  {New PX math fonts definition (SJTUTeX)}
+%<font&math&newpx>\ProvidesExplFile{sjtu-math-font-newpx.def}
+%<font&math&lm>  {Latin Modern math fonts definition (SJTUTeX)}
+%<font&math&lm>\ProvidesExplFile{sjtu-math-font-lm.def}
+%<font&math&times>  {Times math fonts definition (SJTUTeX)}
+%<font&math&times>\ProvidesExplFile{sjtu-math-font-times.def}
+%<font&math&stixtwo>  {STIX Two math fonts definition (SJTUTeX)}
+%<font&math&stixtwo>\ProvidesExplFile{sjtu-math-font-stixtwo.def}
+%<font&math&libertinus>  {Libertinus math fonts definition (SJTUTeX)}
+%<font&math&libertinus>\ProvidesExplFile{sjtu-math-font-libertinus.def}
+%<font&math&cambria>  {Cambria math fonts definition (SJTUTeX)}
+%<font&math&cambria>\ProvidesExplFile{sjtu-math-font-cambria.def}
+%<font&math&newcm>  {New Computer Modern math fonts definition (SJTUTeX)}
+%<font&math&newcm>\ProvidesExplFile{sjtu-math-font-newcm.def}
+%<font&math&xits>  {XITS math fonts definition (SJTUTeX)}
+%<font&math&xits>\ProvidesExplFile{sjtu-math-font-xits.def}
+%<font&cjk&windows>  {Windows CJK fonts definition (SJTUTeX)}
+%<font&cjk&windows>\ProvidesExplFile{sjtu-cjk-font-windows.def}
+%<font&cjk&mac>  {macOS CJK fonts definition (SJTUTeX)}
+%<font&cjk&mac>\ProvidesExplFile{sjtu-cjk-font-mac.def}
+%<font&cjk&ubuntu>  {Ubuntu CJK fonts definition (SJTUTeX)}
+%<font&cjk&ubuntu>\ProvidesExplFile{sjtu-cjk-font-ubuntu.def}
+%<font&cjk&adobe>  {Adobe CJK fonts definition (SJTUTeX)}
+%<font&cjk&adobe>\ProvidesExplFile{sjtu-cjk-font-adobe.def}
+%<font&cjk&fandol>  {Fandol CJK fonts definition (SJTUTeX)}
+%<font&cjk&fandol>\ProvidesExplFile{sjtu-cjk-font-fandol.def}
+%<font&cjk&founder>  {Founder CJK fonts definition (SJTUTeX)}
+%<font&cjk&founder>\ProvidesExplFile{sjtu-cjk-font-founder.def}
+%<font&cjk&hanyi>  {Hanyi CJK fonts definition (SJTUTeX)}
+%<font&cjk&hanyi>\ProvidesExplFile{sjtu-cjk-font-hanyi.def}
+%<!driver>  {\ExplFileDate}{2.3.1}{\ExplFileDescription}
+%</!(driver|install)>
+%
+%<*driver>
+\PassOptionsToPackage{fontset=ubuntu}{ctex}
+\documentclass{ctxdoc}
+\newcommand{\sjtutex}{SJTU\TeX}
+\expandafter\def\csname ver@\jobname.dtx\endcsname
+  {2026/02/26 v2.3.1 SJTUTeX}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{listings}
+\AtEndOfClass{\sloppy}
+\definecolor{sjtu-red}{RGB}{200,22,30}
+\definecolor{sjtu-dark-red}{RGB}{167,32,56}
+\definecolor{sjtu-amber}{RGB}{253,208,0}
+\definecolor{sjtu-orange}{RGB}{240,131,0}
+\definecolor{sjtu-blue}{RGB}{0,134,209}
+\definecolor{sjtu-dark-blue}{RGB}{0,64,152}
+\definecolor{sjtu-green}{RGB}{51,141,39}
+\definecolor{sjtu-dark-green}{RGB}{0,81,78}
+\lstdefinestyle{style@base}{^^A
+  basewidth         = 0.5 em,
+  gobble            = 2,
+  lineskip          = 2 pt,
+  frame             = l,
+  framerule         = 1.2 pt,
+  framesep          = 0 pt,
+  escapeinside      = {(*}{*)},
+  basicstyle        = \small\ttfamily,
+  xleftmargin       = 0.5 em,
+  xrightmargin      = 0.5 em,
+  framexleftmargin  = 0.5 em,
+  framexrightmargin = 0.5 em}
+\lstdefinestyle{style@shell}{^^A
+  style             = style@base,
+  rulecolor         = \color{sjtu-dark-green},
+  backgroundcolor   = \color{sjtu-dark-green!2},
+  language          = bash,
+  alsoletter        = {-},
+  keywordstyle      = \color{sjtu-green},
+  emphstyle         = \color{sjtu-amber}}
+\lstdefinestyle{style@latex}{^^A
+  style             = style@base,
+  rulecolor         = \color{sjtu-dark-blue},
+  backgroundcolor   = \color{sjtu-dark-blue!2},
+  language          = [LaTeX]TeX,
+  alsoletter        = {*, -},
+  keywordstyle      = \color{sjtu-dark-red!80},
+  texcsstyle        = *\color{sjtu-blue},
+  emphstyle         = [1]\color{sjtu-orange},
+  emphstyle         = [2]\color{sjtu-green},
+  emphstyle         = [3]\color{sjtu-dark-blue!80}}
+\lstnewenvironment{shell}[1][]{^^A
+  \lstset{style=style@shell, #1}}{}
+\lstnewenvironment{latex}[1][]{^^A
+  \lstset{style=style@latex, #1}}{}
+\newcommand\TNA[1]{\textcolor{sjtu-blue}{\tn{#1}}}
+\newcommand\TNB[1]{\textcolor{sjtu-dark-red!80}{\tn{#1}}}
+\newcommand\OPT[1]{\textcolor{sjtu-dark-blue!80}{#1}}
+\newcommand\OPS[1]{\textcolor{sjtu-green}{#1}}
+\newcommand\ENV[1]{\textcolor{sjtu-orange}{#1}}
+\newcommand\BEV[1]{\TNA{begin}\{\ENV{#1}\}}
+\newcommand\EEV[1]{\TNA{end}\{\ENV{#1}\}}
+\newcommand\note[1]{{^^A
+  \color{sjtu-dark-green}{\noindent\bfseries 说明：}~\emph{#1}}}
+\newcommand\sjtutexrev[1]{^^A
+  \href{https://github.com/sjtug/SJTUTeX/commit/#1}{\texttt{sjtutex} rev. #1}}
+\hypersetup{^^A
+  bookmarksnumbered = true,
+  bookmarksopen     = true}
+\makeatletter
+\pdfstringdefDisableCommands{^^A
+  \let\color\@gobble}
+\makeatother
+\begin{document}
+  \DocInput{\jobname.dtx}
+  \IndexLayout
+  \PrintChanges
+  \PrintIndex
+\end{document}
+%</driver>
+% \fi
+%
+% \changes{v2.0}{2021/09/10}{应用 \LaTeXiii{} 重构代码。}
+% \changes{v2.0}{2022/12/27}{新增文档类 \cls{sjtuarticle} 和 \cls{sjtureport}。}
+%
+% \GetFileId{\jobname.dtx}
+%
+% \title{\bfseries\color{sjtu-red}\sjtutex{}: 上海交通大学文档类集}
+% \author{SJTUG}
+% \date{\filedate\quad\fileversion\thanks{\sjtutexrev{\ExplFileVersion}.}}
+%
+% \hypersetup{^^A
+%   pdfsubject  = {上海交通大学文档类集使用说明},
+%   pdfkeywords = {模板; 上海交通大学; 使用说明}}
+%
+% \maketitle
+%
+% \begin{abstract}
+% 此宏包旨在建立一个简单易用的上海交通大学文档类集，包括学位论文文档类
+% \cls{sjtuthesis} 以及普通文档类 \cls{sjtuarticle} 和 \cls{sjtureport}。
+% \end{abstract}
+%
+% \def\abstractname{免责声明}
+% \begin{abstract}
+% \noindent
+% \begin{enumerate}
+% \item 本模板的发布遵守 \href{https://www.latex-project.org/lppl/lppl-1-3c.txt}
+%   {\LaTeX{} Project Public License (1.3c)}，使用前请认真阅读协议内容。
+% \item 学位论文模板根据 \href{https://www.gs.sjtu.edu.cn/post/detail/Z3MzNDA0}
+%   {《上海交通大学博士、硕士学位论文撰写指南》} ，并参考
+%   \href{https://jwc.sjtu.edu.cn/info/1222/123971.htm}
+%   {《上海交通大学本科生毕业设计（论文）撰写规范》}
+%   编写而成。旨在供上海交通大学准毕业生撰写学位论文使用。
+% \item 学位论文模板仅为撰写指南的参考实现，不保证审查老师不提意见。任何由于使用
+%   本模板而引起的论文格式审查问题均与本模板作者无关。
+% \item 任何个人或组织以本模板为基础进行修改、扩展而生成的新的专用模板，请严格遵
+%   守 \LaTeX{} Project Public License 协议。由于违犯协议而引起的任何纠纷争端均
+%   与本模板作者无关。
+% \end{enumerate}
+% \end{abstract}
+%
+% \tableofcontents
+%
+% \begin{documentation}
+%
+% \section{介绍}
+%
+% 最早的一版 \LaTeX{} 学位论文模板由一位热心的物理系同学制作，中文字符处理采用了
+% 当时最为流行的 CJK--\LaTeX{} 方案。在此基础上，weijianwen 根据交大研究生院对学
+% 位论文的要求，完成了一份基本可用的交大 \LaTeX{} 学位论文模板。由于 CJK--\LaTeX{}
+% 方案不易使用，weijianwen 与 William Wang 开始着手把模板向 \XeTeX{} 引擎移植。
+% 之后 weijianwen又断断续续做了一些完善模板的工作，在原有硕士学位论文模板的基础
+% 上完成了交大学士和博士学位论文模板。
+%
+% 2012 年 5 月模板开始在 GitHub^^A
+% \footnote{\url{https://github.com/weijianwen/SJTUThesis}，项目转移后该链接已重定向。}^^A
+% 上管理和更新，2018 年 1 月项目转移至 SJTUG 名下。2019 年 6 月 Alexara Wu 重构
+% 了整个宏包的代码，并使用 Doc\TeX{} 文档和\textsc{DocStrip} 工具进行代码的管理，
+% 升级版本号为 1.0。2022 年 11 月，论文模板改版后，使用 \LaTeXiii{} 重构了代码，
+% 添加 \cls{sjtureport} 和 \cls{sjtuarticle} 文档类，升级版本号为 2.0。
+% 2024 年 2 月，\pkg{sjtutex} 文档类集在 CTAN 上发布，被 \TeX{} Live 2024 及之后
+% 的版本收录。
+%
+% 现在，\sjtutex{} 代码在 GitHub^^A
+% \footnote{\url{https://github.com/sjtug/SJTUTeX}}^^A
+% 上维护，并同步发布至 CTAN\footnote{\url{https://www.ctan.org/pkg/sjtutex}} 上。
+% 原 \href{https://github.com/sjtug/SJTUThesis}{SJTUThesis} 仓库则作为学位论文
+% 示例文档，提供开箱即用的模板。学位论文模板用户可以在
+% \href{https://github.com/sjtug/SJTUThesis/discussions}{Discussions}
+% 上提问使用问题，也可以在
+% \href{https://github.com/sjtug/SJTUThesis/issues}{Issues}
+% 中进行 Bug 反馈与新功能提案。如果需要对文档类代码进行修改，欢迎前往
+% \href{https://github.com/sjtug/SJTUTeX}{\sjtutex} 仓库进行 Pull Request。
+% \sjtutex{} 模板的许多实现细节离不开
+% \href{https://github.com/sjtug/SJTUThesis/graphs/contributors}{热心同学们}
+% 的贡献，在此感谢所有为模板贡献过代码的同学们，以及所有测试和使用模板的各位同学！
+%
+% \note{模板的作用在于减少论文写作过程中格式调整的时间，前提是遵守模板的用法，否
+%   则即便用了 \sjtutex{} 也难以保证输出的论文符合学校规范。}
+%
+% \section{简明教程}
+%
+% \subsection{安装 \TeX{} 发行版}
+%
+% 因为 \LaTeXiii{} 和相关宏包在不断更新，所以推荐使用最新的 \TeX{} 发行版。
+% \sjtutex{} 支持主流的 \TeX{} 发行版，包括 \TeX{} Live、\hologo{MiKTeX}、
+% Mac\TeX{}，但不支持 \CTeX{} 套装。安装方法具体可以参考
+% \href{https://github.com/sjtug/SJTUThesis/wiki/TeX-发行版及其安装}
+% {Wiki 页面《\TeX{} 发行版及其安装》}。
+%
+% \sjtutex{} 需要 \LaTeXe{} 内核 2024-06-01 或以上版本，\pkg{ctex} 宏包版本应当
+% 在 v2.5 及以上。版本过低将无法正常编译。
+%
+% \subsection{文件组成}
+%
+% 表~\ref{tab:files} 列出了 \sjtutex{} 的主要文件及其功能介绍。
+%
+% \begin{table}[!hbt]
+% \centering
+% \begin{threeparttable}
+%   \caption{模板的文件组成}
+%   \label{tab:files}
+%   \begin{tabular}{l|l|p{4cm}}
+%     \toprule
+%     \strong{类别}         & \strong{文件}               & \strong{说明}  \\
+%     \midrule
+%     文档类                & \file{sjtuarticle.cls}      & 文稿文档类     \\
+%                           & \file{sjtureport.cls}       & 报告文档类     \\
+%                           & \file{sjtuthesis.cls}       & 学位论文文档类 \\
+%                           & \file{sjtu-lang-*.def}      & 文档类语言配置 \\
+%                           & \file{sjtu-scheme-*.def}    & 文档类语言方案 \\
+%                           & \file{sjtu-*-preset-*.def}  & 文档类预设配置 \\
+%     \midrule
+%     字体配置文件          & \file{sjtu-text-font-*.def} & 西文字体配置   \\
+%                           & \file{sjtu-math-font-*.def} & 数学字体配置   \\
+%                           & \file{sjtu-cjk-font-*.def}  & CJK 字体配置   \\
+%     \midrule
+%     视觉形象系统\tnote{a} & \file{sjtu-vi-logo-*.pdf}   & 校标图片       \\
+%                           & \file{sjtu-vi-badge-*.pdf}  & 校徽图片       \\
+%
+%     \bottomrule
+%   \end{tabular}
+%   \begin{tablenotes}
+%     \item[a] \href{https://vi.sjtu.edu.cn}{交大视觉形象系统}
+%       的相关图像资源版权归上海交通大学所有。
+%   \end{tablenotes}
+% \end{threeparttable}
+% \end{table}
+%
+% \subsection{使用文档类}
+%
+% 共有 3 种文档类，\cls{sjtuthesis} 用于学位论文的排版，\cls{sjtureport}
+% 用于课程大报告的排版，\cls{sjtuarticle} 用于课程小论文的排版。
+%
+% 将文档保存在下载好的 \sjtutex{} 模板根目录下，或者直接使用 \TeX{} 发行版
+% 中的 \pkg{sjtutex} 文档类集^^A
+% \footnote{为了使用最新版本的 \sjtutex{}，请及时更新发行版至最新的版本：^^A
+% \TeX{} Live 用户请使用命令 \texttt{tlmgr update --self --all} 来更新全部宏包；^^A
+% \hologo{MiKTeX} 用户请在 MiKTeX Console 更新选项卡中更新所有宏包。}，
+% 文件以 \texttt{.tex} 后缀结尾。
+% 注意在使用文档类时，需要将涉及到的所有源文件使用 UTF-8 编码保存。
+% 对于不同的文档类，使用方法略有不同，这里给出这三种文档类的最小使用示例。
+%
+% 下面这份 \TeX{} 文档展示了 \cls{sjtuthesis} 文档类的基本用法，一般需要指定
+% 中英文名称。该文档将包含中英文封面，页眉为文档主题及章节名称。
+% \begin{latex}[moretexcs={\sjtusetup,\maketitle,\tableofcontents,\chapter},
+%   morekeywords={\frontmatter,\mainmatter}, emph={[1]sjtuthesis,document},
+%   emph={[2]info},emph={[3]type,zh,en,title,author}]
+% \documentclass[type=master]{sjtuthesis}
+% \sjtusetup{
+%   info = {
+%     zh/title  = {上海交通大学学位论文模板示例文档},
+%     en/title  = {A Sample Document for SJTU Thesis Template},
+%     zh/author = {某某},
+%     en/author = {Mo Mo},
+%   }
+% }
+% \begin{document}
+%   \maketitle
+%   \frontmatter
+%   \tableofcontents
+%   \mainmatter
+%   \chapter{欢迎}
+%   \section{欢迎使用 SJTUThesis}
+%   你好，\LaTeX{}!
+% \end{document}
+% \end{latex}
+%
+% 下面这份 \TeX{} 文档展示了 \cls{sjtureport} 文档类的基本用法，建议使用标准命令
+% 定义中文名称。该文档将包含标题页，页眉为校标图片、文档主题及章节名称。
+% \begin{latex}[moretexcs={\subject,\keywords,\maketitle,\chapter},
+%   emph={[1]sjtureport,document}]
+% \documentclass{sjtureport}
+% \title{上海交通大学报告模板示例文档}
+% \author{某某}
+% \subject{XX期末课程论文}
+% \keywords{上海交大, 饮水思源, 爱国荣校}
+% \begin{document}
+%   \maketitle
+%   \chapter{欢迎}
+%   \section{欢迎使用 SJTUReport}
+%   你好，\LaTeX{}!
+% \end{document}
+% \end{latex}
+%
+% 下面这份 \TeX{} 文档展示了 \cls{sjtuarticle} 文档类的基本用法，建议使用标准
+% 命令定义中文名称，不能够使用 \tn{chapter} 这一级。该文档包含标题栏，页眉为
+% 校标图片、文档主题及章节名称。
+% \begin{latex}[moretexcs={\maketitle}, emph={[1]sjtuarticle,document}]
+% \documentclass{sjtuarticle}
+% \title{示例文档}
+% \author{某某}
+% \begin{document}
+%   \maketitle
+%   \section{欢迎使用 SJTUArticle}
+%   你好，\LaTeX{}!
+% \end{document}
+% \end{latex}
+%
+% \subsection{编译文档}
+%
+% 文档类推荐使用 \XeLaTeX{} 或 \LuaLaTeX{} 编译，同时也支持 \pdfTeX{} 引擎。为了
+% 生成正确的目录、脚注以及交叉引用，至少需要连续编译两次。
+%
+% 在实际使用中，一般推荐使用自动生成工具 \pkg{latexmk} 编译文档。\pkg{latexmk}
+% 命令可以自动进行多步编译，直到交叉引用都被解决。
+% 假设您的 \TeX{} 源文件名为 \file{main.tex}，
+% 可在命令行中执行如下命令使用 \XeLaTeX{} 编译文档：
+% \begin{shell}[morekeywords={latexmk},emph={-xelatex}]
+% latexmk -xelatex main
+% \end{shell}
+% 也可通过修改 \file{latexmkrc} 配置文件来控制 \pkg{latexmk} 的行为，
+% 具体可以参考 \pkg{latexmk} 文档。
+%
+% \section{文档配置}
+%
+% 本模板中的选项、命令或环境可以分为以下三类：
+% \begin{itemize}
+%   \item 名字后面带有 \rexptarget\rexpstar{} 的，表示只能在 \cls{sjtuthesis}
+%     文档类中使用；
+%   \item 名字后面带有 \exptarget\expstar{} 的，表示只能在 \cls{sjtureport}
+%     和 \cls{sjtuarticle} 文档类中使用；
+%   \item 名字后面不带有特殊符号的，一般表示在 \cls{sjtuthesis}、\cls{sjtureport}
+%     和 \cls{sjtuarticle} 文档类中都可以使用，特殊情况另作说明。
+% \end{itemize}
+%
+% \subsection{文档类选项}
+%
+% 本节所指“文档类选项”是指需要在引入文档类的时候指定的选项:
+%
+% \begin{latex}[emph={[1]sjtuthesis}]
+% \documentclass(*\oarg{文档类选项}*){sjtuthesis}
+% \end{latex}
+%
+% 部分选项采用 \meta{key}|=|\meta{value} 的形式，需要使用逗号分隔各选项。
+% 当 \meta{value} 省略时，将采用默认值。
+% 在下文的说明中，将用\textbf{粗体}表示默认值。
+%
+% \subsubsection{通用选项}
+%
+% \begin{function}[rEXP,updated=2022-12-03]{type}
+%   \begin{syntax}
+%     \OPT{type} = <bachelor|(master)|doctor>
+%   \end{syntax}
+%   论文类型。三种选项分别代表学士学位论文、硕士学位论文、博士学位论文。
+% \end{function}
+%
+% \begin{function}[updated=2023-03-23]{lang}
+%   \begin{syntax}
+%     \OPT{lang} = <(zh)|en|de|ja>
+%   \end{syntax}
+%   论文主要语言。可选中文、英文、德文或日文，该选项会改变文档中的一些标题的名字。
+%   下文中 \meta{lang} 可以指定为这些选项中的其中之一。
+% \end{function}
+%
+% \begin{function}{draft, final}
+%   是否开启草稿模式。
+%   \opt{draft} 开启草稿模式，所有的图片将不会被加载，超过边界的区域将会被涂上黑色色块。
+%   \opt{final} 关闭草稿模式。
+%   默认为 \opt{final}。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2025-01-14]{review}
+%   盲审模式。开启盲审模式会将作者姓名、导师姓名、学号、基金等个人信息留空，
+%   并使得标题页的信息表格强制显示相关字段，
+%   相关说明详见第 \ref{sec:sjtuthesiskey} 节；
+%   开启盲审模式还会删去版权使用授权书、原创性声明和致谢页。默认关闭。
+% \end{function}
+%
+% \subsubsection{页面设置}
+%
+% \begin{function}{oneside, twoside}
+%   指明论文的单双面模式。
+%   \opt{oneside} 为单面模式，
+%   \opt{twoside} 为双面模式。
+%   \begin{itemize}
+%     \item 在 \cls{sjtuthesis} 文档类中，默认为 \opt{twoside}。
+%     \item 在 \cls{sjtureport} 和 \cls{sjtuarticle} 文档类中，默认为 \opt{oneside}。
+%   \end{itemize}
+% \end{function}
+%
+% \begin{function}{openright, openany}
+%   指明论文是否奇数页开章。
+%   \opt{openright} 为从奇数页开始新章，
+%   \opt{openany} 为从任意页开始新章。
+%   \begin{itemize}
+%     \item 在 \cls{sjtuthesis} 文档类中，默认为 \opt{openright}。
+%     \item 在 \cls{sjtureport} 文档类中，默认为 \opt{openany}。
+%     \item 在 \cls{sjtuarticle} 文档类中，该选项不可用。
+%   \end{itemize}
+% \end{function}
+%
+% \begin{function}[EXP,added=2022-12-23]{titlepage, notitlepage}
+%   指明论文的标题形式。
+%   \opt{titlepage} 为使用标题页。
+%   \opt{notitlepage} 为使用标题块。
+%   \begin{itemize}
+%     \item 在 \cls{sjtuthesis} 文档类中，该选项不可用，只能使用标题页。
+%     \item 在 \cls{sjtureport} 文档类中，默认为 \opt{titlepage}。
+%     \item 在 \cls{sjtuarticle} 文档类中，默认为 \opt{notitlepage}。
+%   \end{itemize}
+% \end{function}
+%
+% \subsubsection{字体选项}
+% \label{sec:fontsetup}
+%
+% \begin{function}[updated=2022-12-18]{zihao}
+%   \begin{syntax}
+%     \OPT{zihao} = <(-4)|5>
+%   \end{syntax}
+%   论文默认字号，可以设定为小四号或五号。
+%   \begin{itemize}
+%     \item 在 \cls{sjtuthesis} 和 \cls{sjtureport} 文档类中默认为小四号;
+%     \item 在 \cls{sjtuarticle} 文档类中默认为五号。
+%   \end{itemize}
+% \end{function}
+%
+% \begin{function}[added=2023-10-24]{linespread}
+%   \begin{syntax}
+%     \OPT{linespread} = <数值>
+%   \end{syntax}
+%   设置行距倍数。
+%   \begin{itemize}
+%     \item 在 \cls{sjtuthesis} 文档类中默认不调整行距倍数;
+%     \item 在 \cls{sjtuarticle} 和 \cls{sjtureport} 文档类中默认为 1.3。
+%   \end{itemize}
+% \end{function}
+%
+% \begin{function}[added=2023-10-24]{baselineskip}
+%   \begin{syntax}
+%     \OPT{baselineskip} = <长度|false>
+%   \end{syntax}
+%   正文基线间距。
+%   \begin{itemize}
+%     \item 在 \cls{sjtuthesis} 文档类中，默认为 20 磅。
+%     \item 在 \cls{sjtureport} 和 \cls{sjtuarticle} 文档类中，默认为 \opt{false}；
+%           此时正文基线间距为字号的 1.2 倍。
+%   \end{itemize}
+% \end{function}
+%
+% \begin{function}{cjk-font}
+%   \begin{syntax}
+%     \OPT{cjk-font} = <(auto)|windows|mac|ubuntu|adobe|(fandol)|founder|hanyi|none>
+%   \end{syntax}
+%   指定 CJK 字体集。\sjtutex{} 预定义了一些 CJK 字体组合，
+%   具体配置见表 \ref{tab:cjkfonts}。
+%   默认情况下会根据操作系统自动配置：
+%   Windows 系统默认使用 \opt{windows}，
+%   macOS 系统默认使用 \opt{mac}，
+%   Linux 系统默认使用 \opt{fandol}。
+%   找不到对应定义的 CJK 字体集时的回退选项为 \opt{fandol}。
+%
+%   \textbf{仅} \opt{windows}、\opt{founder} 和 \opt{hanyi} 字体集支持 \pdfLaTeX{} 直接生成 PDF。
+%   其他 CJK 字体集使用 \pdfTeX{} 引擎需要先通过 \LaTeX{} 生成 DVI，
+%   然后再使用 DVIPDFM\textit{x} 转换为 PDF。
+% \end{function}
+%
+% \begin{table}[ht]
+% \centering\small
+% \setlength\leftskip{0pt plus 1 fil minus \marginparwidth}
+% \begin{threeparttable}
+%   \caption{CJK 字体配置}
+%   \label{tab:cjkfonts}
+%   \tabcolsep=3pt
+%   \begin{tabular}{ccccccc}
+%     \toprule
+%     	                   & \strong{宋体}     & \strong{黑体}    & \strong{仿宋} & \strong{楷体}   & \strong{明朝体}\tnote{c} & \strong{哥特体}\tnote{c}  \\
+%     \midrule
+%       |windows|          & （中易）宋体      & （中易）黑体     & （中易）仿宋  & （中易）楷体    & MS Mincho                & MS Gothic                 \\
+%       |mac|              & （华文）宋体-简   & （华文）黑体-简  & 华文仿宋      & （华文）楷体-简 & Hiragino Mincho ProN     & Hiragino Kaku Gothic ProN \\
+%       |ubuntu|           & Noto Serif CJK SC & Noto Sans CJK SC & ---           & 文鼎 PL 简中楷  & Noto Serif CJK JP        & Noto Sans CJK JP          \\
+%       |adobe|            & Adobe 宋体        & Adobe 黑体       & Adobe 仿宋    & Adobe 楷体      & Kozuka Mincho Pr6N       & Kozuka Gothic Pr6N        \\
+%       |fandol|\tnote{a}  & Fandol 宋体       & Fandol 黑体      & Fandol 仿宋   & Fandol 楷体     & HaranoAjiMincho          & HaranoAjiGothic           \\
+%       |founder|\tnote{b} & 方正书宋          & 方正黑体         & 方正仿宋      & 方正楷体        & IPAMincho                & IPAGothic                 \\
+%       |hanyi|            & 汉仪书宋二 S      & 汉仪中黑 S       & 汉仪仿宋 S    & 汉仪楷体 S      & HaranoAjiMincho          & HaranoAjiGothic           \\
+%     \bottomrule
+%   \end{tabular}
+%   \begin{tablenotes}
+%     \item[a] 发行版中自带的 Fandol 中文字库容易出现缺字的情况；
+%       我们建议 Linux 用户使用 \opt{ubuntu} 选项或自行配置合适的字体；参见
+%       \href{https://github.com/sjtug/SJTUThesis/wiki/在线使用说明}
+%       {Wiki 页面《在线使用说明》}。
+%     \item[b] 配置 \opt{founder} 选项使用方正简繁扩展版（即 GBK 版）字体。
+%     \item[c] 日文模板才需要日文明朝体与哥特体；日文字体使用 \pkg{fontspec}
+%       宏包设置，故日文模板不支持 \pdfTeX{} 引擎，请使用 \XeLaTeX{} 或
+%       \LuaLaTeX{} 编译。
+%   \end{tablenotes}
+% \end{threeparttable}
+% \end{table}
+%
+% \begin{function}{text-font}
+%   \begin{syntax}
+%     \OPT{text-font} = <(newtx)|times|stixtwo|xits|newpx|cambria|newcm|lm|libertinus|none>
+%   \end{syntax}
+%   指定西文字体集。\sjtutex{} 预定义了一些西文字体组合，
+%   具体配置见表 \ref{tab:latinfonts}。
+%   找不到定义的西文字体集时的回退选项为 \opt{newtx}。
+% \end{function}
+%
+% \begin{function}{math-font}
+%   \begin{syntax}
+%     \OPT{math-font} = <(auto)|(newtx)|times|stixtwo|xits|newpx|cambria|newcm|lm|libertinus|none>
+%   \end{syntax}
+%   指定数学字体集。\sjtutex{} 预定义了一些数学字体组合，
+%   具体配置见表 \ref{tab:latinfonts} 数学字体列。
+%   默认跟随西文字体 \opt{text-font} 的设置。
+%   找不到定义的数学字体集时的回退选项为 \opt{newtx}。
+%
+%   \opt{xits}，\opt{newcm}，\opt{cambria} 选项仅支持 \XeLaTeX/\LuaLaTeX{} 编译。
+% \end{function}
+%
+% \begin{table}[ht]
+% \centering\small
+% \begin{threeparttable}
+%   \caption{西文字体与数学字体配置}
+%   \label{tab:latinfonts}
+%   \begin{tabular}{ccccc}
+%     \toprule
+%       & \strong{正文字体} & \strong{无衬线字体} & \strong{等宽字体} & \strong{数学字体} \\
+%     \midrule
+%       |newtx|                  & TG Termes X\tnote{a}     & TG Heros        & TG Cursor   & newtx           \\
+%       \multirow{2}{*}{|times|} & Times New Roman\tnote{b} & Arial           & Courier New & \multirow{2}{*}{mathptmx} \\
+%                                & Times\tnote{c}           & Helvetica       & Courier     &                 \\
+%       |stixtwo|                & STIX Two Text            & TG Heros        & TG Cursor   & STIX Two Math   \\
+%       |xits|                   & XITS                     & TG Heros        & TG Cursor   & XITS Math       \\
+%       |newpx|                  & TG Pagella X             & TG Heros        & TG Cursor   & newpx           \\
+%       |cambria|                & Cambria                  & Calibri         & Consolas    & Cambria Math    \\
+%       |newcm|                  & New CM\tnote{d}          & New CM Sans     & New CM Mono & New CM Math     \\
+%       |lm|                     & LM Roman\tnote{e}        & LM Sans         & LM Mono     & LM Math         \\
+%       |libertinus|             & Libertinus Serif         & Libertinus Sans & LM Mono     & Libertinus Math \\
+%     \bottomrule
+%   \end{tabular}
+%   \begin{tablenotes}
+%     \item[a] “TG”是 TeX Gyre 的缩写。
+%     \item[b] 本行中，Times New Roman、Arial 和 Courier New 是商业字体，
+%       在 Windows 和 macOS 系统上均默认安装。
+%     \item[c] 使用 \pdfTeX{} 引擎时，实际使用对应字体的 Type 1 开源版本。
+%     \item[d] “CM”是 Computer Modern 的缩写。
+%     \item[e] “LM”是 Latin Modern 的缩写。
+%   \end{tablenotes}
+% \end{threeparttable}
+% \end{table}
+%
+% \begin{function}[added=2022-12-03,updated=2023-01-05]{math-style}
+%   \begin{syntax}
+%     \OPT{math-style} = <(ISO)|TeX>
+%   \end{syntax}
+%   数学符号样式。该选项将影响 \opt{uppercase-greek}、\opt{integral}、
+%   \opt{integral-limits} 选项。
+%   默认遵循 ISO 80000-2 标准设置，即斜体的大写希腊字母、直立的积分号
+%   以及积分号上下限置于上下方。
+%   用户也可以逐项修改数学样式。
+% \end{function}
+%
+% \begin{function}[added=2023-01-05]{uppercase-greek}
+%   \begin{syntax}
+%     \OPT{uppercase-greek} = <slanted|upright>
+%   \end{syntax}
+%   大写希腊字母的正/斜体。
+% \end{function}
+%
+% \begin{function}[added=2023-01-05]{integral}
+%   \begin{syntax}
+%     \OPT{integral} = <slanted|upright>
+%   \end{syntax}
+%   积分号的正/斜体。
+% \end{function}
+%
+% \begin{function}[added=2023-01-05]{integral-limits}
+%   \begin{syntax}
+%     \OPT{integral-limits} = <true|false>
+%   \end{syntax}
+%   行间公式中积分号上下限的位置，
+%   \opt{true} 使得上下限在积分号上下方，
+%   \opt{false} 使得上下限在积分号右侧。
+%   该选项只影响行间公式，行内公式统一居右侧，不受影响。
+% \end{function}
+%
+% \subsubsection{其他选项}
+%
+% \begin{function}[added=2026-02-22]{preset}
+%   \begin{syntax}
+%     \OPT{preset} = <(base)|预设配置名称|none>
+%   \end{syntax}
+%   预设配置名称。
+%   可以通过指定预设配置名称来快速应用对应配置文件中一系列相关设置或自定义模板。
+%   默认为内置预设 \opt{base}，该预设包含了参照学校规范的默认设置。
+%   当设置为 \opt{none} 时，将不加载任何预设配置，只保留文档类最基本的设置。
+% \end{function}
+%
+% \note{其他上述未提到的文档类选项会被传递给对应的 \CTeX{} 文档类，
+% 请注意 \opt{GBK}、\opt{scheme} 等选项不受 \sjtutex{} 支持。}
+%
+% \subsection{论文信息设置}
+%
+% \begin{function}{\sjtusetup}
+%   \begin{syntax}
+%     \TNA{sjtusetup}\marg{键值列表}
+%   \end{syntax}
+%   本模板提供了一系列选项，可由您自行配置。载入文档类之后，以下
+%   所有选项均可通过统一的命令 \tn{sjtusetup} 来设置。
+% \end{function}
+%
+% \tn{sjtusetup} 的参数是一组由（英文）逗号隔开的选项列表，列表中的选项通常是
+% \meta{key}|=|\meta{value} 的形式。对于同一项，后面的设置将会覆盖前面的设置。在
+% 下文的说明中，将用\textbf{粗体}表示默认值。\tn{sjtusetup} 支持不同类型以及多种
+% 层次的选项设定。键值列表中，“|=|”左右的空格不影响设置；但需注意，参数列表中不
+% 可以出现空行。
+%
+% \begin{latex}[moretexcs={\sjtusetup}, emph={[2]info,style,name},
+%   emph={[3]zh,en,title,author,float-num-sep,achv}]
+% \sjtusetup{
+%   info = {
+%     zh/title      = {上海交通大学学位论文模板示例文档},
+%     en/title      = {A Sample Document for SJTU Thesis Template},
+%     zh/author     = {某某},
+%     en/author     = {Mo Mo},
+%   },
+%   style = {
+%     float-num-sep = {-},
+%   },
+%   name = {
+%     achv          = {攻读学位期间完成的论文},
+%   },
+% }
+% \end{latex}
+%
+% \subsubsection{信息域}
+%
+% \begin{function}[updated=2026-01-08]{info}
+%   \begin{syntax}
+%     \OPS{info} = \marg{键值列表}
+%   \end{syntax}
+%   文档类默认的预设 \opt{base} 提供了该选项的多种子项，用于录入基本信息。
+%   具体内容见下。
+%   \begin{itemize}
+%     \item 在 \cls{sjtuthesis} 文档类中，推荐使用带语言代码前缀 \meta{lang}
+%           （比如 \opt{zh} 或 \opt{en}）的键来设定对应语言的论文信息，见第
+%           \ref{sec:sjtuthesiskey} 节；
+%           各标题页中的信息表格会根据设定信息的顺序进行显示与排列，
+%           未设置的信息将不会显示，但在盲审模式开启时会例外地强制显示相关字段，
+%           中文标题页会强制显示 \texttt{info/zh} 中的 \texttt{author, id,
+%           supervisor, assoc_supervisor, co_supervisor, department, major, degree}
+%           字段，其他语言标题页会强制显示 \texttt{info/<lang>} 中的
+%           \texttt{author, supervisor, assoc_supervisor, co_supervisor} 字段，
+%           这种顺序也是这些信息的推荐设置顺序。如果需要更改该字段在标题页中的
+%           键显示名称，可以使用 \tn{SetInfoEntry} 命令。
+%     \item 在 \cls{sjtureport} 和 \cls{sjtuarticle} 文档类中，不需要使用语言代
+%           码前缀。此时推荐直接使用标准接口来设定这些信息，这些标准接口不属于键
+%           值列表，应当直接写在导言区内，见第 \ref{sec:sjtureportcmd} 节。
+%   \end{itemize}
+%
+%  \note{本节所记述的 \texttt{info} 选项的子项仅适用于预设 \opt{base}，
+%  如果使用了其他预设或自定义模板，可能会有不同的子项设置，
+%  具体请参见对应预设配置文件或自定义模板的文档说明。}
+% \end{function}
+%
+% \begin{function}[rEXP,added=2025-12-12]{\SetInfoEntry}
+%   \begin{syntax}
+%     \TNA{SetInfoEntry}\marg{lang}\marg{键值列表}
+%   \end{syntax}
+%   用于新建或修改 \cls{sjtuthesis} 文档类中 |info| 选项的子项，
+%   需要在 \tn{maketitle} 之前使用该命令。
+%   第一个参数指定语言，
+%   第二个参数使用键值列表指定字段的键名称和显示名称，各键值对间用英文逗号隔开，
+%   如 |supervisor={校内导师},co-supervisor={行业导师}|。
+% \end{function}
+%
+% \paragraph{适用于 \cls{sjtuthesis} 文档类的键}
+% \label{sec:sjtuthesiskey}
+%
+% \begin{function}[rEXP,updated=2023-03-14]{info/<lang>/title}
+%   \begin{syntax}
+%     \OPT{\meta{lang}}/\OPT{title} = \marg{标题}
+%   \end{syntax}
+%   标题。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2023-03-14]{info/<lang>/display-title}
+%   \begin{syntax}
+%     \OPT{\meta{lang}}/\OPT{display-title} = \marg{标题页标题}
+%   \end{syntax}
+%   标题页中的题目。默认为跟随对应语言的标题。
+%   如果标题过长，可以尝试使用“|\\|”手动断行。
+% \end{function}
+%
+% \begin{function}[rEXP,added=2022-12-17,updated=2023-03-14]{info/<lang>/subject}
+%   \begin{syntax}
+%     \OPT{\meta{lang}}/\OPT{subject} = \marg{主题}
+%   \end{syntax}
+%   文档主题。一般显示在中文标题页校徽下方。
+%   默认值类似于 “上海交通大学学士学位论文” 或 “A Dissertation Submitted to
+%   Shanghai Jiao Tong University for the Degree of Bachelor”。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2023-03-14]{info/<lang>/keywords}
+%   \begin{syntax}
+%     \OPT{\meta{lang}}/\OPT{keywords} = \marg{中文关键字}
+%   \end{syntax}
+%   关键字列表。各关键字之间需使用英文逗号隔开。
+%   为防止歧义，可以用分组括号“|{...}|”把各字段括起来。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2023-03-14]{info/<lang>/author}
+%   \begin{syntax}
+%     \OPT{\meta{lang}}/\OPT{author} = \marg{姓名}
+%   \end{syntax}
+%   作者姓名。
+% \end{function}
+%
+% \begin{function}[rEXP]{info/id}
+%   \begin{syntax}
+%     \OPT{id} = \marg{学号}
+%   \end{syntax}
+%   学号。该键不需要语言前缀。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2023-03-14]{info/<lang>/supervisor,
+%   info/<lang>/assoc-supervisor,info/<lang>/co-supervisor}
+%   \begin{syntax}
+%     \OPT{\meta{lang}}/\OPT{supervisor}       = \marg{导师姓名}
+%     \OPT{\meta{lang}}/\OPT{assoc-supervisor} = \marg{副导师姓名}
+%     \OPT{\meta{lang}}/\OPT{co-supervisor}    = \marg{联合导师姓名}
+%   \end{syntax}
+%   导师、副导师、联合导师姓名。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2023-03-14]{info/<lang>/department}
+%   \begin{syntax}
+%     \OPT{\meta{lang}}/\OPT{department} = \marg{院系名称}
+%   \end{syntax}
+%   院系名称。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2023-03-14]{info/<lang>/major}
+%   \begin{syntax}
+%     \OPT{\meta{lang}}/\OPT{major} = \marg{专业名称}
+%   \end{syntax}
+%   专业名称。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2023-03-14]{info/<lang>/degree}
+%   \begin{syntax}
+%     \OPT{\meta{lang}}/\OPT{degree} = \marg{学位名称}
+%   \end{syntax}
+%   申请学位中英文名称。
+%   包括申请的学位类别和级别，如“工学硕士”、“理学博士”等。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2023-03-14]{info/<lang>/fund}
+%   \begin{syntax}
+%     \OPT{\meta{lang}}/\OPT{fund} = \marg{资助基金名称}
+%   \end{syntax}
+%   资助基金列表。各资助基金名称之间需使用英文逗号隔开。
+%   为防止歧义，可以用分组括号“|{...}|”把各字段括起来。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2023-02-25]{info/date}
+%   \begin{syntax}
+%     \OPT{date} = \marg{ISO 日期}
+%   \end{syntax}
+%   日期。默认值为文档编译日期。也可以自己指定，要求使用 ISO 格式，
+%   即 |yyyy-mm-dd| 或 |yyyy-mm|，否则设定无效。该键语言前缀不是必须的。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2023-03-14]{info/<lang>/display-date}
+%   \begin{syntax}
+%     \OPT{\meta{lang}}/\OPT{display-date} = \marg{日期文字}
+%   \end{syntax}
+%   显示日期，可以显示不同于标准日期格式的日期，日期文字将会被原样输出。
+%   设定该键时，将会覆盖 \opt{info/date} 键在对应语言下的设定。
+% \end{function}
+%
+% \paragraph{适用于 \cls{sjtureport} 和 \cls{sjtuarticle} 文档类的命令}
+% \label{sec:sjtureportcmd}
+%
+% \begin{function}[EXP,added=2022-12-17,updated=2023-03-14]{\title}
+%   \begin{syntax}
+%     \TNA{title}\marg{标题}
+%   \end{syntax}
+%   设置标题，覆盖 \opt{info/title} 键的值。
+% \end{function}
+%
+% \begin{function}[EXP,added=2022-12-17,updated=2023-03-14]{\author}
+%   \begin{syntax}
+%     \TNA{author}\marg{姓名}
+%   \end{syntax}
+%   设置作者姓名，覆盖 \opt{info/author} 键的值。
+% \end{function}
+%
+% \begin{function}[EXP,added=2022-12-17,updated=2023-03-14]{\date}
+%   \begin{syntax}
+%     \TNA{date}\marg{日期}
+%   \end{syntax}
+%   设置日期，覆盖 \opt{info/display-date} 键的值。
+%   日期会被原样显示。
+% \end{function}
+%
+% \begin{function}[EXP,added=2023-03-14]{\subject}
+%   \begin{syntax}
+%     \TNA{subject}\marg{主题}
+%   \end{syntax}
+%   文档主题。覆盖 \opt{info/subject} 键的值。
+% \end{function}
+%
+% \begin{function}[EXP,added=2023-03-14]{\keywords}
+%   \begin{syntax}
+%     \TNA{keywords}\marg{关键词}
+%   \end{syntax}
+%   文档关键词，使用英文逗号隔开不同的关键词。覆盖 \opt{info/keywords} 键的值。
+% \end{function}
+%
+% \subsubsection{样式域}
+%
+% \begin{function}{style}
+%   \begin{syntax}
+%     \OPS{style} = \marg{键值列表}
+%   \end{syntax}
+%   该选项包含许多子项目，用于设置论文样式。具体内容见下。
+% \end{function}
+%
+% \begin{function}[added=2024-01-10]{style/indent-first}
+%   \begin{syntax}
+%     \OPT{indent-first} = <(true)|false>
+%   \end{syntax}
+%   章节标题后首段是否缩进。
+% \end{function}
+%
+% \begin{function}[added=2023-11-30]{style/equation-font}
+%   \begin{syntax}
+%     \OPT{equation-font} = \marg{字体设置}
+%   \end{syntax}
+%   行间数学公式的字体设置，该选项主要用于调整行间公式的行距，
+%   不建议修改字号字形。
+%   \cls{sjtuthesis} 中默认数学公式的行距为字号的 1.2 倍。
+% \end{function}
+%
+% \begin{function}[added=2022-12-03,updated=2022-12-27]{style/float-font}
+%   \begin{syntax}
+%     \OPT{float-font} = \marg{字体设置}
+%   \end{syntax}
+%   图、表等浮动体的额外字体设置。
+%   默认为 |\zihao{5}|，五号字。
+% \end{function}
+%
+% \begin{function}[added=2022-12-20]{style/caption-font}
+%   \begin{syntax}
+%     \OPT{caption-font} = \marg{字体设置}
+%   \end{syntax}
+%   题注字体。
+%   默认为 |\zihao{5}\bfseries|，粗体五号字。
+% \end{function}
+%
+% \begin{function}[added=2022-12-20]{style/subcaption-font}
+%   \begin{syntax}
+%     \OPT{subcaption-font} = \marg{字体设置}
+%   \end{syntax}
+%   子图题注字体。
+%   默认为 |\zihao{5}\normalfont|，正常字重五号字。
+% \end{function}
+%
+% \begin{function}[added=2024-03-21]{style/theorem-header-font}
+%   \begin{syntax}
+%     \OPT{theorem-header-font} = \marg{字体设置}
+%   \end{syntax}
+%   定理头（即标题）字体。
+%   默认为 |\bfseries\CJKsffamily|，黑体加粗。
+% \end{function}
+%
+% \begin{function}[added=2024-03-21]{style/theorem-body-font}
+%   \begin{syntax}
+%     \OPT{theorem-body-font} = \marg{字体设置}
+%   \end{syntax}
+%   定理内容字体。
+%   默认为 |\normalfont|，和正文字体相同。
+% \end{function}
+%
+% \begin{function}[added=2023-03-28]{style/fnmark-style}
+%   \begin{syntax}
+%     \OPT{fnmark-style} = <plain|circled>
+%   \end{syntax}
+%   脚注数字编号样式。
+%   \opt{plain} 表示使用普通数字编号；
+%   \opt{circled} 表示使用带圈数字编号。
+%   在 \opt{zh} 和 \opt{ja} 语言设置中，默认为 \opt{circled}；
+%   在 \opt{en} 和 \opt{de} 语言设置中，默认为 \opt{plain}。
+%
+%   使用带圈数字编号时，由于超过 50 的带圈数字没有对应的 Unicode 码位，
+%   所以每页脚注最好不要超过 50 个。
+%   带圈数字默认使用 CJK 字体。通常情况下默认字体不一定包含所有带圈数字的字符，
+%   此时可以设置 \opt{fnmark-font} 选项给带圈数字设置合适的字体。
+% \end{function}
+%
+% \begin{function}[added=2022-12-03,updated=2023-03-28]{style/fnmark-font}
+%   \begin{syntax}
+%     \OPT{fnmark-font} = <haranoaji|\marg{字体设置}>
+%   \end{syntax}
+%   脚注编号的额外字体设置。
+%   默认为空。
+%   可以使用预设 \opt{haranoaji}，支持在 Unicode 引擎中使用 HaranoAjiMincho 字体
+%   中的带圈数字。
+% \end{function}
+%
+% \begin{function}[added=2023-12-02]{style/num-sep}
+%   \begin{syntax}
+%     \OPT{num-sep} = \marg{分隔符}
+%   \end{syntax}
+%   图、表、公式以及定理编号中的分隔符。该选项将统一设定 \opt{float-num-sep}、
+%   \opt{equation-num-sep}、\opt{theorem-num-sep} 选项。
+%   用户也可以逐项修改编号分隔符。
+%   默认为 \opt{.} 句点。
+% \end{function}
+%
+% \begin{function}[updated=2023-11-29]{style/float-num-sep}
+%   \begin{syntax}
+%     \OPT{float-num-sep} = \marg{分隔符}
+%   \end{syntax}
+%   图、表等浮动体编号中的分隔符。
+% \end{function}
+%
+% \begin{function}[updated=2023-11-29]{style/equation-num-sep}
+%   \begin{syntax}
+%     \OPT{equation-num-sep} = \marg{分隔符}
+%   \end{syntax}
+%   公式编号中的分隔符。
+% \end{function}
+%
+% \begin{function}[added=2023-12-02]{style/theorem-num-sep}
+%   \begin{syntax}
+%     \OPT{theorem-num-sep} = \marg{分隔符}
+%   \end{syntax}
+%   定理编号中的分隔符。
+% \end{function}
+%
+% \begin{function}[added=2022-12-20,updated=2023-03-14]{style/header-uppercase}
+%   \begin{syntax}
+%     \OPT{header-uppercase} = <true|(false)>
+%   \end{syntax}
+%   页眉英文字母是否大写。默认为 \opt{false}。
+% \end{function}
+%
+% \begin{function}[added=2022-12-20]{style/header-font}
+%   \begin{syntax}
+%     \OPT{header-font} = \marg{页眉字体}
+%   \end{syntax}
+%   页眉字体。
+%   \begin{itemize}
+%     \item 在 \cls{sjtuthesis} 文档类中，默认为 |\zihao{-5}|，小五号字。
+%     \item 在 \cls{sjtureport} 和 \cls{sjtuarticle} 文档类中，默认为 |\zihao{-5}\sffamily|，小五号字黑体。
+%   \end{itemize}
+% \end{function}
+%
+% \begin{function}[added=2022-12-20]{style/footer-font}
+%   \begin{syntax}
+%     \OPT{footer-font} = \marg{页脚字体}
+%   \end{syntax}
+%   页脚字体。默认为 |\zihao{-5}|，小五号字。
+% \end{function}
+%
+% \begin{function}[added=2022-12-03,updated=2024-12-30]{style/page-number}
+%   \begin{syntax}
+%     \OPT{page-number} = \marg{格式定义}
+%   \end{syntax}
+%   设置页码的显示格式。\meta{格式定义} 有两个参数：
+%   参数 |#1| 是当前页码，参数 |#2| 是当前编码的总页码数。
+%   获取总页码数需要使用 \pkg{pageslts} 宏包。
+%   默认为 |{#1}|，即仅显示当前页码。
+% \end{function}
+%
+% \begin{function}[added=2023-11-30]{style/keywords-format}
+%   \begin{syntax}
+%     \OPT{keywords-format} = <(plain)|hang>
+%   \end{syntax}
+%   设置关键词格式。默认为 \opt{plain} 无缩进的普通段落，另可选 \opt{hang} 悬挂格式。
+% \end{function}
+%
+% \subsubsection{名称域}
+%
+% \begin{function}{name}
+%   \begin{syntax}
+%     \OPS{name} = \marg{键值列表}
+%   \end{syntax}
+%   选项包含许多子项目，用于设置论文中一些标题的名称。部分选项只能在 \cls{sjtuthesis} 中使用。
+%   具体内容见表 \ref{tab:names}。
+% \end{function}
+%
+% \begin{function}[updated=2023-03-18]{name/contents,name/listfigure,name/listtable,
+%   name/figure,name/table,name/abstract,name/index,name/appendix,name/proof,name/bib,
+%   name/figure*,name/table*,name/algorithm,name/listalgorithm,
+%   name/abbr,name/nom,name/ack,name/resume,name/digest,name/achv}
+% \end{function}
+%
+% \begingroup
+% \vspace{-48ex}
+% \small \tabcolsep=3pt
+% \begin{longtable}{l|p{7em}|>{\raggedright\arraybackslash}p{9em}|p{11em}|p{8em}}
+%   \caption{\opt{name} 选项的默认设置} \label{tab:names} \\
+%   \toprule
+%     \strong{选项}        & \strong{|lang = zh|}   & \strong{|lang = en|}          & \strong{|lang = de|}   & \strong{|lang = ja|} \\
+%   \midrule
+%   \endfirsthead
+%     \multicolumn{5}{r}{续表~\thetable} \\
+%   \toprule
+%     \strong{选项}        & \strong{|lang = zh|}   & \strong{|lang = en|}          & \strong{|lang = de|}   & \strong{|lang = ja|} \\
+%   \midrule
+%   \endhead
+%     \bottomrule
+%     \multicolumn{5}{r}{续下页}
+%   \endfoot
+%     \bottomrule
+%   \endlastfoot
+%     |contents|           & 目录                   & Contents                      & Inhaltsverzeichnis     & 目次                 \\
+%     |listfigure|         & 插图                   & List of Figures               & Abbildungsverzeichnis  & 図目次               \\
+%     |listtable|          & 表格                   & List of Tables                & Tabellenverzeichnis    & 表目次               \\
+%     |figure|             & 图                     & Figure                        & Abbildung              & 図                   \\
+%     |table|              & 表                     & Table                         & Tabelle                & 表                   \\
+%     |abstract| \expstar  & 摘要                   & Abstract                      & Zusammenfassung        & 概要                 \\
+%     |index|              & 索引                   & Index                         & Index                  & 索引                 \\
+%     |appendix|           & 附录                   & Appendix                      & Anhang                 & 付録                 \\
+%     |proof|              & 证明                   & Proof                         & Beweis                 & 证明                 \\
+%     |bib|                & 参考文献               & Bibliography                  & Literaturverzeichnis   & 参考文献             \\
+%   \midrule
+%     |figure*|            & Figure                 & 图                            & Figure                 & Figure               \\
+%     |table*|             & Table                  & 表                            & Table                  & Table                \\
+%     |algorithm|          & 算法                   & Algorithm                     & Algorithmus            & アルゴリズム         \\
+%     |listalgorithm|      & 算法                   & List of Algorithms            & Algorithmenverzeichnis & アルゴリズム目次     \\
+%     |abbr| \rexpstar     & 缩略语对照表           & Abbreviation                  & Abkürzungsverzeichnis  & 略語表               \\
+%     |nom| \rexpstar      & 主要符号对照表         & Nomenclature                  & Symbolverzeichnis      & 記号表               \\
+%     |ack| \rexpstar      & 致谢                   & Acknowledgements              & Danksagungen           & 謝辞                 \\
+%     |resume| \rexpstar   & 个人简历               & Resume                        & Lebenslauf             & 履歴書               \\
+%     |digest| \rexpstar   & 大摘要                 & Digest                        & Kurzfassung            & 要約                 \\
+%     |achv| \rexpstar     & 学术论文和科研成果目录 & List of Research Achievements & Forschungsleistungen   & 研究業績書           \\
+% \end{longtable}
+% \endgroup
+%
+% \section{内容编写}
+%
+% \begin{function}{document}
+%   \begin{syntax}
+%     \BEV{document}
+%     \  \meta{文档内容}
+%     \EEV{document}
+%   \end{syntax}
+%   在文档开始后进行内容编写，文档内容由 |document| 环境包裹。
+% \end{function}
+%
+% \subsection{用于本节环境或命令的参数}
+%
+% 本节描述的部分环境和命令提供 \meta{标题参数}，用于进行局部的标题相关设置。
+% 可以使用逗号分隔的选项列表作为可选参数传入该环境，例如：
+% \begin{latex}
+% \begin{acknowledgements}[intoc,title={自定义标题}]
+% \end{acknowledgements}
+% \end{latex}
+%
+% \begin{function}[added=2025-01-12]{intoc, notintoc}
+%   指明该环境的小标题是否在目录中出现。
+%   \opt{intoc} 表示出现在目录中，
+%   \opt{notintoc} 表示不出现在目录中。
+%   默认 \tn{mainmatter} 之前的环境为 \opt{notintoc}，
+%   \tn{mainmatter} 之后的环境为 \opt{intoc}。
+% \end{function}
+%
+% \begin{function}[added=2025-01-12]{title}
+%   \begin{syntax}
+%     \OPT{title} = \marg{小标题}
+%   \end{syntax}
+%   设置该环境的小标题，默认是全局语言下的小标题。
+% \end{function}
+%
+% \begin{function}[added=2025-01-12]{marking}
+%   \begin{syntax}
+%     \OPT{marking} = \marg{目录中的小标题}
+%   \end{syntax}
+%   设置该环境在目录中的小标题，默认与小标题相同。
+%   只有在设置 \opt{intoc} 小标题出现在目录中才会显示。
+% \end{function}
+%
+% 部分环境还提供了参数 \opt{lang}，用于设置环境的语言。
+% \begin{function}[added=2025-01-12,label=]{lang}
+%   \begin{syntax}
+%     \OPT{lang} = <(zh)|en|de|ja>
+%   \end{syntax}
+%   设置该环境的局部语言选项，默认与全局语言选项相同。
+%   该选项会设置该环境的局部语言排版设置。
+% \end{function}
+%
+% 对于同时提供了 \meta{标题参数} 和 \opt{lang} 参数的环境，二者可以一同使用，例如：
+% \begin{latex}
+% \begin{abstract}[lang=en,intoc,title={自定义标题},marking={目录中的标题}]
+% \end{abstract}
+% \end{latex}
+%
+% \subsection{标题页和声明页}
+%
+% \begin{function}[updated=2022-12-03]{\maketitle}
+%   \begin{syntax}
+%     \TNA{maketitle}
+%   \end{syntax}
+%   生成标题。
+%   \begin{itemize}
+%     \item 在 \cls{sjtuthesis} 文档类中，生成标题页。
+%     \item 在 \cls{sjtureport} 和 \cls{sjtuarticle} 文档类中，
+%           \begin{itemize}
+%             \item 若处于 \opt{titlepage} 文档类选项中，生成标题页。\cls{sjtureport} 文档类默认。
+%             \item 若处于 \opt{notitlepage} 文档类选项中，生成标题块。\cls{sjtuarticle} 文档类默认。
+%           \end{itemize}
+%   \end{itemize}
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2026-02-22]{\copyrightpage}
+%   \begin{syntax}
+%     \TNA{copyrightpage}
+%     \TNA{copyrightpage}\oarg{file=授权书扫描件,variant=<(a)|b>,额外选项}
+%   \end{syntax}
+%   生成空白原创性声明及使用授权书。
+%   接受可选参数 \opt{file} 用于插入原创性声明及使用授权书扫描件，
+%   插入外置 PDF 页时需要手动加载 \pkg{pdfpages} 宏包。
+%   接受可选参数 \opt{variant} 用于选择原创性声明变体：
+%   \opt{a} 为研究生院学位办发布的版本；
+%   \opt{b} 为教务处发布的版本，新增了人工智能工具使用规范的相关内容。
+%   默认值为 \opt{a}。
+%   额外选项将传递给 \tn{includepdf} 命令。
+% \end{function}
+%
+% \subsection{前文部分}
+%
+% \begin{function}[rEXP]{\frontmatter}
+%   \begin{syntax}
+%     \TNB{frontmatter}
+%   \end{syntax}
+%   声明前文部分开始。
+% \end{function}
+%
+% \begin{function}[updated=2024-12-20]{abstract}
+%   \begin{syntax}
+%     \BEV{abstract}\oarg{lang=<(zh)|en|de|ja>,标题参数}
+%     \  \meta{\textup{\cls{sjtuthesis}} 中的摘要}
+%     \EEV{abstract}
+%     \BEV{abstract}
+%     \  \meta{\textup{\cls{sjtuarticle}} 和 \textup{\cls{sjtureport}} 中的摘要}
+%     \EEV{abstract}
+%   \end{syntax}
+%   摘要环境。会在结尾添加关键词。
+%   \begin{itemize}
+%     \item \cls{sjtuthesis} 文档类中，可以设置可选参数，
+%           指定摘要的局部语言会同步更改小标题为对应语言设置。
+%     \item \cls{sjtuarticle} 和 \cls{sjtureport} 文档类中，不设置可选参数。
+%   \end{itemize}
+% \end{function}
+%
+% \begin{function}[updated=2024-12-20]{\tableofcontents,\listoffigures,\listoftables,\listofalgorithms}
+%   \begin{syntax}
+%     \TNA{tableofcontents}\oarg{标题参数}
+%     \TNA{listoffigures}\oarg{标题参数}
+%     \TNA{listoftables}\oarg{标题参数}
+%     \TNA{listofalgorithms}\oarg{标题参数}
+%   \end{syntax}
+%   目录、插图、表格和算法等索引命令如表 \ref{tab:list} 所示，将其插入到期望的
+%   位置即可，这些命令可以使用可选的 \meta{标题参数} 来调整标题相关设置。
+%   \begin{table}[H]
+%     \centering\small
+%     \begin{threeparttable}
+%       \caption{目录和索引表}
+%       \label{tab:list}
+%       \begin{tabular}{lp{4cm}lp{4cm}}
+%         \toprule
+%         \strong{用途}     & \strong{命令}         & \strong{用途}     & \strong{命令}          \\
+%         \midrule
+%         目录              & \tn{tableofcontents}  & 插图索引          & \tn{listoffigures}     \\
+%         \midrule
+%         表格索引          & \tn{listoftables}     & 算法索引\tnote{a} & \tn{listofalgorithms}  \\
+%         \bottomrule
+%       \end{tabular}
+%       \begin{tablenotes}
+%         \item[a] 启用 \pkg{algorithm2e} 或 \pkg{algorithm} 后有效。
+%       \end{tablenotes}
+%     \end{threeparttable}
+%   \end{table}
+% \end{function}
+%
+% \subsection{正文部分}
+%
+% \begin{function}[rEXP]{\mainmatter}
+%   \begin{syntax}
+%     \TNB{mainmatter}
+%   \end{syntax}
+%   声明正文部分开始。正文部分是论文的核心，您可以分章节撰写。
+%   如有需求，也可以采用多文件编译的方式。
+% \end{function}
+%
+% \begin{function}[updated=2022-12-03]{\footnote}
+%   \begin{syntax}
+%     \TNA{footnote}\oarg{脚注编号}\marg{脚注文字}
+%   \end{syntax}
+%   插入脚注。其中脚注编号参数是可选的，一般不需要输入。
+% \end{function}
+%
+% \begin{function}{assumption,axiom,conjecture,corollary,definition,example,
+%   exercise,lemma,problem,proposition,theorem}
+%   \sjtutex{} 预定义了一系列数学环境，如表 \ref{tab:theorems} 所示，
+%   在启用 \pkg{amsthm} 或 \pkg{ntheorem} 宏包后有效。
+%   \begin{table}[H]
+%     \centering\small
+%     \caption{预定义的数学环境}
+%     \label{tab:theorems}
+%     \begin{tabular}{*{7}{l}}
+%       \toprule
+%       \env{assumption} & \env{axiom}   & \env{conjecture} & \env{corollary}   & \env{definition} & \env{example}  & \env{exercise} \\
+%       假设             & 公理          & 猜想             & 推论              & 定义             & 例             & 练习           \\
+%       \midrule
+%       \env{lemma}      & \env{problem} & \env{proof}      & \env{proposition} & \env{remark}     & \env{solution} & \env{theorem}  \\
+%       引理             & 问题          & 证明             & 命题              & 注               & 解             & 定理           \\
+%       \bottomrule
+%     \end{tabular}
+%   \end{table}
+% \end{function}
+%
+% \begin{function}[added=2023-10-24]{\setbaselineskip}
+%   \begin{syntax}
+%     \TNA{setbaselineskip}\marg{长度}
+%   \end{syntax}
+%   设置当前的基线间距，一般在字号命令之后使用。
+% \end{function}
+%
+% \begin{function}{\appendix}
+%   \begin{syntax}
+%     \TNA{appendix}
+%   \end{syntax}
+%   附录由 \tn{appendix} 命令开启，然后像正文一样书写。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2024-12-20]{nomenclature}
+%   \begin{syntax}
+%     \BEV{nomenclature}\oarg{标题参数}
+%     \  \meta{符号对照表}
+%     \EEV{nomenclature}
+%   \end{syntax}
+%   符号对照表环境。可以使用 \meta{标题参数} 手动设置标题。
+%   符号对照表环境仅设置标题，内部实现可由用户自行决定：
+%   可以使用 \pkg{longtable}，也可以使用 \pkg{nomencl} 宏包。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2024-12-20]{abbreviation}
+%   \begin{syntax}
+%     \BEV{abbreviation}\oarg{标题参数}
+%     \  \meta{缩略语对照表}
+%     \EEV{abbreviation}
+%   \end{syntax}
+%   缩略语对照表环境。可以使用可选参数手动设置标题。
+%   缩略语对照表环境仅设置标题，内部实现可由用户自行决定。
+% \end{function}
+%
+% \subsection{后文部分}
+%
+% \begin{function}[rEXP]{\backmatter}
+%   \begin{syntax}
+%     \TNB{backmatter}
+%   \end{syntax}
+%   声明后文部分开始。 后文部分包含致谢等。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2024-12-20]{acknowledgements}
+%   \begin{syntax}
+%     \BEV{acknowledgements}\oarg{标题参数}
+%     \  \meta{致谢内容}
+%     \EEV{acknowledgements}
+%   \end{syntax}
+%   致谢环境。盲审模式下致谢将被隐去。可以使用 \meta{标题参数} 手动设置标题。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2024-12-20]{achievements}
+%   \begin{syntax}
+%     \BEV{achievements}\oarg{标题参数}
+%     \  \meta{获得的科研成果}
+%     \EEV{achievements}
+%   \end{syntax}
+%   科研成果环境，可以使用 \meta{标题参数} 手动设置标题。内部请配合使用下面的附录用文献列表环境
+%   \env{bibliolist} 和 \env{bibliolist*}。你可以在该环境中使用带星号的节次命令
+%   以分隔不同的类型的成果（比如学术论文、专利等）；你也可以使用多个 \env{achievements}
+%   环境，配合不同的 \meta{标题参数}，展示不同类型的成果。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2024-12-08]{bibliolist,bibliolist*}
+%   \begin{syntax}
+%     \BEV{bibliolist}\oarg{可选参数}\marg{最长条目编号}
+%     \  \TNA{item} \meta{文献条目}
+%     \EEV{bibliolist}
+%     \BEV{bibliolist*}\oarg{可选参数}\marg{最长条目编号}
+%     \  \TNA{item} \meta{文献条目（隐去姓名）}
+%     \EEV{bibliolist*}
+%   \end{syntax}
+%   用于展示科研成果的文献列表，比如学术论文、专利等。
+%   需要指定最长条目的编号作为参数，比如 \opt{99}；
+%   如果将该强制参数被指定为空，将不显示编号，每条以悬挂缩进做区分。
+%   可以使用可选参数 \opt{resume} 设置连续编号。
+%   环境内部使用 \tn{item} 来分隔各条目。
+%   普通模式下显示 \env{bibliolist} 中的内容，盲审模式下显示 \env{bibliolist*} 中的内容。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2024-12-20]{resume}
+%   \begin{syntax}
+%     \BEV{resume}\oarg{标题参数}
+%     \  \meta{简历内容}
+%     \EEV{resume}
+%   \end{syntax}
+%   简历环境。盲审模式下简历将被隐去。可以使用 \meta{标题参数} 手动设置标题。
+% \end{function}
+%
+% \begin{function}[rEXP,updated=2024-12-20]{digest}
+%   \begin{syntax}
+%     \BEV{digest}\oarg{lang=<zh|(en)|de|ja>,标题参数}
+%     \  \meta{大摘要}
+%     \EEV{digest}
+%   \end{syntax}
+%   学士论文大摘要，可以设置可选参数，指定大摘要的局部语言会同步更改小标题
+%   为对应语言设置，默认为 \opt{lang=en}。
+% \end{function}
+%
+% \section{宏包依赖情况}
+%
+% 使用不同编译方式、指定不同选项，会导致宏包依赖情况有所不同。
+% 具体如下：
+% \begin{itemize}
+%   \item 在任何情况下，文档类都会\emph{显式}调用以下宏包
+%     （或文档类）：
+%     \begin{itemize}
+%       \item \cls{ctexbook}、\cls{ctexrep} 和 \cls{ctexart}，
+%         提供中文排版的通用框架。属于 \CTeX{} 宏集 \cite{CTeX}。
+%       \item \pkg{array}，提供表格环境的增强功能。
+%       \item \pkg{mathtools}，对 \LaTeX{} 的数学排版功能进行了全面扩展。
+%         是 \pkg{amsmath} 的扩充。
+%       \item \pkg{geometry}，用于调整页面尺寸。
+%       \item \pkg{fancyhdr}，处理页眉页脚。
+%       \item \pkg{titletoc}，设置目录格式。
+%       \item \pkg{caption}、\cls{bicaption} 和 \cls{subcaption}，用于设置题注。
+%       \item \pkg{graphicx}，提供图形插入的接口。
+%       \item \pkg{enumitem}，设置列表环境格式。
+%     \end{itemize}
+%   \item 部分西文与数学字体预设会调用相关的字体宏包，具体调用情况请参见对应的
+%     字体预设文件。
+%   \item 部分数字字体预设会调用 \pkg{unicode-math} 处理 Unicode 编码的
+%     OpenType 数学字体。在未启用 \pkg{unicode-math} 的情况下，会调用 \pkg{bm}
+%     来选择粗体数学符号。
+%   \item 当需要显示总页码数时，会调用 \pkg{pageslts} 宏包。
+% \end{itemize}
+%
+% 这里只列出了本模板直接调用的宏包。这些宏包自身的调用情况，
+% 此处不再具体展开。如有需要，请参阅相关文档。
+%
+% \begin{thebibliography}{99}
+%
+% \addcontentsline{toc}{section}{\refname}
+%
+% \newcommand\urlprefix{\newline\hspace*{\fill}}
+% \let\OldUrl=\url
+% \renewcommand\url[2][]{{\small\textit{#1}~\OldUrl{#2}}}
+% \newcommand\CTANurl[2][]{{^^A
+%   \small\textit{#1}~\href{https://mirror.ctan.org/#2}{\texttt{CTAN://#2}}}}
+%
+% \subsection*{图书}
+%
+% \bibitem{Knuth1986}
+% \textsc{Knuth D E}.
+% \newblock \textit{The \TeX book: Computers \& Typesetting, volume A}\allowbreak[M].
+% \newblock Boston: Addison--Wesley Publishing Company, 1986.
+% \urlprefix \CTANurl[源代码^^A
+%   \footnote{此代码只可作为学习之用。未经 Knuth 本人同意，您不应当编译此文档。}：]^^A
+%   {systems/knuth/dist/tex/texbook.tex}
+%
+% \bibitem{MittelbachF2023}
+% \textsc{Mittelbach F} and \textsc{Fischer U}.
+% \newblock \textit{The \LaTeX{} Companion}\allowbreak[M].
+% \newblock 3rd ed.
+% \newblock Boston: Addison--Wesley Publishing Company, 2023.
+%
+% \bibitem{LiuHY2013}
+% 刘海洋.
+% \newblock \textit{\LaTeX{} 入门}\allowbreak[M].
+% \newblock 北京: 电子工业出版社, 2013.
+%
+% \subsection*{标准、规范}
+%
+% \bibitem{gb-t-7713.1-2006}
+% 国务院学位委员会办公室, 全国信息与文献标准化技术委员会.
+% \newblock \textit{学位论文编写规则: GB/T 7713.1--2006}\allowbreak[S].
+% \newblock 北京: 中国标准出版社, 2007.
+%
+% \bibitem{cy-t-35-2001}
+% 全国信息与文献标准化技术委员会第七分委员会, 中华人民共和国新闻出版总署.
+% \newblock \textit{科技文献的章节编号方法: CY/T 35--2001}\allowbreak[S].
+% \newblock [S.l. : s.n.], 2001.
+%
+% \bibitem{SJTUGS2025}
+% 上海交通大学研究生院.
+% \newblock \textit{上海交通大学博士、硕士学位论文撰写指南}\allowbreak[EB/OL].
+% \newblock (2025-11-24)[2026-01-06].
+% \urlprefix\url{https://www.gs.sjtu.edu.cn/post/detail/Z3MzNDA0}
+%
+% \subsection*{宏包、模版}
+%
+% \bibitem{source2e}
+% \textsc{Braams J}, \textsc{Carlisle D}, \textsc{Jeffrey A}, et~al.
+% \newblock \textit{The \LaTeXe{} Sources}\allowbreak[CP/OL].
+% \newblock (2024-11-01).
+% \urlprefix\url{https://ctan.org/pkg/latex}
+% \urlprefix\CTANurl[源代码：]{macros/latex/base/source2e.pdf}
+%
+% \bibitem{interface3}
+% \textsc{The \LaTeX{} Project}.
+% \newblock \textit{The \LaTeXiii{} Interfaces}\allowbreak[EB/OL].
+% \newblock (2024-11-02).
+% \urlprefix\url{https://ctan.org/pkg/l3kernel}
+% \urlprefix\CTANurl[文档：]{macros/latex/l3kernel/interface3.pdf}
+%
+% \bibitem{CTeX}
+% \textsc{CTEX.ORG}.
+% \newblock \textit{\CTeX{} 宏集手册}\allowbreak[EB/OL].
+% \newblock version 2.5.10,
+% \newblock (2022-07-14).
+% \urlprefix\url{https://ctan.org/pkg/ctex}
+% \urlprefix\CTANurl[文档及源代码：]{language/chinese/ctex/ctex.pdf}
+%
+% \bibitem{zhlineskip}
+% 张瑞熹.
+% \newblock \textit{zhlineskip 宏包}\allowbreak[EB/OL].
+% \newblock version 1.0e,
+% \newblock (2019-05-15).
+% \urlprefix\url{https://ctan.org/pkg/zhlineskip}
+% \urlprefix\CTANurl[文档：]{language/chinese/zhlineskip/zhlineskip.pdf}
+%
+% \bibitem{fduthesis}
+% 曾祥东.
+% \newblock \textit{fduthesis: 复旦大学论文模板}\allowbreak[EB/OL].
+% \newblock version 0.9a,
+% \newblock (2023-05-27).
+% \urlprefix\url{https://ctan.org/pkg/fduthesis}
+% \urlprefix\CTANurl[文档及源代码：]{macros/latex/contrib/fduthesis/fduthesis-code.pdf}
+%
+% \bibitem{thuthesis}
+% 清华大学 TUNA 协会.
+% \newblock \textit{\textsc{ThuThesis}：清华大学学位论文模板}\allowbreak[EB/OL].
+% \newblock version 7.5.2,
+% \newblock (2025-07-01).
+% \urlprefix\url{https://ctan.org/pkg/thuthesis}
+% \urlprefix\CTANurl[文档及源代码：]{macros/latex/contrib/thuthesis/thuthesis.pdf}
+%
+% \end{thebibliography}
+%
+% \end{documentation}
+%
+% \begin{implementation}
+%
+% \clearpage
+% \section{代码实现}
+%
+% \changes{v2.1}{2023/12/05}{同步 \LaTeX{} 2020-10-01，无需显式调用
+% \pkg{expl3} 和 \pkg{xparse} 宏包。}
+% \changes{v2.2}{2024/11/22}{同步 \LaTeX{} 2024-06-01，无需显式调用
+% \pkg{xtemplate} 宏包。}
+% \changes{v2.2}{2025/02/10}{重命名视觉形象系统文件名称。}
+% 本模板使用 \LaTeXiii{} 语法编写，依赖 \pkg{expl3} 环境，
+% 并需调用 \pkg{l3packages} 中的相关宏包。
+%
+% \subsection{前置准备}
+%
+% 目前 \pkg{sjtutex} 文档类仅支持 \XeLaTeX{}、\LuaLaTeX{} 和 \pdfLaTeX{} 编译。
+%    \begin{macrocode}
+%<@@=sjtu>
+%<*class>
+\msg_new:nnn { sjtutex } { unsupported-engine }
+  {
+    The~sjtutex~classes~does~NOT~support~'#1'~engine. \\\\
+    Please~set~your~typesetting~program~to~either~
+    'xelatex'~or~'lualatex'.
+  }
+\bool_lazy_any:nF
+  {
+    { \sys_if_engine_xetex_p:  }
+    { \sys_if_engine_luatex_p: }
+    { \sys_if_engine_pdftex_p: }
+  }
+  { \msg_fatal:nnV { sjtutex } { unsupported-engine } \c_sys_engine_str }
+%    \end{macrocode}
+%
+% \subsection{内部定义}
+%
+% \begin{variable}{\l_@@_tmp_tl,\l_@@_tmp_clist,\l_@@_tmp_box}
+% 临时变量。
+%    \begin{macrocode}
+\tl_new:N \l_@@_tmp_tl
+\clist_new:N \l_@@_tmp_clist
+%<thesis>\box_new:N \l_@@_tmp_box
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{macro}[int]{\clist_use:Nv,\clist_use:cv,
+% \exp_args:NNnv,\exp_last_unbraced:ce}
+% \LaTeX3{} 函数变体。
+%    \begin{macrocode}
+\cs_generate_variant:Nn \clist_use:Nn { Nv, cv }
+\exp_args_generate:n { Nnv }
+\cs_generate_variant:Nn \exp_last_unbraced:Ne { ce }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_conditional_const:nn}
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_conditional_const:nn #1#2
+  {
+    \bool_if:nTF {#2}
+      {
+        \cs_new_eq:cN { @@_if_ #1 :T  } \use:n
+        \cs_new_eq:cN { @@_if_ #1 :F  } \use_none:n
+        \cs_new_eq:cN { @@_if_ #1 :TF } \use_i:nn
+        \cs_new_eq:cN { @@_if_ #1 _p: } \c_true_bool
+      }
+      {
+        \cs_new_eq:cN { @@_if_ #1 :T  } \use_none:n
+        \cs_new_eq:cN { @@_if_ #1 :F  } \use:n
+        \cs_new_eq:cN { @@_if_ #1 :TF } \use_ii:nn
+        \cs_new_eq:cN { @@_if_ #1 _p: } \c_false_bool
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int,pTF]{\@@_if_engine_opentype:}
+%    \begin{macrocode}
+\@@_conditional_const:nn { engine_opentype }
+  {
+    \bool_lazy_or_p:nn
+      { \sys_if_engine_xetex_p:  }
+      { \sys_if_engine_luatex_p: }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_disable_package_load:n}
+%    \begin{macrocode}
+\msg_new:nnn { sjtutex } { package-disabled }
+  { The~loading~of~package~'#1'~is~disabled. }
+\cs_new_protected:Npn \@@_disable_package_load:n #1
+  {
+    \disable@package@load {#1}
+      { \msg_warning:nnn { sjtutex } { package-disabled } {#1} }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.0.2}{2023/03/31}{区分 \texttt{dim} 与 \texttt{skip} 类型变量。}
+% \begin{macro}[int]{\@@_dim_set_to_wd:Nn}
+% 操作长度变量的辅助函数。
+%    \begin{macrocode}
+%<*thesis>
+\cs_new:Npn \@@_dim_set_to_wd:Nn #1#2
+  {
+    \hbox_set:Nn \l_@@_tmp_box {#2}
+    \dim_set:Nn #1 { \box_wd:N \l_@@_tmp_box }
+  }
+\cs_generate_variant:Nn \@@_dim_set_to_wd:Nn { Nv }
+%</thesis>
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_cs_provide_eq:NN}
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_cs_provide_eq:NN #1#2
+  { \cs_if_exist:NF #1 { \cs_set_eq:NN #1 #2 } }
+\cs_generate_variant:Nn \@@_cs_provide_eq:NN { cc }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_name_set:nnn,\@@_name_const:nnn,
+% \@@_name_const_from_clist:nnnn}
+% 定义默认名称的辅助函数。
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_name_set:nnn #1#2#3
+  { \tl_set:cn   { l_@@_name_ #2 _ #1 _tl } {#3} }
+\cs_new_protected:Npn \@@_name_const:nnn #1#2#3
+  { \tl_const:cn { c_@@_name_ #2 _ #1 _tl } {#3} }
+%<*thesis>
+\cs_new_protected:Npn \@@_name_const_from_clist:nnnn #1#2#3#4
+  { \tl_const:ce { c_@@_name_ #2 _ #1 _tl } { \clist_item:nn {#4} {#3} } }
+%</thesis>
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsection{文档选项}
+%
+% \begin{variable}{\g_@@_thesis_type_int}
+% 论文类型。
+%    \begin{macrocode}
+%<thesis>\int_new:N \g_@@_thesis_type_int
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{variable}{\g_@@_lang_tl,\g_@@_lang_clist}
+% 论文主要语言。
+%    \begin{macrocode}
+\tl_new:N \g_@@_lang_tl
+%<thesis>\clist_set:Nn \g_@@_lang_clist { zh, en }
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{variable}{\g_@@_baseline_skip_dim,\@@_if_fixed_baselineskip:T}
+% 固定行距。
+%    \begin{macrocode}
+\dim_new:N \g_@@_baseline_skip_dim
+\cs_set_eq:NN \@@_if_fixed_baselineskip:T \use_none:n
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{variable}{\g_@@_text_font_tl,\g_@@_math_font_tl,\g_@@_cjk_font_tl}
+% 字体配置。
+%    \begin{macrocode}
+\tl_new:N \g_@@_text_font_tl
+\tl_new:N \g_@@_math_font_tl
+\tl_new:N \g_@@_cjk_font_tl
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{variable}{\g_@@_slanted_uppercase_greek_bool}
+% 大写希腊字母的正/斜体。
+%    \begin{macrocode}
+\bool_new:N \g_@@_slanted_uppercase_greek_bool
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{variable}{\g_@@_upright_integral_bool}
+% 积分号的正/斜体。
+%    \begin{macrocode}
+\bool_new:N \g_@@_upright_integral_bool
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{variable}{\g_@@_integral_limits_bool}
+% 积分号上下限的位置。
+%    \begin{macrocode}
+\bool_new:N \g_@@_integral_limits_bool
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{variable}{\g_@@_math_font_options_clist}
+% 传入数学字体宏包的选项列表。
+%    \begin{macrocode}
+\clist_new:N \g_@@_math_font_options_clist
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{variable}{\g_@@_review_bool}
+% 盲审模式。
+%    \begin{macrocode}
+%<thesis>\bool_new:N \g_@@_review_bool
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{variable}{\g_@@_preset_tl}
+% 预设配置。
+%    \begin{macrocode}
+\tl_new:N \g_@@_preset_tl
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{variable}{\g_@@_options_to_ctex_class_clist}
+% 保存由 \pkg{sjtutex} 传入 \pkg{ctex} 文档类的选项列表。
+% 默认 \pkg{ctex} 文档类的选项：
+% 使用 UTF8 编码，不调整基础类的版式以及不载入 \pkg{ctex} 字体预设配置。
+% \cls{sjtuthesis} 和 \cls{sjtureport} 文档类默认字号为小四号。
+% \cls{sjtureport} 和 \cls{sjtuarticle} 文档类默认使用 1.3 行距倍数。
+%    \begin{macrocode}
+\clist_set:Nn \g_@@_options_to_ctex_class_clist
+  {
+    UTF8,
+%<!article>    zihao = -4,
+%<!thesis>    linespread = 1.3,
+    scheme = plain,
+    fontset = none
+  }
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{variable}{\g_@@_options_to_packages_clist}
+% 保存由传入其他宏包的选项列表。
+%    \begin{macrocode}
+\clist_set:Nn \g_@@_options_to_packages_clist
+  {
+    { no-math           } { fontspec     } ,
+    { list = off        } { bicaption    } ,
+    { warnings-off =
+      {
+        mathtools-overbracket,
+        mathtools-colon
+      }
+    }                     { unicode-math } ,
+%<!article>    { chapter           } { algorithm    } ,
+%<!article>    { algochapter       } { algorithm2e  } ,
+    { amsmath, thmmarks } { ntheorem     }
+  }
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{macro}[int]{\@@_set_deprecated_option:n}
+% 对过时选项给出警告。
+%    \begin{macrocode}
+\msg_new:nnn { sjtutex } { deprecated-option }
+  { Option~'\l_keys_key_str'~is~deprecated! \\ #1 }
+\cs_new_protected:Npn \@@_set_deprecated_option:n #1
+  {
+    \msg_warning:nnn { sjtutex } { deprecated-option } { Option~'#1'~is~set. }
+    \keys_set:nn { sjtu / option } {#1}
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+%    \begin{macrocode}
+\msg_new:nnn { sjtutex } { unsupported-option }
+  { Option~'\l_keys_key_str'~is~not~supported! \\ Will~be~ignored. }
+%    \end{macrocode}
+%
+% 定义 |sjtu/option| 键值类。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / option }
+  {
+%    \end{macrocode}
+%
+% \changes{v2.0}{2022/10/25}{\cls{sjtuthesis} 类型选项移除 \opt{course}，
+% 不再支持课程论文。}
+% \begin{macro}{type}
+% 论文类型。
+%    \begin{macrocode}
+%<*thesis>
+    type .choice: ,
+    type .value_required:n = true ,
+    type .choices:nn =
+      { bachelor, master, doctor }
+      { \int_gset_eq:NN \g_@@_thesis_type_int \l_keys_choice_int } ,
+    type .initial:n = { master } ,
+%</thesis>
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.0}{2023/03/19}{语言选项新增 \opt{ja}，添加日文模板。}
+% \changes{v2.0}{2023/03/23}{语言选项新增 \opt{de}，添加德文模板。}
+% \begin{macro}{lang}
+% 论文主要语言。
+%    \begin{macrocode}
+    lang .choice: ,
+    lang .value_required:n = true ,
+    lang .choices:nn =
+      { zh, en, de, ja }
+      {
+        \tl_gset_eq:NN \g_@@_lang_tl \l_keys_choice_tl
+%<*thesis>
+        \clist_if_in:NnF \g_@@_lang_clist {#1}
+          { \clist_gput_right:Nn \g_@@_lang_clist {#1} }
+%</thesis>
+      } ,
+    lang .initial:n = { zh } ,
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.0}{2022/12/03}{添加 \opt{lineskip} 文档类选项。}
+% \changes{v2.1}{2023/10/24}{添加 \opt{baselineskip} 文档类选项，
+% 替换原 \opt{lineskip} 选项。}
+% \begin{macro}{baselineskip}
+% 正文基线间距。
+%    \begin{macrocode}
+    baselineskip .choice: ,
+    baselineskip .value_required:n = true ,
+    baselineskip / false   .code:n =
+      { \cs_gset_eq:NN \@@_if_fixed_baselineskip:T \use_none:n } ,
+    baselineskip / unknown .code:n =
+      {
+        \cs_gset_eq:NN \@@_if_fixed_baselineskip:T \use:n
+        \dim_gset:Nn \g_@@_baseline_skip_dim {#1}
+      } ,
+%<thesis>    baselineskip .initial:n = { 20 bp } ,
+%<!thesis>    baselineskip .initial:n = { false } ,
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{text-font,math-font,cjk-font}
+% 字体配置。
+%    \begin{macrocode}
+    text-font .tl_gset:N = \g_@@_text_font_tl ,
+    text-font .initial:n = { newtx } ,
+    math-font .tl_gset:N = \g_@@_math_font_tl ,
+    cjk-font  .tl_gset:N = \g_@@_cjk_font_tl ,
+%    \end{macrocode}
+% \end{macro}
+%
+% \opt{fontset} 等是过时选项。
+%    \begin{macrocode}
+    fontset    .code:n = { \@@_set_deprecated_option:n { cjk-font = #1 } } ,
+    nofonts    .code:n = { \@@_set_deprecated_option:n { cjk-font = none } } ,
+    adobefonts .code:n = { \@@_set_deprecated_option:n { cjk-font = adobe } } ,
+    winfonts   .code:n = { \@@_set_deprecated_option:n { cjk-font = windows } } ,
+%    \end{macrocode}
+%
+% \changes{v2.0}{2023/01/05}{添加 \opt{math-style} 文档类选项，默认值为 \opt{ISO}。}
+% \begin{macro}{math-style}
+% 数学符号样式。
+%    \begin{macrocode}
+    math-style .choice: ,
+    math-style .value_required:n = true,
+    math-style / TeX .code:n =
+      {
+        \bool_gset_false:N \g_@@_slanted_uppercase_greek_bool
+        \bool_gset_false:N \g_@@_upright_integral_bool
+        \bool_gset_false:N \g_@@_integral_limits_bool
+      } ,
+    math-style / ISO .code:n =
+      {
+        \bool_gset_true:N \g_@@_slanted_uppercase_greek_bool
+        \bool_gset_true:N \g_@@_upright_integral_bool
+        \bool_gset_true:N \g_@@_integral_limits_bool
+      } ,
+    math-style .initial:n = { ISO } ,
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{uppercase-greek}
+% 大写希腊字母的正/斜体。
+%    \begin{macrocode}
+    uppercase-greek .choice: ,
+    uppercase-greek .value_required:n = true ,
+    uppercase-greek / slanted .code:n =
+      { \bool_gset_true:N  \g_@@_slanted_uppercase_greek_bool } ,
+    uppercase-greek / upright .code:n =
+      { \bool_gset_false:N \g_@@_slanted_uppercase_greek_bool } ,
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{integral}
+% 积分号的正/斜体。
+%    \begin{macrocode}
+    integral .choice: ,
+    integral .value_required:n = true ,
+    integral / slanted .code:n =
+      { \bool_gset_false:N \g_@@_upright_integral_bool } ,
+    integral / upright .code:n =
+      { \bool_gset_true:N  \g_@@_upright_integral_bool } ,
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{integral-limits}
+% 积分号上下限的位置。
+%    \begin{macrocode}
+    integral-limits .choice: ,
+    integral-limits .value_required:n = true ,
+    integral-limits / false .code:n =
+      { \bool_gset_false:N \g_@@_integral_limits_bool } ,
+    integral-limits / true  .code:n =
+      { \bool_gset_true:N  \g_@@_integral_limits_bool } ,
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{review}
+% 盲审模式。
+%    \begin{macrocode}
+%<thesis>    review .bool_gset:N = \g_@@_review_bool ,
+%<thesis>    review .initial:n = false ,
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.3}{2026/02/21}{新增 \opt{preset} 文档选项。}
+% \begin{macro}{preset}
+% 预设配置。
+%    \begin{macrocode}
+    preset .tl_gset:N = \g_@@_preset_tl,
+    preset .initial:n = { base } ,
+%    \end{macrocode}
+% \end{macro}
+%
+% 将未知选项传给标准文档类。
+%    \begin{macrocode}
+    unknown .code:n =
+      { \clist_gput_right:No \g_@@_options_to_ctex_class_clist { \CurrentOption } }
+  }
+%    \end{macrocode}
+%
+% 屏蔽不支持的 \pkg{ctex} 选项。
+%    \begin{macrocode}
+\clist_map_inline:nn
+  { GBK, scheme, cap, nocap }
+  {
+    \keys_define:nn { sjtu / option }
+      {
+        #1 .code:n =
+          { \msg_warning:nn { sjtutex } { unsupported-option } }
+      }
+  }
+%    \end{macrocode}
+%
+% 将文档类选项传给 |sjtu/option|。
+%    \begin{macrocode}
+\ProcessKeyOptions [ sjtu / option ]
+%    \end{macrocode}
+%
+% \begin{macro}[int,pTF]{\@@_if_main_lang_de:,\@@_if_main_lang_ja:}
+% 快捷判断主要语言。
+%    \begin{macrocode}
+\@@_conditional_const:nn { main_lang_de }
+  { \str_if_eq_p:Vn \g_@@_lang_tl { de } }
+\@@_conditional_const:nn { main_lang_ja }
+  { \str_if_eq_p:Vn \g_@@_lang_tl { ja } }
+%    \end{macrocode}
+% \end{macro}
+%
+% 数字字体宏包选项。
+%    \begin{macrocode}
+\bool_if:NT \g_@@_slanted_uppercase_greek_bool
+  { \clist_put_right:Nn \g_@@_math_font_options_clist { slantedGreek } }
+\bool_if:NT \g_@@_upright_integral_bool
+  { \clist_put_right:Nn \g_@@_math_font_options_clist { upint } }
+%    \end{macrocode}
+%
+% 追加选项。
+%    \begin{macrocode}
+\clist_put_left:Nn \@classoptionslist { a4paper }
+\@@_if_main_lang_de:T
+  { \clist_put_right:Nn \@classoptionslist { german, ngerman } }
+\bool_if:NTF \g_@@_integral_limits_bool
+  {
+    \clist_put_right:Nn \@classoptionslist { intlimits }
+    \clist_put_right:Nn \g_@@_options_to_packages_clist
+      { { displaylimits } { cmupint } }
+  }
+  {
+    \clist_put_right:Nn \g_@@_options_to_packages_clist
+      { { nolimits      } { cmupint } }
+  }
+\clist_concat:NNN \@classoptionslist
+  \@classoptionslist \g_@@_math_font_options_clist
+%    \end{macrocode}
+%
+% 内部设置接口。
+%    \begin{macrocode}
+%<*thesis>
+\cs_set_protected:Npe \@@_setup:n
+  {
+    \bool_if:NTF \g_@@_review_bool
+      { \exp_not:N \keys_set_exclude_groups:nnn { sjtu } { sensitive } }
+      { \exp_not:N \keys_set:nn { sjtu } }
+  }
+%</thesis>
+%    \end{macrocode}
+%
+%
+% \subsection{载入宏包、文档类}
+%
+% 将选项传入 \pkg{ctex} 文档类。
+%    \begin{macrocode}
+\exp_args:No \PassOptionsToClass
+  { \g_@@_options_to_ctex_class_clist }
+%<thesis>  { ctexbook }
+%<report>  { ctexrep }
+%<article>  { ctexart }
+%    \end{macrocode}
+%
+% 传入各宏包选项。
+%    \begin{macrocode}
+\clist_map_inline:Nn \g_@@_options_to_packages_clist
+  { \PassOptionsToPackage #1 }
+%    \end{macrocode}
+%
+% 载入 \pkg{ctex} 文档类。
+% 在使用 \XeLaTeX{} 编译时，\pkg{ctex} 的底层将调用 \pkg{xeCJK}
+% 宏包；而在使用 \LuaLaTeX{} 编译时，则将调用 \pkg{LuaTeX-ja} 宏包。
+% 两种情况下 \pkg{ctex} 均会调用 \pkg{fontspec} 宏包。
+%    \begin{macrocode}
+%<article>\tl_const:Nn \c_@@_class_tl { article }
+%<article>\LoadClass { ctexart }
+%<report>\tl_const:Nn \c_@@_class_tl { report }
+%<report>\LoadClass { ctexrep }
+%<thesis>\tl_const:Nn \c_@@_class_tl { thesis }
+%<thesis>\LoadClass { ctexbook }
+%    \end{macrocode}
+%
+% \changes{v2.2.1}{2025/03/27}{不再自动载入 \pkg{xcolor} 宏包。}
+% 载入各宏包。
+%    \begin{macrocode}
+\RequirePackage
+  {
+    array,
+    mathtools,
+    geometry,
+    fancyhdr,
+    titletoc,
+    caption,
+    bicaption,
+    subcaption,
+    graphicx,
+    enumitem
+  }
+%    \end{macrocode}
+%
+% \subsection{文档格式}
+%
+% \subsubsection{字号行距}
+%
+% \begin{macro}{\setbaselineskip}
+% 设置基线间距，在字号命令之后使用。
+%    \begin{macrocode}
+\NewDocumentCommand \setbaselineskip { m }
+  { \fontsize { \f@size } {#1} \selectfont }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\SJTU@orig@normalsize}
+% 保存原始 \tn{normalsize} 字号大小。
+%    \begin{macrocode}
+\normalsize
+\cs_set_protected:Npe \SJTU@orig@normalsize
+  { \exp_not:N \fontsize { \f@size } { \f@baselineskip } \exp_not:N \selectfont }
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.3}{2026/02/23}{设置标题行距与正文一致。}
+% \begin{macro}{\SJTU@set@sec@lineskip}
+% 设置标题行距的辅助变量。
+%    \begin{macrocode}
+\tl_new:N \SJTU@set@sec@lineskip
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_set_font_size:nnNn}
+% \begin{macro}{\normalsize}
+% 重定义 \tn{normalsize}，设置正文的基线间距。
+%    \begin{macrocode}
+\msg_new:nnn { sjtutex } { baselineskip-invalid }
+  { Invalid~baselineskip~value~'#1'! \\ Using~default~value~instead. }
+\cs_new_protected:Npn \@@_set_font_size:nnNn #1#2#3#4
+  { \cs_set_protected:Npn #3 { \@setfontsize #3 {#1} {#2} #4 } }
+\@@_if_fixed_baselineskip:T
+  {
+    \dim_compare:nNnTF { \f@size pt } > { \g_@@_baseline_skip_dim }
+      {
+        \msg_warning:nne { sjtutex } { baselineskip-invalid }
+          { \dim_to_decimal:n { \g_@@_baseline_skip_dim } pt }
+      }
+      {
+        \tl_set:Ne \l_@@_font_size_tl
+          { { \f@size } { \dim_to_decimal:n { \g_@@_baseline_skip_dim } } }
+        \tl_set:Ne \SJTU@set@sec@lineskip
+          {
+            \exp_not:N \setbaselineskip
+              { \dim_to_decimal:n { \g_@@_baseline_skip_dim } }
+          }
+        \int_case:nn { \@ptsize }
+          {
+            { 0 }
+              {
+                \exp_after:wN \@@_set_font_size:nnNn \l_@@_font_size_tl
+                  \normalsize
+                  {
+                    \abovedisplayskip 10\p@ \@plus2\p@ \@minus5\p@
+                    \abovedisplayshortskip \z@ \@plus3\p@
+                    \belowdisplayshortskip 6\p@ \@plus3\p@ \@minus3\p@
+                    \belowdisplayskip \abovedisplayskip
+                    \let\@listi\@listI
+                  }
+              }
+            { 1 }
+              {
+                \exp_after:wN \@@_set_font_size:nnNn \l_@@_font_size_tl
+                  \normalsize
+                  {
+                    \abovedisplayskip 11\p@ \@plus3\p@ \@minus6\p@
+                    \abovedisplayshortskip \z@ \@plus3\p@
+                    \belowdisplayshortskip 6.5\p@ \@plus3.5\p@ \@minus3\p@
+                    \belowdisplayskip \abovedisplayskip
+                    \let\@listi\@listI
+                  }
+              }
+            { 2 }
+              {
+                \exp_after:wN \@@_set_font_size:nnNn \l_@@_font_size_tl
+                  \normalsize
+                  {
+                    \abovedisplayskip 12\p@ \@plus3\p@ \@minus7\p@
+                    \abovedisplayshortskip \z@ \@plus3\p@
+                    \belowdisplayshortskip 6.5\p@ \@plus3.5\p@ \@minus3\p@
+                    \belowdisplayskip \abovedisplayskip
+                    \let\@listi\@listI
+                  }
+              }
+          }
+        \normalsize
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+%
+% \subsubsection{字体配置}
+%
+% \begin{macro}[int]{\@@_fontset_error:nn}
+% 字库不可用时给出紧急错误信息，停止读取定义文件。
+%    \begin{macrocode}
+\msg_new:nnn { sjtutex } { font-unavailable }
+  { '#1-font~=~#2'~is~unavailable~in~current~mode. }
+\cs_new_protected:Npn \@@_fontset_error:nn #1#2
+  { \msg_critical:nnnn { sjtutex } { font-unavailable } {#1} {#2} }
+\cs_set_protected:Npn \ctex_fontset_error:n #1
+  { \msg_critical:nnnn { sjtutex } { font-unavailable } { cjk } {#1} }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_declare_math_symbol:nnNn}
+%    \begin{macrocode}
+\cs_new_protected:Nn \@@_declare_math_symbol:nnNn
+  {
+    \cs_undefine:N #3
+    \DeclareMathSymbol {#3} {#1} {#2} {#4}
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_set_slanted_greek:}
+%    \begin{macrocode}
+\cs_new_protected:Nn \@@_set_slanted_greek:
+  {
+    \clist_const:Nn \c_@@_uppercase_greek_clist
+      { Gamma, Delta, Theta, Lambda, Xi, Pi, Sigma, Upsilon, Phi, Psi, Omega }
+    \clist_map_inline:Nn \c_@@_uppercase_greek_clist
+      {
+        \cs_set_eq:cc { up ##1 } {     ##1 }
+        \cs_set_eq:cc { it ##1 } { var ##1 }
+      }
+    \bool_if:NT \g_@@_slanted_uppercase_greek_bool
+      {
+        \clist_map_inline:Nn \c_@@_uppercase_greek_clist
+          { \cs_set_eq:cc { ##1 } { it ##1 } }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_set_unimath_symbol:}
+%    \begin{macrocode}
+\cs_new_protected:Nn \@@_set_unimath_symbol:
+  {
+    \clist_map_inline:nn
+      {
+        { increment } { upDelta     } ,
+        { QED       } { blacksquare }
+      }
+      { \@@_cs_provide_eq:cc ##1 }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% 如果没有指定数学字体，则根据西文字体设置匹配的数字字体。
+%    \begin{macrocode}
+\tl_if_empty:NT \g_@@_math_font_tl
+  { \tl_gset_eq:NN \g_@@_math_font_tl \g_@@_text_font_tl }
+%    \end{macrocode}
+%
+% 根据操作系统判断默认 CJK 字体配置。
+%    \begin{macrocode}
+\tl_if_empty:NT \g_@@_cjk_font_tl
+  {
+    \sys_if_platform_windows:TF
+      { \tl_gset:Nn \g_@@_cjk_font_tl { windows } }
+      {
+        \ctex_if_platform_macos:TF
+          { \tl_gset:Nn \g_@@_cjk_font_tl { mac    } }
+          { \tl_gset:Nn \g_@@_cjk_font_tl { fandol } }
+      }
+  }
+%    \end{macrocode}
+%
+% \begin{macro}[int]{\@@_load_font:nn,\@@_load_fontset:}
+% 如果字体配置文件不存在，则载入默认值，并给出警告。
+%    \begin{macrocode}
+\msg_new:nnn { sjtutex } { invalid-font }
+  {
+    Invalid~value~'#1-font~=~\tl_use:c { g_@@_ #1 _font_tl }'! \\
+    Using~'#2'~instead.
+  }
+\cs_new_protected:Npn \@@_load_font:nn #1#2
+  {
+    \str_if_eq:vnF { g_@@_ #1 _font_tl } { none }
+      {
+        \file_if_exist:nF
+          { sjtu- #1 -font- \tl_use:c { g_@@_ #1 _font_tl } .def }
+          {
+            \msg_warning:nnnn { sjtutex } { invalid-font } {#1} {#2}
+            \tl_gset:cn { g_@@_ #1 _font_tl } {#2}
+          }
+        \ctex_file_input:n
+          { sjtu- #1 -font- \tl_use:c { g_@@_ #1 _font_tl } .def }
+      }
+  }
+\cs_new_protected:Nn \@@_load_fontset:
+  {
+    \clist_map_inline:nn
+      {
+        { math } { newtx  },
+        { text } { newtx  },
+        { cjk  } { fandol }
+      }
+      { \@@_load_font:nn ##1 }
+  }
+\@onlypreamble \@@_load_font:nn
+\@onlypreamble \@@_load_fontset:
+%</class>
+%    \end{macrocode}
+% \end{macro}
+%
+% \paragraph{西文与数学字体}
+%
+% \changes{v2.0.3}{2023/09/25}{新增 \opt{libertinus} 字体配置。}
+%    \begin{macrocode}
+%<*font&(math|text)>
+%<*math&type1>
+%<*newtx|newpx>
+\tl_set_eq:NN \l_@@_save_encodingdefault_tl \encodingdefault
+\tl_set_eq:NN \l_@@_save_rmdefault_tl \rmdefault
+\tl_set_eq:NN \l_@@_save_sfdefault_tl \sfdefault
+\tl_set_eq:NN \l_@@_save_ttdefault_tl \ttdefault
+\tl_set:Nn \encodingdefault { OT1 }
+%<newtx>\tl_set:Nn \rmdefault { ntxtlf }
+%<newpx>\tl_set:Nn \rmdefault { zplTLF }
+\tl_set:Nn \qhv@scale { 0.94 }
+\tl_set:Nn \sfdefault { qhv }
+\tl_set:Nn \ttdefault { qcr }
+%<newtx>\RequirePackage { newtxmath }
+%<newpx>\RequirePackage { newpxmath }
+\tl_set_eq:NN \encodingdefault \l_@@_save_encodingdefault_tl
+\tl_set_eq:NN \rmdefault \l_@@_save_rmdefault_tl
+\tl_set_eq:NN \sfdefault \l_@@_save_sfdefault_tl
+\tl_set_eq:NN \ttdefault \l_@@_save_ttdefault_tl
+%</newtx|newpx>
+%<times>\PassOptionsToPackage { Symbol } { upgreek }
+%<lm|times>\RequirePackage { amssymb, upgreek }
+%<*lm>
+\SetSymbolFont { operators    } { normal } { OT1 } { lmr  } { m  } { n  }
+\SetSymbolFont { letters      } { normal } { OML } { lmm  } { m  } { it }
+\SetSymbolFont { symbols      } { normal } { OMS } { lmsy } { m  } { n  }
+\SetSymbolFont { largesymbols } { normal } { OMX } { lmex } { m  } { n  }
+\SetSymbolFont { operators    } { bold   } { OT1 } { lmr  } { bx } { n  }
+\SetSymbolFont { letters      } { bold   } { OML } { lmm  } { b  } { it }
+\SetSymbolFont { symbols      } { bold   } { OMS } { lmsy } { b  } { n  }
+\SetSymbolFont { largesymbols } { bold   } { OMX } { lmex } { m  } { n  }
+\SetMathAlphabet { \mathbf } { normal } { OT1 } { lmr  } { bx } { n  }
+\SetMathAlphabet { \mathsf } { normal } { OT1 } { lmss } { m  } { n  }
+\SetMathAlphabet { \mathit } { normal } { OT1 } { lmr  } { m  } { it }
+\SetMathAlphabet { \mathtt } { normal } { OT1 } { lmtt } { m  } { n  }
+\SetMathAlphabet { \mathbf } { bold   } { OT1 } { lmr  } { bx } { n  }
+\SetMathAlphabet { \mathsf } { bold   } { OT1 } { lmss } { bx } { n  }
+\SetMathAlphabet { \mathit } { bold   } { OT1 } { lmr  } { bx } { it }
+\SetMathAlphabet { \mathtt } { bold   } { OT1 } { lmtt } { m  } { n  }
+\@@_set_slanted_greek:
+%</lm>
+%<*times>
+\tl_set_eq:NN \l_@@_save_rmdefault_tl \rmdefault
+  \RequirePackage { mathptmx }
+\tl_set_eq:NN \rmdefault \l_@@_save_rmdefault_tl
+\tl_set:Nn \Hv@scale { 0.94 }
+\DeclareMathAlphabet { \mathsf } { OT1 } { phv } { m } { n }
+\DeclareMathAlphabet { \mathtt } { OT1 } { pcr } { m } { n }
+\SetMathAlphabet { \mathsf } { bold } { OT1 } { phv } { b } { n }
+\SetMathAlphabet { \mathtt } { bold } { OT1 } { pcr } { b } { n }
+\DeclareSymbolFont { SJTU@ptm } { OML } { ptmcm } { m } { it }
+\@@_declare_math_symbol:nnNn { \mathord } { SJTU@ptm } \upvarsigma { "26 }
+%</times>
+%<lm|times>\bool_if:NT \g_@@_upright_integral_bool
+%<lm|times>  { \RequirePackage { cmupint } }
+\@@_set_unimath_symbol:
+%</math&type1>
+%<*!(math&type1)>
+%<lm>\@@_if_engine_opentype:F
+%<*!lm>
+\@@_if_engine_opentype:TF
+  {
+%<*math>
+    \RequirePackage { unicode-math }
+%<*stixtwo>
+    \bool_if:NTF \g_@@_upright_integral_bool
+      {
+        \setmathfont { STIXTwoMath-Regular.otf }
+          [ StylisticSet = 8 ]
+      }
+      { \setmathfont { STIXTwoMath-Regular.otf } }
+    \setmathfont { STIXTwoMath-Regular.otf }
+      [
+        range        = { scr, bfscr },
+        StylisticSet = 1
+      ]
+%</stixtwo>
+%<*libertinus>
+    \bool_if:NTF \g_@@_upright_integral_bool
+      { \setmathfont { LibertinusMath-Regular.otf } }
+      {
+        \setmathfont { LibertinusMath-Regular.otf }
+          [ StylisticSet = 8 ]
+      }
+    \setmathfont { latinmodern-math.otf } [ range = \checkmark ]
+%</libertinus>
+%<cambria>    \setmathfont { Cambria~Math }
+%<*newcm>
+    \bool_if:NTF \g_@@_upright_integral_bool
+      {
+        \setmathfont { NewCMMath-Book.otf }
+          [ StylisticSet = 2 ]
+      }
+      { \setmathfont { NewCMMath-Book.otf } }
+    \setmathfont { NewCMMath-Book.otf }
+      [
+        range        = { scr, bfscr },
+        StylisticSet = 1
+      ]
+%</newcm>
+%<*xits>
+    \bool_if:NTF \g_@@_upright_integral_bool
+      {
+        \setmathfont { XITSMath-Regular }
+          [
+            Extension    = .otf,
+            BoldFont     = XITSMath-Bold,
+            StylisticSet = 8
+          ]
+      }
+      {
+        \setmathfont { XITSMath-Regular }
+          [
+            Extension    = .otf,
+            BoldFont     = XITSMath-Bold,
+          ]
+      }
+    \setmathfont { XITSMath-Regular.otf }
+      [
+        range        = { cal, bfcal },
+        StylisticSet = 1
+      ]
+%</xits>
+%</math>
+%<*newtx|newpx|stixtwo|xits>
+%<math>    \setmathrm
+%<text>    \setmainfont
+%<newtx>      { TeXGyreTermesX }
+%<newpx>      { TeXGyrePagellaX }
+%<stixtwo>      { STIXTwoText }
+%<xits>      { XITS }
+      [
+        Extension      = .otf,
+        UprightFont    = *-Regular,
+        BoldFont       = *-Bold,
+        ItalicFont     = *-Italic,
+        BoldItalicFont = *-BoldItalic
+      ]
+%<math>    \setmathsf
+%<text>    \setsansfont
+      { texgyreheros }
+      [
+        Extension      = .otf,
+        UprightFont    = *-regular,
+        BoldFont       = *-bold,
+        ItalicFont     = *-italic,
+        BoldItalicFont = *-bolditalic,
+        Scale          = 0.94
+      ]
+%<math>    \setmathtt
+%<text>    \setmonofont
+      { texgyrecursor }
+      [
+        Extension      = .otf,
+        UprightFont    = *-regular,
+        BoldFont       = *-bold,
+        ItalicFont     = *-italic,
+        BoldItalicFont = *-bolditalic,
+        Ligatures      = CommonOff
+      ]
+%</newtx|newpx|stixtwo|xits>
+%<*text&times>
+    \setmainfont { Times~New~Roman } [ Ligatures = Rare ]
+    \setsansfont { Arial } [ Scale = 0.94 ]
+    \setmonofont { Courier~New }
+%</text&times>
+%<*libertinus>
+%<math>    \setmathrm
+%<text>    \setmainfont
+      { LibertinusSerif }
+      [
+        Extension           = .otf,
+        UprightFont         = *-Regular,
+        BoldFont            = *-Bold,
+        ItalicFont          = *-Italic,
+        BoldItalicFont      = *-BoldItalic,
+        SlantedFont         = *-Regular,
+        BoldSlantedFont     = *-Bold,
+        SlantedFeatures     = { FakeSlant = 0.2 },
+        BoldSlantedFeatures = { FakeSlant = 0.2 }
+      ]
+%<math>    \setmathsf
+%<text>    \setsansfont
+      { LibertinusSans }
+      [
+        Extension           = .otf,
+        UprightFont         = *-Regular,
+        BoldFont            = *-Bold,
+        ItalicFont          = *-Italic,
+        BoldItalicFont      = *-Italic,
+        BoldItalicFeatures  = { FakeBold  = 3   },
+        SlantedFont         = *-Regular,
+        BoldSlantedFont     = *-Bold,
+        SlantedFeatures     = { FakeSlant = 0.2 },
+        BoldSlantedFeatures = { FakeSlant = 0.2 }
+      ]
+%</libertinus>
+%<*cambria>
+%<*math>
+    \setmathrm { Cambria }
+    \setmathsf { Calibri }
+    \setmathtt { Consolas } [ Scale = 0.95 ]
+%</math>
+%<*text>
+    \setmainfont { Cambria }
+    \setsansfont { Calibri }
+    \setmonofont { Consolas } [ Scale = 0.95 ]
+%</text>
+%</cambria>
+%<*newcm>
+%<math>    \setmathrm
+%<text>    \setmainfont
+      { NewCM10 }
+      [
+        Extension    = .otf,
+        SizeFeatures =
+          {
+            {
+              Size        = -9,
+              Font        = NewCM08-Book,
+              ItalicFont  = NewCM08-BookItalic,
+              SlantedFont = NewCM08-Book,
+            },
+            { Size        = 9- }
+          },
+        UprightFont         = *-Book,
+        BoldFont            = *-Bold,
+        ItalicFont          = *-BookItalic,
+        BoldItalicFont      = *-BoldItalic,
+        SlantedFont         = *-Book,
+        SlantedFeatures     = { FakeSlant = 0.25 },
+        BoldSlantedFont     = *-Bold,
+        BoldSlantedFeatures = { FakeSlant = 0.25 }
+      ]
+%<math>    \setmathsf
+%<text>    \setsansfont
+      { NewCMSans10 }
+      [
+        Extension    = .otf,
+        SizeFeatures =
+          {
+            {
+              Size       = -9,
+              Font       = NewCMSans08-Book,
+              ItalicFont = NewCMSans08-BookOblique,
+            },
+            { Size       = 9- }
+          },
+        UprightFont    = *-Book,
+        BoldFont       = *-Bold,
+        ItalicFont     = *-BookOblique,
+        BoldItalicFont = *-BoldOblique
+      ]
+%<math>    \setmathtt
+%<text>    \setmonofont
+      { NewCMMono10 }
+      [
+        Extension           = .otf,
+        UprightFont         = *-Book,
+        BoldFont            = *-Bold,
+        ItalicFont          = *-BookItalic,
+        BoldItalicFont      = *-BoldOblique,
+        SlantedFont         = *-Book,
+        SlantedFeatures     = { FakeSlant = 0.25 },
+        BoldSlantedFont     = *-Bold,
+        BoldSlantedFeatures = { FakeSlant = 0.25 }
+      ]
+%</newcm>
+  }
+%</!lm>
+%<*text&!otf>
+  {
+    \tl_set:Nn \encodingdefault { T1 }
+%<lm>    \tl_set:Nn \rmdefault { lmr  }
+%<lm>    \tl_set:Nn \sfdefault { lmss }
+%<libertinus>    \tl_set:Nn \rmdefault { LibertinusSerif-TLF }
+%<libertinus>    \tl_set:Nn \sfdefault { LibertinusSans-TLF  }
+%<lm|libertinus>    \tl_set:Nn \ttdefault { lmtt }
+%<newtx>    \PassOptionsToPackage { nohelv, nott } { newtxtext }
+%<newpx>    \PassOptionsToPackage { nohelv, nott } { newpxtext }
+%<newtx>    \RequirePackage { newtxtext }
+%<newpx>    \RequirePackage { newpxtext }
+%<*stixtwo>
+    \DeclareEncodingSubset { TS1 } { ? } { 0 }
+    \UndeclareTextCommand { \textpertenthousand } { T1 }
+    \DeclareTextSymbolDefault { \textpertenthousand } { TS1 }
+    \tl_set:Nn \rmdefault { stix2 }
+%</stixtwo>
+%<newtx|newpx|stixtwo>    \tl_set:Nn \qhv@scale { 0.94 }
+%<newtx|newpx|stixtwo>    \tl_set:Nn \sfdefault { qhv }
+%<newtx|newpx|stixtwo>    \tl_set:Nn \ttdefault { qcr }
+%<*times>
+    \tl_set:Nn \rmdefault { ptm }
+    \tl_set:Nn \Hv@scale { 0.94 }
+    \tl_set:Nn \sfdefault { phv }
+    \tl_set:Nn \ttdefault { pcr }
+%</times>
+  }
+%</text&!otf>
+%<*text&otf>
+%<cambria>  { \@@_fontset_error:nn { text } { cambria } }
+%<newcm>  { \@@_fontset_error:nn { text } { newcm } }
+%<xits>  { \@@_fontset_error:nn { text } { xits } }
+%</text&otf>
+%<*math&!otf>
+  {
+%<*libertinus>
+    \exp_args:No \PassOptionsToPackage
+      { \g_@@_math_font_options_clist } { libertinust1math }
+    \RequirePackage { libertinust1math }
+%</libertinus>
+%<*stixtwo>
+    \DeclareSizeFunction { sub } { \sub@sfcnt \@font@info }
+    \PassOptionsToPackage { notext } { stix2 }
+    \RequirePackage { stix2 }
+    \clist_map_inline:nn
+      {
+        \upalpha      { "0B } ,
+        \upbeta       { "0C } ,
+        \upgamma      { "0D } ,
+        \updelta      { "0E } ,
+        \upepsilon    { "0F } ,
+        \upzeta       { "10 } ,
+        \upeta        { "11 } ,
+        \uptheta      { "12 } ,
+        \upiota       { "13 } ,
+        \upkappa      { "14 } ,
+        \uplambda     { "15 } ,
+        \upmu         { "16 } ,
+        \upnu         { "17 } ,
+        \upxi         { "18 } ,
+        \uppi         { "19 } ,
+        \uprho        { "1A } ,
+        \upsigma      { "1B } ,
+        \uptau        { "1C } ,
+        \upupsilon    { "1D } ,
+        \upphi        { "1E } ,
+        \upchi        { "1F } ,
+        \uppsi        { "20 } ,
+        \upomega      { "21 } ,
+        \upvarepsilon { "22 } ,
+        \upvartheta   { "23 } ,
+        \upvarpi      { "24 } ,
+        \upvarrho     { "25 } ,
+        \upvarsigma   { "26 } ,
+        \upvarphi     { "27 }
+      }
+      { \@@_declare_math_symbol:nnNn { \stix@lcgc } { operators } #1 }
+    \@@_set_slanted_greek:
+%</stixtwo>
+  }
+%</math&!otf>
+%<*math&otf>
+%<cambria>  { \@@_fontset_error:nn { math } { cambria } }
+%<newcm>  { \@@_fontset_error:nn { math } { newcm } }
+%<xits>  { \@@_fontset_error:nn { math } { xits } }
+%</math&otf>
+%</!(math&type1)>
+%</font&(math|text)>
+%    \end{macrocode}
+%
+% \pkg{unicode-math} 宏包设置。
+%    \begin{macrocode}
+%<*class>
+\ctex_at_end_package:nn { unicode-math }
+  {
+    \DeclareDocumentCommand \bm { m }
+      { { \symbf {#1} } }
+    \DeclareDocumentCommand \boldsymbol { m }
+      { { \symbf {#1} } }
+    \bool_if:NTF \g_@@_slanted_uppercase_greek_bool
+      { \keys_set:nn { unicode-math } { math-style = ISO } }
+      { \keys_set:nn { unicode-math } { math-style = TeX } }
+    \bool_if:NTF \g_@@_integral_limits_bool
+      { \removenolimits } { \addnolimits }
+      {
+        \int\iint\iiint\iiiint\oint\oiint\oiiint
+        \intclockwise\varointclockwise\ointctrclockwise\sumint
+        \intbar\intBar\fint\cirfnint\awint\rppolint
+        \scpolint\npolint\pointint\sqint\intlarhk\intx
+        \intcap\intcup\upint\lowint
+      }
+    \clist_map_inline:nn
+      { amsfonts, amssymb, bm, upgreek }
+      { \@@_disable_package_load:n {#1} }
+  }
+%    \end{macrocode}
+%
+% 若未使用 \pkg{unicode-math} 配置数学字体，则自动调用 \pkg{bm}，
+% 并在未定义 \tn{uppi} 和 \tn{checkmark} 时分别调用 \pkg{upgreek} 和 \pkg{amsfonts}。
+%    \begin{macrocode}
+\ctex_at_end_preamble:n
+  {
+    \IfPackageLoadedF { unicode-math }
+      {
+        \RequirePackage { bm }
+        \cs_if_exist:NF \uppi
+          { \RequirePackage { upgreek  } }
+        \cs_if_exist:NF \checkmark
+          { \RequirePackage { amsfonts } }
+      }
+  }
+%</class>
+%    \end{macrocode}
+%
+% \paragraph{CJK 字体}
+%
+% \changes{v2.2}{2024/11/28}{新增 \opt{hanyi} 字体配置。}
+% 在字体未提供对应粗体的情况下，允许使用伪粗。
+%    \begin{macrocode}
+%<*font&cjk>
+\@@_if_engine_opentype:TF
+  {
+    \@@_if_main_lang_ja:TF
+      {
+%<*windows>
+        \setCJKmainfont { MS~Mincho } [ AutoFakeBold = 3 ]
+        \setCJKsansfont { MS~Gothic } [ AutoFakeBold = 3 ]
+        \setCJKmonofont { MS~Mincho }
+        \setCJKfamilyfont { jamin  } { MS~Mincho } [ AutoFakeBold = 3 ]
+        \setCJKfamilyfont { jagoth } { MS~Gothic } [ AutoFakeBold = 3 ]
+%</windows>
+%<*mac>
+        \setCJKmainfont { HiraMinProN  }
+          [
+            UprightFont    = *-W3 ,
+            BoldFont       = *-W6
+          ]
+        \setCJKsansfont { HiraKakuProN }
+          [
+            UprightFont    = *-W3 ,
+            BoldFont       = *-W6
+          ]
+        \setCJKmonofont { HiraMinProN-W3 }
+        \setCJKfamilyfont { jamin  } { HiraMinProN  }
+          [
+            UprightFont    = *-W3 ,
+            BoldFont       = *-W6
+          ]
+        \setCJKfamilyfont { jagoth } { HiraKakuProN }
+          [
+            UprightFont    = *-W3 ,
+            BoldFont       = *-W6
+          ]
+%</mac>
+%<*ubuntu>
+        \setCJKmainfont { Noto~Serif~CJK~JP }
+          [
+            UprightFont = *~Light ,
+            BoldFont    = *~Bold
+          ]
+        \setCJKsansfont { Noto~Sans~CJK~JP  }
+          [
+            UprightFont = *~Medium ,
+            BoldFont    = *~Bold
+          ]
+        \setCJKmonofont { Noto~Serif~CJK~JP }
+          [
+            UprightFont = *~Light ,
+            BoldFont    = *~Bold
+          ]
+        \setCJKfamilyfont { jamin  } { Noto~Serif~CJK~JP }
+          [
+            UprightFont = *~Light ,
+            BoldFont    = *~Bold
+          ]
+        \setCJKfamilyfont { jagoth } { Noto~Sans~CJK~JP  }
+          [
+            UprightFont = *~Medium ,
+            BoldFont    = *~Bold
+          ]
+%</ubuntu>
+%<*adobe>
+        \setCJKmainfont { KozMinPr6N }
+          [
+            UprightFont = *-Light ,
+            BoldFont    = *-Bold
+          ]
+        \setCJKsansfont { KozGoPr6N  }
+          [
+            UprightFont = *-Medium ,
+            BoldFont    = *-Bold
+          ]
+        \setCJKmonofont { KozMinPr6N-Light }
+        \setCJKfamilyfont { jamin  } { KozMinPr6N }
+          [
+            UprightFont = *-Light ,
+            BoldFont    = *-Bold
+          ]
+        \setCJKfamilyfont { jagoth } { KozGoPr6N  }
+          [
+            UprightFont = *-Medium ,
+            BoldFont    = *-Bold
+          ]
+%</adobe>
+%<*fandol|hanyi>
+        \setCJKmainfont { HaranoAjiMincho }
+          [
+            Extension   = .otf ,
+            UprightFont = *-Regular ,
+%<fandol>            BoldFont    = *-Bold
+%<hanyi>            BoldFont    = *-Medium
+          ]
+        \setCJKsansfont { HaranoAjiGothic }
+          [
+            Extension   = .otf ,
+            UprightFont = *-Medium ,
+            BoldFont    = *-Bold
+          ]
+        \setCJKmonofont { HaranoAjiGothic }
+          [
+            Extension   = .otf ,
+            UprightFont = *-Regular
+          ]
+        \setCJKfamilyfont { jamin  } { HaranoAjiMincho }
+          [
+            Extension   = .otf ,
+%<fandol>            BoldFont    = *-Bold
+%<hanyi>            BoldFont    = *-Medium
+          ]
+        \setCJKfamilyfont { jagoth } { HaranoAjiGothic }
+          [
+            Extension   = .otf ,
+            UprightFont = *-Medium ,
+            BoldFont    = *-Bold
+          ]
+%</fandol|hanyi>
+%<*founder>
+        \setCJKmainfont { ipam.ttf } [ AutoFakeBold = 3 ]
+        \setCJKsansfont { ipag.ttf } [ AutoFakeBold = 3 ]
+        \setCJKmonofont { ipag.ttf }
+        \setCJKfamilyfont { jamin  } { ipam.ttf } [ AutoFakeBold = 3 ]
+        \setCJKfamilyfont { jagoth } { ipag.ttf } [ AutoFakeBold = 3 ]
+%</founder>
+        \NewDocumentCommand \mincho   { } { \CJKfamily { jamin   } }
+        \NewDocumentCommand \gothic   { } { \CJKfamily { jagoth  } }
+      }
+%<*windows>
+      {
+        \setCJKmainfont { SimSun   }
+          [ AutoFakeBold = 3 , ItalicFont = KaiTi ]
+        \setCJKsansfont { SimHei   } [ AutoFakeBold = 3 ]
+        \setCJKmonofont { FangSong }
+      }
+    \setCJKfamilyfont { zhsong } { SimSun   }
+      [ AutoFakeBold = 3 , ItalicFont = KaiTi ]
+    \setCJKfamilyfont { zhhei  } { SimHei   } [ AutoFakeBold = 3 ]
+    \setCJKfamilyfont { zhkai  } { KaiTi    }
+    \setCJKfamilyfont { zhfs   } { FangSong }
+%</windows>
+%<*mac>
+      {
+        \setCJKmainfont { Songti~SC  }
+          [
+            UprightFont    = *~Light ,
+            BoldFont       = *~Bold ,
+            ItalicFont     = Kaiti~SC~Regular ,
+            BoldItalicFont = Kaiti~SC~Bold
+          ]
+        \setCJKsansfont { Heiti~SC   }
+          [
+            UprightFont    = *~Medium ,
+            AutoFakeBold   = 3
+          ]
+        \setCJKmonofont { STFangsong }
+      }
+    \setCJKfamilyfont { zhsong } { Songti~SC  }
+      [
+        UprightFont    = *~Light ,
+        BoldFont       = *~Bold ,
+        ItalicFont     = Kaiti~SC~Regular ,
+        BoldItalicFont = Kaiti~SC~Bold
+      ]
+    \setCJKfamilyfont { zhhei  } { Heiti~SC   }
+      [
+        UprightFont    = *~Medium ,
+        AutoFakeBold   = 3
+      ]
+    \setCJKfamilyfont { zhfs   } { STFangsong }
+    \setCJKfamilyfont { zhkai  } { Kaiti~SC   }
+      [
+        UprightFont    = *~Regular ,
+        BoldFont       = *~Bold
+        ]
+%</mac>
+%<*ubuntu>
+      {
+        \setCJKmainfont { Noto~Serif~CJK~SC }
+          [
+            UprightFont = *~Light ,
+            BoldFont    = *~Bold ,
+            ItalicFont  = AR~PL~KaitiM~GB
+          ]
+        \setCJKsansfont { Noto~Sans~CJK~SC  }
+          [
+            UprightFont = *~Medium ,
+            BoldFont    = *~Bold
+          ]
+        \setCJKmonofont { Noto~Serif~CJK~SC }
+          [
+            UprightFont = *~Light ,
+            BoldFont    = *~Bold
+          ]
+      }
+    \setCJKfamilyfont { zhsong } { Noto~Serif~CJK~SC }
+      [
+        UprightFont = *~Light ,
+        BoldFont    = *~Bold ,
+        ItalicFont  = AR~PL~KaitiM~GB
+      ]
+    \setCJKfamilyfont { zhhei  } { Noto~Sans~CJK~SC  }
+      [
+        UprightFont = *~Medium ,
+        BoldFont    = *~Bold
+      ]
+    \setCJKfamilyfont { zhkai  } { AR~PL~KaitiM~GB   }
+%</ubuntu>
+%<*adobe>
+      {
+        \setCJKmainfont { AdobeSongStd-Light       }
+          [ AutoFakeBold = 3 , ItalicFont = AdobeKaitiStd-Regular ]
+        \setCJKsansfont { AdobeHeitiStd-Regular    } [ AutoFakeBold = 3 ]
+        \setCJKmonofont { AdobeFangsongStd-Regular }
+      }
+    \setCJKfamilyfont { zhsong } { AdobeSongStd-Light       }
+      [ AutoFakeBold = 3 , ItalicFont = AdobeKaitiStd-Regular ]
+    \setCJKfamilyfont { zhhei  } { AdobeHeitiStd-Regular    } [ AutoFakeBold = 3 ]
+    \setCJKfamilyfont { zhfs   } { AdobeFangsongStd-Regular }
+    \setCJKfamilyfont { zhkai  } { AdobeKaitiStd-Regular    }
+%</adobe>
+%<*fandol>
+      {
+        \setCJKmainfont { FandolSong }
+          [
+            Extension   = .otf ,
+            UprightFont = *-Regular ,
+            BoldFont    = *-Bold ,
+            ItalicFont  = FandolKai-Regular
+          ]
+        \setCJKsansfont { FandolHei  }
+          [
+            Extension   = .otf ,
+            UprightFont = *-Regular ,
+            BoldFont    = *-Bold
+          ]
+        \setCJKmonofont { FandolFang }
+          [
+            Extension   = .otf ,
+            UprightFont = *-Regular
+          ]
+      }
+    \setCJKfamilyfont { zhsong } { FandolSong }
+      [
+        Extension   = .otf ,
+        UprightFont = *-Regular ,
+        BoldFont    = *-Bold ,
+        ItalicFont  = FandolKai-Regular
+      ]
+    \setCJKfamilyfont { zhhei  } { FandolHei  }
+      [
+        Extension   = .otf ,
+        UprightFont = *-Regular,
+        BoldFont    = *-Bold
+      ]
+    \setCJKfamilyfont { zhfs   } { FandolFang }
+      [
+        Extension   = .otf ,
+        UprightFont = *-Regular
+      ]
+    \setCJKfamilyfont { zhkai  } { FandolKai  }
+      [
+        Extension   = .otf ,
+        UprightFont = *-Regular
+      ]
+%</fandol>
+%<*founder>
+      {
+        \setCJKmainfont { FZShuSong-Z01  }
+          [ AutoFakeBold = 3 , ItalicFont = FZKai-Z03 ]
+        \setCJKsansfont { FZHei-B01      } [ AutoFakeBold = 3 ]
+        \setCJKmonofont { FZFangSong-Z02 }
+      }
+    \setCJKfamilyfont { zhsong } { FZShuSong-Z01  }
+      [ AutoFakeBold = 3 , ItalicFont = FZKai-Z03 ]
+    \setCJKfamilyfont { zhhei  } { FZHei-B01      } [ AutoFakeBold = 3 ]
+    \setCJKfamilyfont { zhkai  } { FZKai-Z03      }
+    \setCJKfamilyfont { zhfs   } { FZFangSong-Z02 }
+%</founder>
+%<*hanyi>
+      {
+        \setCJKmainfont { HYShuSongEr~S }
+          [ BoldFont = HYZhongSong~S, ItalicFont = HYKaiTi~S ]
+        \setCJKsansfont { HYZhongHei~S  } [ BoldFont = HYDaHei~S ]
+        \setCJKmonofont { HYFangSong~S  }
+      }
+    \setCJKfamilyfont { zhsong } { HYShuSongEr~S }
+      [ BoldFont = HYZhongSong~S ]
+    \setCJKfamilyfont { zhhei  } { HYZhongHei~S  }
+      [ BoldFont = HYDaHei~S     ]
+    \setCJKfamilyfont { zhkai  } { HYKaiTi~S     }
+    \setCJKfamilyfont { zhfs   } { HYFangSong~S  }
+%</hanyi>
+    \NewDocumentCommand \songti   { } { \CJKfamily { zhsong  } }
+    \NewDocumentCommand \heiti    { } { \CJKfamily { zhhei   } }
+%<!ubuntu>    \NewDocumentCommand \fangsong { } { \CJKfamily { zhfs    } }
+    \NewDocumentCommand \kaishu   { } { \CJKfamily { zhkai   } }
+  }
+  {
+    \@@_if_main_lang_ja:TF
+%<windows>      { \@@_fontset_error:nn { cjk } { windows } }
+%<windows>      { \ctex_file_input:n { ctex-fontset-windows.def } }
+%<mac>      { \@@_fontset_error:nn { cjk } { mac } }
+%<mac>      { \ctex_file_input:n { ctex-fontset-mac.def } }
+%<ubuntu>      { \@@_fontset_error:nn { cjk } { ubuntu } }
+%<ubuntu>      { \ctex_file_input:n { ctex-fontset-ubuntu.def } }
+%<adobe>      { \@@_fontset_error:nn { cjk } { adobe } }
+%<adobe>      { \ctex_file_input:n { ctex-fontset-adobe.def } }
+%<fandol>      { \@@_fontset_error:nn { cjk } { fandol } }
+%<fandol>      { \ctex_file_input:n { ctex-fontset-fandol.def } }
+%<founder>      { \@@_fontset_error:nn { cjk } { founder } }
+%<founder>      { \ctex_file_input:n { ctex-fontset-founder.def } }
+%<hanyi>      { \@@_fontset_error:nn { cjk } { hanyi } }
+%<hanyi>      { \ctex_file_input:n { ctex-fontset-hanyi.def } }
+  }
+%</font&cjk>
+%    \end{macrocode}
+%
+% \begin{macro}{\CJKrmfamily,\CJKsffamily,\CJKttfamily}
+% 只改变 CJK 字体族的命令。
+%    \begin{macrocode}
+%<*class>
+\NewDocumentCommand \CJKrmfamily { } { \CJKfamily { \CJKrmdefault } }
+\NewDocumentCommand \CJKsffamily { } { \CJKfamily { \CJKsfdefault } }
+\NewDocumentCommand \CJKttfamily { } { \CJKfamily { \CJKttdefault } }
+%    \end{macrocode}
+% \end{macro}
+%
+% 带圈数字使用 CJK 字体。
+%    \begin{macrocode}
+\sys_if_engine_xetex:T
+  {
+    \xeCJK_declare_char_class:nn { CJK }
+      { "24EA, "2460->"2473, "3251->"32BF, "25A1 }
+  }
+\sys_if_engine_luatex:T
+  {
+    \ltjdefcharrange { 99 }
+      { "24EA, "2460- "2473, "3251- "32BF, "25A1 }
+    \ltjsetparameter { jacharrange = { +99 } }
+  }
+%    \end{macrocode}
+%
+% \begin{macro}[int]{\@@_unicode_char:n}
+% 由 Unicode 码位直接调用字符的辅助函数。
+%    \begin{macrocode}
+\sys_if_engine_pdftex:TF
+  {
+    \cs_new:Npn \@@_unicode_char:n #1
+      {
+        \exp_not:N \Unicode
+          { \int_div_truncate:nn {#1} { 256 } }
+          { \int_mod:nn          {#1} { 256 } }
+      }
+  }
+  { \cs_new:Npn \@@_unicode_char:n #1 { \tex_Uchar:D #1 \scan_stop: } }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_symbol_const:nn}
+% 定义符号的辅助函数。
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_symbol_const:nn #1#2
+  { \tl_const:ce { c_@@_symbol_ #1 _tl } { \@@_unicode_char:n {#2} } }
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.0.2}{2023/04/01}{延迟载入字体配置，修复 \pkg{unicode-math}
+% 设置不生效的问题。}
+% 载入字体配置。
+%    \begin{macrocode}
+\@@_load_fontset:
+%    \end{macrocode}
+%
+% \subsubsection{名称选项}
+%
+% 定义 |sjtu/name| 键值类。
+%
+% 设置标准文档类中已定义的名称。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / name }
+  {
+    contents        .meta:nn = { ctex } { contentsname   = {#1} } ,
+    listfigure      .meta:nn = { ctex } { listfigurename = {#1} } ,
+    listtable       .meta:nn = { ctex } { listtablename  = {#1} } ,
+    figure          .meta:nn = { ctex } { figurename     = {#1} } ,
+    table           .meta:nn = { ctex } { tablename      = {#1} } ,
+%<!thesis>    abstract        .meta:nn = { ctex } { abstractname   = {#1} } ,
+    index           .meta:nn = { ctex } { indexname      = {#1} } ,
+    appendix        .meta:nn = { ctex } { appendixname   = {#1} } ,
+    proof           .meta:nn = { ctex } { proofname      = {#1} } ,
+    bib             .meta:nn = { ctex } { bibname        = {#1} } ,
+    part           .tl_set:N = \partname ,
+%<!article>    chapter        .tl_set:N = \chaptername ,
+%    \end{macrocode}
+%
+% \changes{v2.0}{2022/12/28}{简化 \opt{sjtu/name} 中键的名称：\opt{abbr},
+% \opt{nom}, \opt{ack}, \opt{achv}。}
+% 标准文档类中未定义的名称。
+%    \begin{macrocode}
+    figure*        .tl_set:N = \SJTU@figurename@bi@second ,
+    figure*       .initial:n = { 图 } ,
+    table*         .tl_set:N = \SJTU@tablename@bi@second ,
+    table*        .initial:n = { 表 } ,
+    algorithm      .tl_set:N = \SJTU@algorithmname ,
+    algorithm     .initial:n = { Algorithm } ,
+    listalgorithm  .tl_set:N = \SJTU@listalgorithmname ,
+    listalgorithm .initial:n = { List~of~Algorithms } ,
+%<*thesis>
+    abbr           .tl_set:N = \SJTU@abbrname ,
+    abbr          .initial:n = { Abbreviations } ,
+    nom            .tl_set:N = \SJTU@nomname ,
+    nom           .initial:n = { Nomenclature } ,
+    ack            .tl_set:N = \SJTU@ackname ,
+    ack           .initial:n = { Acknowledgements } ,
+    resume         .tl_set:N = \SJTU@resumename ,
+    resume        .initial:n = { Resume } ,
+    digest         .tl_set:N = \SJTU@digestname ,
+    digest        .initial:n = { Digest } ,
+    achv           .tl_set:N = \SJTU@achvname ,
+    achv          .initial:n = { List~of~Research~Achievements },
+%</thesis>
+  }
+%    \end{macrocode}
+%
+% \subsubsection{页面设置}
+%
+% 利用 \pkg{geometry} 宏包设置页面边距以及页眉高度。
+%    \begin{macrocode}
+\geometry
+  {
+    vmargin       = { 3.5 cm , 4.0 cm } ,
+    hmargin       = 2.5 cm ,
+%<thesis>    bindingoffset = 0.5 cm ,
+    headheight    = 1.5 cm ,
+    headsep       = 0.5 cm ,
+    footskip      = 1.0 cm
+  }
+%    \end{macrocode}
+%
+% \changes{v2.0.3}{2023/09/24}{学位论文页面纵向顶部对齐。}
+% 学位论文页面纵向顶部对齐。
+%    \begin{macrocode}
+%<*thesis>
+\AtEndOfClass { \raggedbottom }
+%</thesis>
+%    \end{macrocode}
+%
+% \subsubsection{页眉页脚}
+%
+% \pkg{ctex} 宏包使用 \opt{heading} 选项后，会把页面格式设置为 |headings|。
+% 因此必须在 \pkg{ctex} 调用之后重新设置 \tn{pagestyle} 为 |fancy|。
+%    \begin{macrocode}
+\pagestyle { fancy }
+%    \end{macrocode}
+%
+% 清除所有页眉页脚。
+%    \begin{macrocode}
+\fancyhf { }
+%    \end{macrocode}
+%
+% \begin{macro}{style/header-font,style/footer-font}
+% 设置页眉页脚字体。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / style }
+  {
+    header-font  .tl_set:N = \l_@@_style_header_font_tl ,
+%<thesis>    header-font .initial:n = \zihao { -5 } \setbaselineskip { 12 bp } ,
+%<!thesis>    header-font .initial:n = \zihao { -5 } \sffamily ,
+    footer-font  .tl_set:N = \l_@@_style_footer_font_tl ,
+%<thesis>    footer-font .initial:n = \zihao { -5 } \setbaselineskip { 12 bp }
+%<!thesis>    footer-font .initial:n = \zihao { -5 }
+  }
+\fancyheadinit { \l_@@_style_header_font_tl }
+\fancyfootinit { \l_@@_style_footer_font_tl }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{style/header-uppercase}
+% \begin{macro}[int]{\@@_nouppercase:n}
+% 页眉西文是否大写。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / style }
+  {
+    header-uppercase       .choice: ,
+    header-uppercase / true  .code:n =
+      { \cs_set_eq:NN \@@_nouppercase:n \use:n                 } ,
+    header-uppercase / false .code:n =
+      { \cs_set:Nn    \@@_nouppercase:n { \nouppercase {##1} } } ,
+    header-uppercase      .default:n = { true  } ,
+    header-uppercase      .initial:n = { false }
+  }
+\cs_generate_variant:Nn \@@_nouppercase:n { V }
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+%
+% \begin{macro}{style/page-number}
+% \begin{macro}[int]{\@@_page:nn}
+% 页脚页码格式。
+%    \begin{macrocode}
+\tl_set:Nn \@@_the_page_tl { \thepage }
+\tl_new:N \@@_the_last_page_tl
+\msg_new:nnn { sjtutex } { require-pageslts }
+  {
+    Add~'\token_to_str:N \usepackage{pageslts}'~in~your~preamble \\
+    to~enable~the~page~number~of~the~last~page.
+  }
+\keys_define:nn { sjtu / style }
+  {
+    page-number    .code:n =
+      {
+        \regex_match:nnT { \#2 } { #1 }
+          {
+            \ctex_if_preamble:TF
+              { \RequirePackage { pageslts } }
+              {
+                \IfPackageLoadedF { pageslts }
+                  { \msg_warning:nn { sjtutex } { require-pageslts } }
+              }
+          }
+        \cs_set:Nn \@@_page:nn { #1 }
+      } ,
+    page-number .initial:n = { {#1} }
+  }
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+%
+% 设置页眉内容。
+%    \begin{macrocode}
+\tl_set:Nn \l_@@_header_tl
+  {
+%<thesis>    { \songti \c_@@_name_subject_zh_tl }
+%<*!thesis>
+    \includegraphics [ height = 1.2 cm ]
+      { sjtu-vi-logo-std-h-cor-red.pdf }
+%</!thesis>
+  }
+%<thesis>\tl_set:Nn \l_@@_leftmark_tl  { \leftmark }
+%<!thesis>\tl_set:Nn \l_@@_leftmark_tl  { \l_@@_info_subject_tl }
+\tl_set:Nn \l_@@_rightmark_tl { \leftmark }
+%    \end{macrocode}
+%
+% 设置页眉页脚。
+%    \begin{macrocode}
+\legacy_if:nTF { @twoside }
+  {
+    \fancyhead [ LO, RE ] { \l_@@_header_tl }
+    \fancyhead [ LE ]     { \@@_nouppercase:V \l_@@_leftmark_tl  }
+    \fancyhead [ RO ]     { \@@_nouppercase:V \l_@@_rightmark_tl }
+  }
+  {
+    \fancyhead [ L ] { \l_@@_header_tl }
+    \fancyhead [ R ] { \@@_nouppercase:V \l_@@_rightmark_tl }
+  }
+\fancyfoot [ C ]
+  { \@@_page:nn { \@@_the_page_tl } { \@@_the_last_page_tl } }
+%    \end{macrocode}
+%
+% \begin{macro}{\headrule}
+% \cls{sjtuthesis} 的页眉线。
+%    \begin{macrocode}
+%<*thesis>
+\tl_set:Nn \headrule
+  {
+    \hrule height 2.25 pt width \headwidth
+    \skip_vertical:n {  0.75 pt }
+    \hrule height 0.75 pt width \headwidth
+    \skip_vertical:n { -3.75 pt }
+  }
+%</thesis>
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.2}{2024/11/08}{更新 \cls{sjtureport} 和 \cls{sjtuarticle} 的
+% \texttt{plain} 页面样式。}
+% 重定义 |plain| 样式。
+%    \begin{macrocode}
+%<*!thesis>
+\legacy_if:nTF { @twoside }
+  {
+    \fancypagestyle { plain }
+      {
+        \fancyhead { }
+        \fancyhead [ LO, RE ] { \l_@@_header_tl }
+        \tl_set:Nn \headrulewidth { 0 pt }
+      }
+  }
+  {
+    \fancypagestyle { plain }
+      {
+        \fancyhead { }
+        \fancyhead [ L ] { \l_@@_header_tl }
+        \tl_set:Nn \headrulewidth { 0 pt }
+      }
+  }
+%</!thesis>
+%    \end{macrocode}
+%
+% |SJTU@null| 样式，不对当前页面样式做任何修改。
+%    \begin{macrocode}
+\cs_new_eq:NN \ps@SJTU@null \prg_do_nothing:
+%    \end{macrocode}
+%
+% \begin{macro}{\cleardoublepage}
+% 空白页清空页眉页脚。
+%    \begin{macrocode}
+\RenewDocumentCommand \cleardoublepage { }
+  {
+    \clearpage
+    \legacy_if:nT { @twoside }
+      {
+        \int_if_odd:nF \c@page
+          { \hbox:n { } \thispagestyle { empty } \newpage }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsubsection{页码设置}
+%
+% 文档初始页码编码设置。
+%    \begin{macrocode}
+%<thesis>\pagenumbering { Alph }
+%    \end{macrocode}
+%
+% \begin{macro}{\frontmatter}
+% 前置部分使用大写罗马数字编码。
+%    \begin{macrocode}
+%<*thesis>
+\RenewDocumentCommand \frontmatter { }
+  {
+    \cleardoublepage
+    \@mainmatterfalse
+    \pagenumbering { Roman }
+  }
+%</thesis>
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsubsection{章节标题}
+%
+% 设置章节标题样式。
+%    \begin{macrocode}
+%<*!article>
+\ctex_set:nn { chapter }
+  {
+    pagestyle   = SJTU@null ,
+    fixskip     = true ,
+%<*thesis>
+    beforeskip  = 27 bp ,
+    afterskip   = 27 bp ,
+    format      = \zihao { 3 } \setbaselineskip{ 20 bp } \bfseries
+                  \CJKsffamily \centering ,
+%</thesis>
+%<*report>
+    beforeskip  = 30 pt ,
+    afterskip   = 24 pt ,
+    format      = \Large \bfseries \CJKsffamily \centering ,
+%</report>
+    nameformat  = ,
+    titleformat = ,
+    lofskip     = \c_zero_skip ,
+    lotskip     = \c_zero_skip ,
+    aftername   = \quad
+  }
+%</!article>
+%</class>
+%<*scheme&(zh|ja)>
+\keys_set_known:nn { ctex / chapter }
+  { name = { 第 \space , \space 章 } }
+%</scheme&(zh|ja)>
+%<*class>
+\ctex_set:nn { section }
+%<*thesis>
+  {
+    beforeskip  = 24 bp ,
+    afterskip   =  6 bp ,
+    format      = \zihao { 4 } \SJTU@set@sec@lineskip \bfseries
+                  \CJKsffamily
+  }
+%</thesis>
+%<!thesis>  { format = \large \bfseries \CJKsffamily }
+\ctex_set:nn { subsection }
+%<*thesis>
+  {
+    beforeskip  = 12 bp ,
+    afterskip   =  6 bp ,
+    format      = \zihao { -4 } \SJTU@set@sec@lineskip \bfseries
+                  \CJKsffamily
+  }
+%</thesis>
+%<!thesis>  { format = \SJTU@orig@normalsize \bfseries \CJKsffamily }
+\ctex_set:nn { subsubsection }
+%<*thesis>
+  {
+    beforeskip  =  6 bp ,
+    afterskip   =  6 bp ,
+    format      = \zihao { -4 } \SJTU@set@sec@lineskip \normalfont
+  }
+%</thesis>
+%<!thesis>  { format = \SJTU@orig@normalsize \normalfont }
+\ctex_set:n { secnumdepth = 3 }
+%    \end{macrocode}
+%
+% \changes{v2.1}{2024/01/10}{新增 \opt{style/indent-first} 选项。}
+% \begin{macro}{style/indent-first}
+% 章节标题后首段是否缩进。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / style }
+  {
+    indent-first    .choice: ,
+    indent-first   .choices:nn =
+      { true, false }
+      {
+        \clist_map_inline:nn
+          {
+%<article>            part,
+%<!article>            chapter,
+            section, subsection, subsubsection,
+            paragraph, subparagraph
+          }
+          { \ctex_set:nn {####1} { afterindent = #1 } }
+      } ,
+    indent-first   .default:n = { true } ,
+    indent-first   .initial:n = { true }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_pdf_bookmark:nn,\@@_phantom_section:}
+% 在 \pkg{hyperref} 载入后才有意义。
+%    \begin{macrocode}
+\cs_new_eq:NN \@@_pdf_bookmark:nn \use_none:nn
+\cs_new_eq:NN \@@_phantom_section: \prg_do_nothing:
+%</class>
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsubsection{段落}
+%
+% 设置全文首行缩进。
+%    \begin{macrocode}
+%<*scheme>
+\ctex_if_autoindent_touched:F
+%<zh>  { \ctex_set:n { autoindent = true } }
+%<en|de>  { \ctex_set:n { autoindent = 1.5 em } }
+%<ja>  { \ctex_set:n { autoindent = 1 } }
+%    \end{macrocode}
+%
+% \begin{macro}{\verse,\quotation}
+% 修改诗歌和引用环境的缩进。
+%    \begin{macrocode}
+%<zh|ja>\ctex_patch_cmd:Nnn \verse { -1.5em } { -2 \ccwd }
+%<zh|ja>\ctex_patch_cmd:Nnn \verse {  1.5em } {  2 \ccwd }
+\ctex_patch_cmd:Nnn \quotation { 1.5em } { \parindent }
+%</scheme>
+%    \end{macrocode}
+% \end{macro}
+%
+% 使用 \pkg{enumitem} 调整默认列表环境的间距。
+%    \begin{macrocode}
+%<*class>
+\setlist { nosep }
+%    \end{macrocode}
+%
+% \subsubsection{数学公式}
+%
+% \changes{v2.1}{2023/11/30}{新增 \opt{style/equation-font} 选项。}
+% \begin{macro}{style/equation-font}
+% 设置行间数学公式的字体。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / style }
+  {
+    equation-font  .tl_set:N = \SJTU@style@equation@font ,
+%<thesis>    equation-font .initial:n = \linespread { } \SJTU@orig@normalsize
+%<!thesis>    equation-font .initial:V = \c_empty_tl
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% 借用 \pkg{zhlineskip} 宏包的代码设置行间公式字体。
+%    \begin{macrocode}
+\clist_map_inline:nn
+  {
+    array, matrix, pmatrix, bmatrix, Bmatrix, vmatrix, Vmatrix,
+    matrix*, pmatrix*, bmatrix*, Bmatrix*, vmatrix*, Vmatrix*,
+    cases, cases*, dcases, dcases*, rcases, rcases*, drcases, drcases*,
+    aligned, alignedat, gathered, multlined, lgathered, rgathered
+  }
+  { \AtBeginEnvironment {#1} { \SJTU@style@equation@font } }
+\clist_map_inline:nn
+  { \start@gather, \start@align, \start@multline }
+  {
+    \ctex_patch_cmd:Nnn #1
+      { \collect@body }
+      {
+        \SJTU@style@equation@font
+        \collect@body
+      }
+  }
+\ctex_patch_cmd:Nnn \gather@split
+  { \spread@equation }
+  {
+    \SJTU@style@equation@font
+    \spread@equation
+  }
+%    \end{macrocode}
+%
+% \subsubsection{数学环境}
+%
+% 可以选用 \pkg{amsthm} 或 \pkg{ntheorem} 宏包控制数学环境样式，
+% 并提供对证明环境 \env{proof} 的支持。
+%
+% \changes{v2.1.1}{2024/03/21}{新增 \opt{style/theorem-header-font}、
+% \opt{style/theorem-body-font} 选项。}
+% \begin{macro}{style/theorem-header-font,style/theorem-body-font}
+% 预定义的数学环境的定理头（即标题）以及定理内容的字体。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / style }
+  {
+    theorem-header-font  .tl_set:N = \SJTU@style@thm@header@font ,
+    theorem-header-font .initial:n = \bfseries \CJKsffamily ,
+    theorem-body-font    .tl_set:N = \SJTU@style@thm@body@font ,
+    theorem-body-font   .initial:n = \normalfont ,
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsubsection{浮动体}
+%
+% 下面这组命令使浮动对象的缺省值稍微宽松一点，从而防止幅度对象占据过多的
+% 文本页面，也可以防止在很大空白的浮动页上放置很小的图形。
+%    \begin{macrocode}
+\tl_set:Nn \textfraction      { 0.15 }
+\tl_set:Nn \topfraction       { 0.85 }
+\tl_set:Nn \bottomfraction    { 0.65 }
+\tl_set:Nn \floatpagefraction { 0.60 }
+%    \end{macrocode}
+%
+% \changes{v2.3}{2026/01/03}{修复浮动体中 \env{cases} 环境中的字体问题。}
+% \begin{macro}{style/float-font}
+% 设置浮动体内的字体。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / style }
+  {
+    float-font  .tl_set:N = \SJTU@style@float@font ,
+%<thesis>    float-font .initial:n = \zihao { 5 } \setbaselineskip { 14 bp }
+%<!thesis>    float-font .initial:n = \zihao { 5 }
+  }
+\ctex_patch_cmd:Nnn \@floatboxreset
+  { \normalsize }
+  {
+    \SJTU@style@float@font
+%    \end{macrocode}
+% 为修复浮动体环境中 \env{cases} 环境中的字体问题（见
+% \href{https://github.com/sjtug/SJTUThesis/issues/1130}{SJTUThesis Issue 1130}），
+% 在浮动体中将 \cs{SJTU@style@equation@font} 置空。
+%    \begin{macrocode}
+    \let \SJTU@style@equation@font \@empty
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.1}{2023/11/29}{更新题注格式。}
+% \begin{macro}{style/caption-font,style/subcaption-font}
+% 题注格式。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / style }
+  {
+%    \end{macrocode}
+%
+% \pkg{bicaption} 中双语标题之间的间距受 \pkg{caption} 字体定义 \opt{normalsize}
+% 的影响，这里我们直接重定义 \opt{normalsize}。
+%    \begin{macrocode}
+    caption-font       .code:n =
+      { \DeclareCaptionFont { normalsize    } {#1} } ,
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<thesis>    caption-font    .initial:n = \zihao { 5 } \setbaselineskip { 14 bp }
+%<thesis>                                 \bfseries ,
+%<!thesis>    caption-font    .initial:n = \zihao { 5 } \bfseries ,
+    subcaption-font    .code:n =
+      { \DeclareCaptionFont { SJTU@sub@font } {#1} } ,
+%<thesis>    subcaption-font .initial:n = \zihao { 5 } \setbaselineskip { 14 bp }
+%<thesis>                                 \normalfont
+%<!thesis>    subcaption-font .initial:n = \zihao { 5 } \normalfont
+  }
+\captionsetup
+  {
+    bi-slc   = off ,
+    labelsep = quad ,
+%<thesis>    skip     = 6 bp
+  }
+\captionsetup [ sub ]
+  {
+    bi-slc   = on ,
+    font     = SJTU@sub@font ,
+    format   = hang
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% 双语题注。
+%    \begin{macrocode}
+\DeclareCaptionOption { bi-second-names } [ ]
+  {
+    \tl_set:Nn \figurename { \SJTU@figurename@bi@second }
+    \tl_set:Nn \tablename  { \SJTU@tablename@bi@second  }
+  }
+\captionsetup [ bi-second ] { bi-second-names }
+%    \end{macrocode}
+%
+% \changes{v2.1}{2023/12/02}{新增 \opt{style/num-sep}、
+% \opt{style/theorem-num-sep} 选项。}
+% \begin{macro}{style/num-sep,style/float-num-sep,
+% style/equation-num-sep,style/theorem-num-sep}
+% 图、表、公式以及定理编号中的分隔符。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / style }
+  {
+    num-sep            .code:n =
+      {
+        \tl_set:Nn \SJTU@style@fl@num@sep {#1}
+        \tl_set:Nn \SJTU@style@eq@num@sep {#1}
+        \tl_set:Nn \@thmcountersep        {#1}
+      } ,
+    num-sep         .initial:n = { . } ,
+    float-num-sep    .tl_set:N = \SJTU@style@fl@num@sep ,
+    equation-num-sep .tl_set:N = \SJTU@style@eq@num@sep ,
+    theorem-num-sep  .tl_set:N = \@thmcountersep
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\SJTU@counterwithin}
+%    \begin{macrocode}
+\NewDocumentCommand \SJTU@counterwithin
+  { s O{ \SJTU@style@fl@num@sep } O{ \arabic } m m }
+  {
+    \@ifbothcounters {#4} {#5}
+      {
+        \@addtoreset {#4} {#5}
+        \IfBooleanF {#1}
+          {
+            \exp_args:Nco \cs_gset:Npn { the #4 }
+              { \cs:w the #5 \cs_end: #2 #3 {#4} }
+          }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% 定义图、表、公式的编号格式。
+%    \begin{macrocode}
+%<*!article>
+\SJTU@counterwithin { figure } { chapter }
+\SJTU@counterwithin { table  } { chapter }
+\SJTU@counterwithin [ \SJTU@style@eq@num@sep ] { equation } { chapter }
+%</!article>
+%    \end{macrocode}
+%
+% \begin{variable}{\l_@@_counter_without_chapter_clist}
+% 大摘要中不需要随章编号的各计数器。
+%    \begin{macrocode}
+%<*thesis>
+\clist_set:Nn \l_@@_counter_without_chapter_clist
+  { section, figure, table, equation }
+%</thesis>
+%    \end{macrocode}
+% \end{variable}
+%
+% \subsubsection{脚注}
+%
+% \begin{macro}[int]{\@@_circled_number:N}
+% 通过 Unicode 码位调用带圈数字。
+%    \begin{macrocode}
+\msg_new:nnn { sjtutex } { circled-number-exceed }
+  { Circled~number~exceed~50! }
+\cs_new:Npn \@@_circled_number:N #1
+  {
+    \int_compare:nNnTF {#1} < { 21 }
+      { \@@_unicode_char:n { \int_eval:n { "2460 - 1 + #1 } } }
+      {
+        \int_compare:nNnTF {#1} < { 36 }
+          { \@@_unicode_char:n { \int_eval:n { "3251 - 21 + #1 } } }
+          {
+            \int_compare:nNnTF {#1} < { 51 }
+              { \@@_unicode_char:n { \int_eval:n { "32B1 - 36 + #1 } } }
+              {
+                \msg_warning:nn { sjtutex } { circled-number-exceed }
+                \int_to_arabic:n {#1}
+              }
+          }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{style/fnmark-font}
+% 脚注编号字体。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / style }
+  {
+    fnmark-font           .choice: ,
+    fnmark-font / haranoaji .code:n =
+      {
+        \@@_if_engine_opentype:TF
+          {
+            \tl_set:Nn \l_@@_style_fnmark_font_tl
+              {
+                \CJKfontspec { HaranoAjiMincho }
+                  [
+                    Extension   = .otf ,
+                    UprightFont = *-Regular ,
+                    BoldFont    = *-Bold
+                  ]
+              }
+          }
+          { \tl_set_eq:NN \l_@@_style_fnmark_font_tl \c_empty_tl }
+      } ,
+    fnmark-font / unknown .tl_set:N = \l_@@_style_fnmark_font_tl ,
+    fnmark-font          .initial:V = \c_empty_tl
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{style/fnmark-style}
+% 脚注编号样式。
+% 重定义内部脚注文字命令，使用带圈数字编号时，脚注不使用上标。
+% 见 \url{https://www.zhihu.com/question/53030087}。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / style }
+  {
+    fnmark-style           .choice: ,
+    fnmark-style / plain   .code:n =
+      {
+        \cs_set:Npn \SJTU@makefnmark
+          { \hbox:n { \@textsuperscript { \normalfont \@thefnmark } } }
+        \tl_set:Nn \thefootnote
+          { \arabic { footnote } }
+        \tl_set:Nn \thempfootnote
+          { { \itshape \alph { mpfootnote } } }
+      } ,
+    fnmark-style / circled .code:n =
+      {
+        \cs_set:Npn \SJTU@makefnmark
+          { \hbox:n { \@thefnmark } }
+        \tl_set:Nn \thefootnote
+          { { \l_@@_style_fnmark_font_tl \@@_circled_number:N \c@footnote } }
+        \tl_set:Nn \thempfootnote
+          { { \l_@@_style_fnmark_font_tl \@@_circled_number:N \c@mpfootnote } }
+      }
+  }
+%</class>
+%    \end{macrocode}
+% \end{macro}
+%
+%    \begin{macrocode}
+%<*scheme>
+\keys_set:nn { sjtu / style }
+%<zh|ja>  { fnmark-style = circled }
+%<en|de>  { fnmark-style = plain   }
+%</scheme>
+%    \end{macrocode}
+%
+% 在导言末尾修改 \tn{@makefntext}，支持使用 \pkg{footmisc} 修改脚注格式。
+%    \begin{macrocode}
+%<*class>
+\ctex_at_end_preamble:n
+  {
+    \cs_set_eq:NN \SJTU@orig@makefntext \@makefntext
+    \cs_set:Npn \@makefntext #1
+      {
+        \group_begin:
+          \cs_set_eq:NN \@makefnmark \SJTU@makefnmark
+          \SJTU@orig@makefntext {#1}
+        \group_end:
+      }
+  }
+%    \end{macrocode}
+%
+% \subsection{多语言支持}
+%
+% \begin{variable}{\l_@@_lang_tl}
+%    \begin{macrocode}
+\tl_set_eq:NN \l_@@_lang_tl \g_@@_lang_tl
+%    \end{macrocode}
+% \end{variable}
+%
+%    \begin{macrocode}
+\msg_new:nnn { sjtutex } { lang-validation }
+  { Invalid~language~argument~'#1'! }
+\keys_define:nn { sjtu / private }
+  {
+    lang .choice: ,
+    lang .value_required:n = true ,
+    lang .groups:n = { lang } ,
+    lang / unknown .code:n =
+      { \msg_warning:nnn { sjtutex } { lang-validation } {#1} }
+  }
+%    \end{macrocode}
+%
+% \begin{macro}[int]{\@@_select_language:n}
+% 选择局部语言。
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_select_language:n
+  { \keys_set_groups:nnn { sjtu / private } { lang } }
+%    \end{macrocode}
+% \end{macro}
+%
+% 载入语言配置文件。
+%    \begin{macrocode}
+%<thesis>\clist_map_inline:Nn \g_@@_lang_clist
+%<thesis>  { \file_input:n { sjtu-lang- #1 .def } }
+%<!thesis>\file_input:n { sjtu-lang- \g_@@_lang_tl .def }
+\file_input:n { sjtu-scheme- \g_@@_lang_tl .def }
+%</class>
+%    \end{macrocode}
+%
+% \begin{macro}[int]{\@@_set_cjk_default_zh:,\@@_set_cjk_default_ja:}
+% 设置 CJK 默认字体族的辅助命令。
+%    \begin{macrocode}
+%<*lang>
+%<*zh>
+\cs_new_protected:Nn \@@_set_cjk_default_zh:
+  {
+    \tl_set:Nn \CJKrmdefault { zhsong }
+    \tl_set:Nn \CJKsfdefault { zhhei  }
+    \tl_set:Nn \CJKttdefault { zhfs   }
+  }
+%</zh>
+%<*ja>
+\cs_new_protected:Nn \@@_set_cjk_default_ja:
+  {
+    \tl_set:Nn \CJKrmdefault { jamin  }
+    \tl_set:Nn \CJKsfdefault { jagoth }
+    \tl_set:Nn \CJKttdefault { jagoth }
+  }
+%</ja>
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.2.1}{2025/03/27}{新增语言设置钩子。}
+% 语言设置钩子。
+%    \begin{macrocode}
+%<zh>\NewHook { sjtutex / lang / zh }
+%<en>\NewHook { sjtutex / lang / en }
+%<de>\NewHook { sjtutex / lang / de }
+%<ja>\NewHook { sjtutex / lang / ja }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\keys_define:nn { sjtu / private }
+  {
+%<zh>    lang / zh .code:n =
+%<en>    lang / en .code:n =
+%<de>    lang / de .code:n =
+%<ja>    lang / ja .code:n =
+      {
+        \tl_set_eq:NN \l_@@_lang_tl \l_keys_value_tl
+%<zh>        \@@_set_cjk_default_zh:
+%<ja>        \@@_set_cjk_default_ja:
+        \normalfont
+%<zh>        \UseHook { sjtutex / lang / zh }
+%<en>        \UseHook { sjtutex / lang / en }
+%<de>        \UseHook { sjtutex / lang / de }
+%<ja>        \UseHook { sjtutex / lang / ja }
+      } ,
+%<zh>    zh .meta:n = { lang = zh } ,
+%<zh>    zh .groups:n = { lang }
+%<en>    en .meta:n = { lang = en } ,
+%<en>    en .groups:n = { lang }
+%<de>    de .meta:n = { lang = de } ,
+%<de>    de .groups:n = { lang }
+%<ja>    ja .meta:n = { lang = ja } ,
+%<ja>    ja .groups:n = { lang }
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<zh>\AddToHook { sjtutex / lang / zh }
+%<en>\AddToHook { sjtutex / lang / en }
+%<de>\AddToHook { sjtutex / lang / de }
+%<ja>\AddToHook { sjtutex / lang / ja }
+  {
+%<zh>    \tl_set:Nn \languagename { chinese }
+%<en>    \tl_set:Nn \languagename { english }
+%<de>    \tl_set:Nn \languagename { ngerman }
+%<ja>    \tl_set:Nn \languagename { japanese }
+%<zh>    \ctex_set:n { autoindent = true }
+%<en|de>    \ctex_set:n { autoindent = 1.5 em }
+%<ja>    \ctex_set:n { autoindent = 1 }
+  }
+%    \end{macrocode}
+%
+% \begin{macro}[int]{\@@_title_case_aux_zh:n,\@@_title_case_aux_en:n,
+% \@@_title_case_aux_de:n,\@@_title_case_aux_ja:n}
+% 设置标题大小写转换的辅助命令。
+%    \begin{macrocode}
+%<zh>\cs_set_eq:NN \@@_title_case_aux_zh:n \use:n
+%<en>\cs_set_eq:NN \@@_title_case_aux_en:n \MakeUppercase
+%<de>\cs_set_eq:NN \@@_title_case_aux_de:n \MakeUppercase
+%<ja>\cs_set_eq:NN \@@_title_case_aux_ja:n \use:n
+%    \end{macrocode}
+% \end{macro}
+%
+% 将形如 |yyyy-mm-dd| 或 |yyyy-mm| 的 ISO 日期格式字符串转化为日期表示。
+%
+% 日期常量。
+%    \begin{macrocode}
+%<*zh|ja>
+\clist_map_inline:nn
+  {
+    { year  } { 年 } ,
+    { month } { 月 } ,
+    { day   } { 日 }
+  }
+%<zh>  { \@@_name_const:nnn { zh } #1 }
+%<ja>  { \@@_name_const:nnn { ja } #1 }
+%</zh|ja>
+%<*en>
+\clist_const:Nn \c_@@_name_month_en_clist
+  {
+    January, February, March, April, May, June,
+    July, August, September, October, November, December
+  }
+%</en>
+%<*de>
+\clist_const:Nn \c_@@_name_month_de_clist
+  {
+    Januar, Februar, März, April, Mai, Juni,
+    Juli, August, September, Oktober, November, Dezember
+  }
+%</de>
+%    \end{macrocode}
+%
+% \begin{macro}[int]{\@@_date_aux_zh:nnn,\@@_date_aux_zh:w,
+% \@@_date_aux_short_zh:nn,\@@_date_aux_short_zh:w}
+% 中文日期。
+%    \begin{macrocode}
+%<*zh>
+\cs_new:Npn \@@_date_aux_zh:nnn #1#2#3
+  {
+    \int_to_arabic:n {#1} ~ { \exp_not:V \c_@@_name_year_zh_tl  } ~
+    \int_to_arabic:n {#2} ~ { \exp_not:V \c_@@_name_month_zh_tl } ~
+    \int_to_arabic:n {#3} ~ { \exp_not:V \c_@@_name_day_zh_tl   }
+  }
+\cs_new:Npn \@@_date_aux_zh:w #1-#2-#3 \q_stop
+  { \@@_date_aux_zh:nnn {#1} {#2} {#3} }
+\cs_new:Npn \@@_date_aux_short_zh:nn #1#2
+  {
+    \int_to_arabic:n {#1} ~ { \exp_not:V \c_@@_name_year_zh_tl  } ~
+    \int_to_arabic:n {#2} ~ { \exp_not:V \c_@@_name_month_zh_tl }
+  }
+\cs_new:Npn \@@_date_aux_short_zh:w #1-#2 \q_stop
+  { \@@_date_aux_short_zh:nn {#1} {#2} }
+%</zh>
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_ordinal_en:n}
+% 上标形式的序数词。
+%    \begin{macrocode}
+%<*en>
+\cs_new:Npn \@@_ordinal_en:n #1
+  {
+    \int_to_arabic:n {#1}
+    \exp_not:N \textsuperscript
+      {
+        \int_case:nnF { \int_mod:nn {#1} { 100 } }
+          {
+            { 11 } { th }
+            { 12 } { th }
+            { 13 } { th }
+          }
+          {
+            \int_case:nnF { \int_mod:nn {#1} { 10 } }
+              {
+                { 1 } { st }
+                { 2 } { nd }
+                { 3 } { rd }
+              }
+              { th }
+          }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_date_aux_en:nnn,\@@_date_aux_en:w,
+% \@@_date_aux_short_en:nn,\@@_date_aux_short_en:w}
+% 英文日期。
+%    \begin{macrocode}
+\cs_new:Npn \@@_date_aux_en:nnn #1#2#3
+  {
+    \clist_item:Nn \c_@@_name_month_en_clist {#2} ~
+    \@@_ordinal_en:n {#3} ,~
+    \int_to_arabic:n {#1}
+  }
+\cs_new:Npn \@@_date_aux_en:w #1-#2-#3 \q_stop
+  { \@@_date_aux_en:nnn {#1} {#2} {#3} }
+\cs_new:Npn \@@_date_aux_short_en:nn #1#2
+  {
+    \clist_item:Nn \c_@@_name_month_en_clist {#2} ,~
+    \int_to_arabic:n {#1}
+  }
+\cs_new:Npn \@@_date_aux_short_en:w #1-#2 \q_stop
+  { \@@_date_aux_short_en:nn {#1} {#2} }
+%</en>
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_date_aux_de:nnn,\@@_date_aux_de:w,
+% \@@_date_aux_short_de:nn,\@@_date_aux_short_de:w}
+% 德文日期。
+%    \begin{macrocode}
+%<*de>
+\cs_new:Npn \@@_date_aux_de:nnn #1#2#3
+  {
+    \clist_item:Nn \c_@@_name_month_de_clist {#2} ~
+    {#3} ,~ \int_to_arabic:n {#1}
+  }
+\cs_new:Npn \@@_date_aux_de:w #1-#2-#3 \q_stop
+  { \@@_date_aux_de:nnn {#1} {#2} {#3} }
+\cs_new:Npn \@@_date_aux_short_de:nn #1#2
+  {
+    \clist_item:Nn \c_@@_name_month_de_clist {#2} ,~
+    \int_to_arabic:n {#1}
+  }
+\cs_new:Npn \@@_date_aux_short_de:w #1-#2 \q_stop
+  { \@@_date_aux_short_de:nn {#1} {#2} }
+%</de>
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_date_aux_ja:nnn,\@@_date_aux_ja:w,
+% \@@_date_aux_short_ja:nn,\@@_date_aux_short_ja:w}
+% 日文日期。
+%    \begin{macrocode}
+%<*ja>
+\cs_new:Npn \@@_date_aux_ja:nnn #1#2#3
+  {
+    \int_to_arabic:n {#1} ~ { \exp_not:V \c_@@_name_year_ja_tl  } ~
+    \int_to_arabic:n {#2} ~ { \exp_not:V \c_@@_name_month_ja_tl } ~
+    \int_to_arabic:n {#3} ~ { \exp_not:V \c_@@_name_day_ja_tl   }
+  }
+\cs_new:Npn \@@_date_aux_ja:w #1-#2-#3 \q_stop
+  { \@@_date_aux_ja:nnn {#1} {#2} {#3} }
+\cs_new:Npn \@@_date_aux_short_ja:nn #1#2
+  {
+    \int_to_arabic:n {#1} ~ { \exp_not:V \c_@@_name_year_ja_tl  } ~
+    \int_to_arabic:n {#2} ~ { \exp_not:V \c_@@_name_month_ja_tl }
+  }
+\cs_new:Npn \@@_date_aux_short_ja:w #1-#2 \q_stop
+  { \@@_date_aux_short_ja:nn {#1} {#2} }
+%</ja>
+%</lang>
+%    \end{macrocode}
+% \end{macro}
+%
+% 初始化语言名称。
+%    \begin{macrocode}
+%<*scheme>
+%<zh>\tl_set:Nn \languagename { chinese  }
+%<en>\tl_set:Nn \languagename { english  }
+%<de>\tl_set:Nn \languagename { ngerman  }
+%<ja>\tl_set:Nn \languagename { japanese }
+%    \end{macrocode}
+%
+% 设置名称选项。默认值为英文，只需修改其他语种。
+%    \begin{macrocode}
+%<*!en>
+\keys_set_known:nn { sjtu / name }
+  {
+%<*zh>
+    contents      = { 目 \protect \quad 录   } ,
+    listfigure    = { 插 \protect \quad 图   } ,
+    listtable     = { 表 \protect \quad 格   } ,
+    figure        = { 图                     } ,
+    table         = { 表                     } ,
+    abstract      = { 摘 \protect \quad 要   } ,
+    index         = { 索 \protect \quad 引   } ,
+    appendix      = { 附录                   } ,
+    proof         = { 证明                   } ,
+    bib           = { 参考文献               } ,
+    figure*       = { Figure                 } ,
+    table*        = { Table                  } ,
+    algorithm     = { 算法                   } ,
+    listalgorithm = { 算 \protect \quad 法   } ,
+    abbr          = { 缩略语对照表           } ,
+    nom           = { 符号对照表             } ,
+    ack           = { 致 \protect \quad 谢   } ,
+    resume        = { 个人简历               } ,
+    digest        = { 大摘要                 } ,
+    achv          = { 学术论文和科研成果目录 }
+%</zh>
+%<*de>
+    contents      = { Inhaltsverzeichnis     } ,
+    listfigure    = { Abbildungsverzeichnis  } ,
+    listtable     = { Tabellenverzeichnis    } ,
+    figure        = { Abbildung              } ,
+    table         = { Tabelle                } ,
+    abstract      = { Zusammenfassung        } ,
+    index         = { Index                  } ,
+    appendix      = { Anhang                 } ,
+    proof         = { Beweis                 } ,
+    bib           = { Literaturverzeichnis   } ,
+    part          = { Teil                   } ,
+    chapter       = { Kapitel                } ,
+    figure*       = { Figure                 } ,
+    table*        = { Table                  } ,
+    algorithm     = { Algorithmus            } ,
+    listalgorithm = { Algorithmenverzeichnis } ,
+    abbr          = { Abkürzungsverzeichnis  } ,
+    nom           = { Symbolverzeichnis      } ,
+    ack           = { Danksagungen           } ,
+    resume        = { Lebenslauf             } ,
+    digest        = { Kurzfassung            } ,
+    achv          = { Forschungsleistungen   }
+%</de>
+%<*ja>
+    contents      = { 目 \protect \quad 次 } ,
+    listfigure    = { 図目次               } ,
+    listtable     = { 表目次               } ,
+    figure        = { 図                   } ,
+    table         = { 表                   } ,
+    abstract      = { 概 \protect \quad 要 } ,
+    index         = { 索 \protect \quad 引 } ,
+    appendix      = { 付録                 } ,
+    proof         = { 证明                 } ,
+    bib           = { 参考文献             } ,
+    figure*       = { Figure               } ,
+    table*        = { Table                } ,
+    algorithm     = { アルゴリズム         } ,
+    listalgorithm = { アルゴリズム目次     } ,
+    abbr          = { 略語表               } ,
+    nom           = { 記号表               } ,
+    ack           = { 謝 \protect \quad 辞 } ,
+    resume        = { 履歴書               } ,
+    digest        = { 要 \protect \quad 約 } ,
+    achv          = { 研究業績書           }
+%</ja>
+  }
+%</!en>
+%</scheme>
+%    \end{macrocode}
+%
+% 通用名称常量。
+%    \begin{macrocode}
+%<*lang>
+\clist_map_inline:nn
+  {
+%<zh>    { keywords } { 关键词          } ,
+%<en>    { keywords } { Key~words       } ,
+%<de>    { keywords } { Schlüsselwörter } ,
+%<ja>    { keywords } { キーワード      } ,
+%<zh|ja>    { info_sep } { ： \null        } ,
+%<en|de>    { info_sep } { \hbox { :~ }    } ,
+%<zh>    { item_sep } { ，              }
+%<en|de>    { item_sep } { ,~              }
+%<ja>    { item_sep } { \quad           }
+  }
+%<zh>  { \@@_name_const:nnn { zh } #1 }
+%<en>  { \@@_name_const:nnn { en } #1 }
+%<de>  { \@@_name_const:nnn { de } #1 }
+%<ja>  { \@@_name_const:nnn { ja } #1 }
+%    \end{macrocode}
+%
+% 学位论文名称常量。
+%    \begin{macrocode}
+\IfClassLoadedF { sjtuthesis } { \endinput }
+%<zh>\@@_symbol_const:nn { white_square } { "25A1 }
+%<zh>\@@_name_const_from_clist:nnnn { zh }
+%<en>\@@_name_const_from_clist:nnnn { en }
+%<de>\@@_name_const_from_clist:nnnn { de }
+%<ja>\@@_name_const_from_clist:nnnn { ja }
+  { degree_level } { \g_@@_thesis_type_int }
+%<zh>  { 学士, 硕士, 博士 }
+%<en>  { Bachelor, Master, Doctor }
+%<de>  { Bachelor, Master, Doktor }
+%<ja>  { 学士, 修士, 博士 }
+\clist_map_inline:nn
+  {
+%<*zh>
+    { univ             } { 上海交通大学           } ,
+    { address          } { 中国・上海             } ,
+    { thesis           } { 学位论文               } ,
+    { title_page       } { 题名页                 } ,
+    { declaration      } { 原创性声明及使用授权书 } ,
+    { orig_decl        } { 原创性声明             } ,
+    { auth_decl        } { 使用授权书             } ,
+    { decl_author      } { 学位论文作者           } ,
+    { decl_supervisor  } { 指导教师               } ,
+    { abstract         } { 摘 \protect \quad 要   }
+%</zh>
+%<*en>
+    { univ             } { Shanghai~ Jiao~ Tong~ University } ,
+    { address          } { Shanghai,~ P.R.~ China           } ,
+    { title_page       } { Title~ Page                      } ,
+    { declaration      } { Statutory~ Declaration           } ,
+    { abstract         } { Abstract                         }
+%</en>
+%<*de>
+    { univ             } { Shanghai~ Jiao~ Tong~ Universität } ,
+    { address          } { Shanghai,~ VR~ China              } ,
+    { title_page       } { Titelblatt                        } ,
+    { declaration      } { Eidesstattliche~ Erklärung        } ,
+    { abstract         } { Abstrakt                          }
+%</de>
+%<*ja>
+    { univ             } { 上海交通大学         } ,
+    { address          } { 中国・上海           } ,
+    { thesis           } { 学位請求論文         } ,
+    { title_page       } { 標題紙               } ,
+    { declaration      } { 誓約書・公表許諾書   } ,
+    { abstract         } { 要 \protect \quad 旨 }
+%</ja>
+  }
+%<zh>  { \@@_name_const:nnn { zh } #1 }
+%<en>  { \@@_name_const:nnn { en } #1 }
+%<de>  { \@@_name_const:nnn { de } #1 }
+%<ja>  { \@@_name_const:nnn { ja } #1 }
+%    \end{macrocode}
+%
+% \changes{v2.0.3}{2023/04/08}{更新学位论文初始英文主题。}
+% 初始化主题。
+%    \begin{macrocode}
+%<*zh>
+\tl_const:Nn \c_@@_name_subject_zh_tl
+  {
+    \c_@@_name_univ_zh_tl
+    \c_@@_name_degree_level_zh_tl
+    \c_@@_name_thesis_zh_tl
+  }
+%</zh>
+%<*en>
+\tl_const:Nn \c_@@_name_subject_en_tl
+  {
+    A~ Dissertation~ Submitted~ to \\
+    { \c_@@_name_univ_en_tl }~ for~
+    the~ Degree~ of~ { \c_@@_name_degree_level_en_tl }
+  }
+%</en>
+%<*de>
+\tl_const:Nn \c_@@_name_subject_de_tl
+  {
+    Eine~ Dissertation~ Eingereicht~ an \\
+    der~ { \c_@@_name_univ_de_tl }~ für~
+    { \c_@@_name_degree_level_de_tl } titel
+  }
+%</de>
+%<*ja>
+\tl_const:Nn \c_@@_name_subject_ja_tl
+  {
+    \c_@@_name_univ_ja_tl
+    \c_@@_name_degree_level_ja_tl
+    \c_@@_name_thesis_ja_tl
+  }
+%</ja>
+%</lang>
+%    \end{macrocode}
+%
+% \subsection{信息录入}
+%
+% \changes{v2.0}{2022/12/17}{添加 \opt{display-date} 键。}
+% \changes{v2.0}{2022/12/23}{使用 \opt{assoc-supervisor} 键表示副导师，
+%                            使用 \opt{co-supervisor} 键表示联合导师。}
+% \changes{v2.0}{2022/12/23}{添加 \opt{subject} 键。}
+% \changes{v2.0}{2023/03/17}{使用语言代码前缀区别不同语种的 \opt{sjtu/info} 键。}
+% \changes{v2.3}{2025/12/12}{新增 \tn{SetInfoEntry} 命令设置 \opt{sjtu/info} 键，
+%                            移除 \texttt{info/\meta{lang}/custom} 键。}
+% \begin{macro}{\SetInfoEntry}
+% 设置 \cls{sjtuthesis} 普通 |sjtu/info| 键值类的用户接口。
+%    \begin{macrocode}
+%<*thesis>
+%<*class>
+\msg_new:nnn { sjtutex } { key-already-defined }
+  { Key~'#1'~is~already~defined~and~redefinition~is~being~ignored. }
+\msg_new:nnn { sjtutex } { key-invalid }
+  { Key~'#1'~is~invalid~and~ignored. }
+\cs_new_protected:Npn \@@_keys_if_valid:nTF #1
+  { \regex_match:nnTF { \A [a-z] [a-z0-9\-]* \*? \Z } {#1} }
+\cs_new_protected:Npn \@@_new_tl_info_entry_aux:nn #1#2
+  {
+    \tl_set:Nn \l_@@_tmp_tl {#2}
+    \tl_remove_all:Nn \l_@@_tmp_tl { * }
+    \keys_if_exist:neTF { sjtu / info / #1 } \l_@@_tmp_tl
+      { \msg_warning:nnn { sjtutex } { key-already-defined } {#2} }
+      {
+        \tl_new:c { l_@@_info_ \l_@@_tmp_tl _ #1 _tl }
+        \keys_define:ne { sjtu / info / #1 }
+          {
+            \l_@@_tmp_tl .code:n =
+              {
+                \exp_not:N \tl_set:cn
+                  { l_@@_info_ \l_@@_tmp_tl _ #1 _tl } {##1}
+                \exp_not:N \@@_setup:n
+                  { info / #1 / @show+ = \l_@@_tmp_tl }
+              }
+          }
+        \regex_match:nnT { \* \Z } {#2}
+          {
+            \keys_define:ne { sjtu / info / #1  }
+              {
+                \l_@@_tmp_tl .groups:n = { sensitive }
+              }
+          }
+      }
+  }
+\cs_new_protected:Npn \@@_new_tl_info_entry:nn #1#2
+  {
+    \@@_keys_if_valid:nTF {#2}
+      { \@@_new_tl_info_entry_aux:nn {#1} {#2} }
+      { \msg_warning:nnn { sjtutex } { key-invalid } {#2} }
+  }
+\cs_new_protected:Npn \@@_new_tl_info_entry:nnn #1#2#3
+  {
+    \@@_keys_if_valid:nTF {#2}
+      {
+        \@@_new_tl_info_entry_aux:nn {#1} {#2}
+        \tl_set:cn { l_@@_name_ \l_@@_tmp_tl _ #1 _tl } {#3}
+      }
+      { \msg_warning:nnn { sjtutex } { key-invalid } {#2} }
+  }
+\NewDocumentCommand \SetInfoEntry { m }
+  {
+    \keyval_parse:nnn
+      { \@@_new_tl_info_entry:nn  {#1} }
+      { \@@_new_tl_info_entry:nnn {#1} }
+  }
+%</class>
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\@@_info_keys_define:n}
+% 定义 \cls{sjtuthesis} 不同语种 |sjtu/info| 键值类的辅助函数。
+%    \begin{macrocode}
+%<*preset>
+\cs_new_protected:Npn \@@_info_keys_define:n #1
+  {
+    \clist_map_inline:nn
+      { title, display_title, subject }
+      { \tl_new:c { l_@@_info_ ##1 _ #1 _tl } }
+    \clist_map_inline:nn
+      { keywords, fund }
+      { \clist_new:c { l_@@_info_ ##1 _ #1 _clist } }
+    \bool_if:NTF \g_@@_review_bool
+      {
+        \seq_set_from_clist:cn { l_@@_info_show_ #1 _seq }
+          { author, id, supervisor, department, major, degree }
+      }
+      { \seq_new:c { l_@@_info_show_ #1 _seq } }
+    \keys_define:nn { sjtu }
+      { info / #1 .meta:nn = { sjtu / info / #1 } {##1} }
+    \keys_define:nn { sjtu / info }
+      {        #1 .meta:nn = { sjtu / info / #1 } {##1} }
+    \keys_define:nn { sjtu / info / #1 }
+      {
+        display-title       .code:n =
+          {
+            \tl_set:co { l_@@_info_display_title_ #1 _tl }
+              { \cs:w @@_title_case_aux_ #1 :n \cs_end: {##1} }
+          } ,
+        title               .code:n =
+          {
+            \tl_set:cn { l_@@_info_title_ #1 _tl } {##1}
+            \tl_if_empty:cT { l_@@_info_display_title_ #1 _tl }
+              { \keys_set:nn { sjtu / info / #1 } { display-title = {##1} } }
+          } ,
+        subject           .tl_set:c = { l_@@_info_subject_ #1 _tl } ,
+        subject          .initial:o = { \cs:w c_@@_name_subject_ #1 _tl \cs_end: } ,
+        keywords       .clist_set:c = { l_@@_info_keywords_ #1 _clist } ,
+        fund           .clist_set:c = { l_@@_info_fund_ #1 _clist } ,
+        fund              .groups:n = { sensitive } ,
+        date               .meta:nn = { sjtu / info } { date = {##1} } ,
+        display-date      .tl_set:c = { l_@@_info_date_ #1 _tl } ,
+        @show+              .code:n =
+          {
+            \seq_if_in:cnF { l_@@_info_show_ #1 _seq } {##1}
+              { \seq_put_right:cn { l_@@_info_show_ #1 _seq } {##1} }
+          } ,
+        @show+            .groups:n = { sensitive }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% 定义标题页信息栏条目。
+%    \begin{macrocode}
+\clist_const:Nn \c_@@_info_entries_zh_clist
+  {
+    author*           = { 姓名              } ,
+    id*               = { 学号              } ,
+    supervisor*       = { 导师              } ,
+    assoc-supervisor* = { 副导师            } ,
+    co-supervisor*    = { 联合导师          } ,
+    department        = { 院系              } ,
+    major             = { 学科 \, / \, 专业 } ,
+    degree            = { 申请学位          }
+  }
+\clist_const:Nn \c_@@_info_entries_en_clist
+  {
+    author*           = { Author             } ,
+    supervisor*       = { Supervisor         } ,
+    assoc-supervisor* = { Assoc.\ Supervisor } ,
+    co-supervisor*    = { Co-supervisor      } ,
+    department , major , degree
+  }
+\clist_const:Nn \c_@@_info_entries_de_clist
+  {
+    author*           = { Autor/in         } ,
+    supervisor*       = { Betreuer/in      } ,
+    assoc-supervisor* = { Zweitbetreuer/in } ,
+    co-supervisor*    = { Co-Betreuer/in   } ,
+    department , major , degree
+  }
+\clist_const:Nn \c_@@_info_entries_ja_clist
+  {
+    author*           = { 氏名       } ,
+    supervisor*       = { 指導教員   } ,
+    assoc-supervisor* = { 副指導教員 } ,
+    co-supervisor*    = { 共同指導   } ,
+    department , major , degree
+  }
+\clist_map_inline:Nn \g_@@_lang_clist
+  {
+    \@@_info_keys_define:n {#1}
+    \exp_args:Nnv \SetInfoEntry { #1 }
+      { c_@@_info_entries_ #1 _clist }
+  }
+%    \end{macrocode}
+%
+% \begin{macro}{info/id}
+% 单独处理学号。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / info }
+  {
+    id   .meta:n = { zh / id = {#1} } ,
+    id .groups:n = { sensitive }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% 设置页眉主题。
+%    \begin{macrocode}
+\tl_set:Nn \l_@@_header_tl { \songti \l_@@_info_subject_zh_tl }
+%    \end{macrocode}
+%
+% 设置 \tn{@title} 和 \tn{@author} 以供标题页使用。
+%    \begin{macrocode}
+\tl_set:Nn \@title  { \l_@@_info_title_zh_tl }
+\tl_set:Nn \@author { \l_@@_info_author_zh_tl }
+%</preset>
+%</thesis>
+%    \end{macrocode}
+%
+% 定义 \cls{sjtureport} 和 \cls{sjtuarticle} 中的信息键值类。
+% \begin{variable}{\l_@@_info_subject_tl,\l_@@_info_keywords_clist}
+%    \begin{macrocode}
+%<*preset&!thesis>
+\tl_new:N \l_@@_info_subject_tl
+\clist_new:N \l_@@_info_keywords_clist
+\keys_define:nn { sjtu / info }
+  {
+    title             .tl_set:N = \@title ,
+    author            .tl_set:N = \@author ,
+    display-date      .tl_set:N = \@date ,
+    subject           .tl_set:N = \l_@@_info_subject_tl ,
+    keywords       .clist_set:N = \l_@@_info_keywords_clist ,
+  }
+%    \end{macrocode}
+% \end{variable}
+%
+% \changes{v2.3.1}{2026/02/26}{将非标准接口移入预设文件。}
+% \begin{macro}{\subject,\keywords}
+% 通用模板新接口。
+%    \begin{macrocode}
+\NewDocumentCommand \subject  { m }
+  { \keys_set:nn { sjtu / info } { subject  = {#1} } }
+\NewDocumentCommand \keywords { m }
+  { \keys_set:nn { sjtu / info } { keywords = {#1} } }
+%</preset&!thesis>
+%    \end{macrocode}
+% \end{macro}
+%
+%    \begin{macrocode}
+%<*class>
+\cs_new_protected:Npn \@@_date_set:Nnn #1#2#3
+  {
+    \regex_match:nnTF { \A \d+ \- \d+ \- \d+ \Z } {#3}
+      {
+        \tl_set:Ne #1
+          { \exp_last_unbraced:ce { @@_date_aux_ #2 :w } #3 \q_stop }
+      }
+      {
+        \regex_match:nnT { \A \d+ \- \d+ \Z } {#3}
+          {
+            \tl_set:Ne #1
+              { \exp_last_unbraced:ce { @@_date_aux_short_ #2 :w } #3 \q_stop }
+          }
+      }
+  }
+\cs_generate_variant:Nn \@@_date_set:Nnn { cnn, NVn, NVV }
+\tl_const:Ne \c_@@_date_tl
+  {
+    \int_to_arabic:n { \c_sys_year_int  } -
+    \int_to_arabic:n { \c_sys_month_int } -
+    \int_to_arabic:n { \c_sys_day_int   }
+  }
+\@@_date_set:NVV \today \g_@@_lang_tl \c_@@_date_tl
+%</class>
+%    \end{macrocode}
+%
+% \begin{macro}{info/date}
+% 日期。
+%    \begin{macrocode}
+%<*preset>
+\keys_define:nn { sjtu / info }
+  {
+    date .code:n =
+%<!thesis>      { \@@_date_set:NVn \@date \g_@@_lang_tl {#1} }
+%<*thesis>
+      {
+        \clist_map_inline:Nn \g_@@_lang_clist
+          { \@@_date_set:cnn { l_@@_info_date_ ##1 _tl } {##1} {#1} }
+
+      } ,
+    date .initial:V = \c_@@_date_tl
+%</thesis>
+  }
+%</preset>
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsection{特殊页面}
+%
+% \subsubsection{页面模板}
+%
+% 使用 \pkg{lttemplates} 构建页面模板，用于绘制标题页与版权页。
+%
+% 页面元素模板。
+%    \begin{macrocode}
+%<*thesis>
+%<*class>
+\NewTemplateType { sjtu / element } { 0 }
+\DeclareTemplateInterface { sjtu / element } { plain } { 0 }
+  {
+    format      : tokenlist = \c_empty_tl ,
+    content     : tokenlist = \c_empty_tl ,
+    bottom-skip : skip      = \c_zero_skip ,
+    align       : choice { left, right, center, normal } = center
+  }
+\DeclareTemplateCode { sjtu / element } { plain } { 0 }
+  {
+    format      = \l_@@_element_format_tl ,
+    content     = \l_@@_element_content_tl ,
+    bottom-skip = \l_@@_element_bottom_skip ,
+    align       =
+      {
+        left    =
+          \cs_set_eq:NN \l_@@_element_align: \raggedright ,
+        right   =
+          \cs_set_eq:NN \l_@@_element_align: \raggedleft ,
+        center  =
+          \cs_set_eq:NN \l_@@_element_align: \centering ,
+        normal  =
+          \cs_set_eq:NN \l_@@_element_align: \prg_do_nothing:
+      }
+  }
+  {
+    \AssignTemplateKeys
+    \group_begin:
+      \l_@@_element_align:
+      \l_@@_element_format_tl
+      \l_@@_element_content_tl
+      \par
+    \group_end:
+    \skip_vertical:N \l_@@_element_bottom_skip
+    \skip_vertical:N \c_zero_skip
+  }
+%    \end{macrocode}
+%
+% 页面模板。
+%    \begin{macrocode}
+\NewTemplateType { sjtu / page } { 1 }
+\DeclareTemplateInterface { sjtu / page } { title } { 1 }
+  {
+    bookmark : tokenlist ,
+    style    : tokenlist = empty ,
+    format   : tokenlist = \linespread { } \selectfont ,
+    precode  : tokenlist ,
+    prefix   : tokenlist ,
+    elements : commalist
+  }
+\DeclareTemplateCode { sjtu / page } { title } { 1 }
+  {
+    bookmark = \l_@@_page_bookmark_tl ,
+    style    = \l_@@_page_style_tl ,
+    format   = \l_@@_page_format_tl ,
+    precode  = \l_@@_page_precode_tl ,
+    prefix   = \l_@@_page_prefix_tl ,
+    elements = \l_@@_page_elements_clist
+  }
+  {
+    \tl_set_eq:NN \l_@@_page_bookmark_tl \c_novalue_tl
+    \AssignTemplateKeys
+    \legacy_if:nTF { @openright }
+      { \cleardoublepage } { \clearpage }
+    \l_@@_page_precode_tl
+    \exp_args:No \thispagestyle { \l_@@_page_style_tl }
+    \group_begin:
+      \@@_select_language:n {#1}
+      \exp_args:No \tl_if_novalue:nF { \l_@@_page_bookmark_tl }
+        { \@@_pdf_bookmark:nn { 0 } { \l_@@_page_bookmark_tl } }
+      \l_@@_page_format_tl
+      \clist_map_inline:Nn \l_@@_page_elements_clist
+        { \UseInstance { sjtu / element } { \l_@@_page_prefix_tl / ##1 } }
+      \clearpage
+    \group_end:
+    \restoregeometry
+  }
+%    \end{macrocode}
+%
+% 声明模板实例的辅助函数。
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_declare_element_instance:nnn #1#2#3
+  { \DeclareInstance { sjtu / element } {#1/#2} { plain } {#3} }
+\cs_new_protected:Npn \@@_declare_page_instance:nnn #1#2
+  { \DeclareInstance { sjtu / page } {#1} { title } {#2} }
+%    \end{macrocode}
+%
+% \subsubsection{标题页}
+%
+% \changes{v2.0}{2022/12/13}{启用新版封面。}
+% \changes{v2.0.2}{2023/04/01}{标题页日期底部增加空白。}
+% \changes{v2.1}{2023/11/30}{标题页信息栏改用表格实现。}
+% \changes{v2.1.4}{2024/08/14}{标题页信息栏允许手动换行。}
+% \changes{v2.1.5}{2024/11/06}{修复了 \pkg{array} 更新造成的标题页生成失败的问题。}
+%
+% \begin{macro}[int]{\@@_info_table_row:nn,\@@_info_table_row:vv,
+% \@@_title_page_info_table:n}
+% 信息输出。
+%    \begin{macrocode}
+\cs_new:Npn \@@_info_table_row:nn #1#2
+  {
+    \exp_not:n {#1}
+    &
+    \exp_not:N \hbox:n
+      {
+        \exp_not:N \tabular [ t ] { @{} l @{} }
+          \exp_not:n {#2}
+        \exp_not:N \endtabular
+      }
+  }
+\cs_generate_variant:Nn \@@_info_table_row:nn { vv }
+\cs_new_protected:Npn \@@_title_page_info_table:n #1
+  {
+    \group_begin:
+      \clist_clear:N \l_@@_tmp_clist
+      \seq_map_inline:cn { l_@@_info_show_ \l_@@_lang_tl _seq }
+        {
+          \bool_lazy_all:nT
+            {
+              { \tl_if_exist_p:c { l_@@_name_ ##1 _ \l_@@_lang_tl _tl } }
+              { \tl_if_exist_p:c { l_@@_info_ ##1 _ \l_@@_lang_tl _tl } }
+            }
+            {
+              \clist_put_right:Ne \l_@@_tmp_clist
+                {
+                  \@@_info_table_row:vv
+                    { l_@@_name_ ##1 _ \l_@@_lang_tl _tl }
+                    { l_@@_info_ ##1 _ \l_@@_lang_tl _tl }
+                }
+            }
+        }
+      \tl_set:Nn \arraystretch { 1 }
+      \int_set_eq:NN \hbadness \c_max_int
+      \tabular {#1}
+        \clist_use:Nn \l_@@_tmp_clist { \\ }
+      \endtabular
+    \group_end:
+  }
+%</class>
+%    \end{macrocode}
+% \end{macro}
+%
+% 构建标题页。
+%
+% 标题页信息栏表格列参数。
+% \begin{variable}{\SJTU@CT@W@width}
+%    \begin{macrocode}
+%<*preset>
+\tl_set:Nn \SJTU@CT@W@width { 5 em }
+%    \end{macrocode}
+% \end{variable}
+%
+% \begin{macro}[int]{\SJTU@CT@W,\SJTU@CT@R,\SJTU@CT@L}
+%    \begin{macrocode}
+\newcolumntype { \SJTU@CT@W } [ 1 ]
+  {
+    w {#1} { \SJTU@CT@W@width }
+    @{ \tl_use:c { c_@@_name_info_sep_ \l_@@_lang_tl _tl } }
+  }
+\newcolumntype { \SJTU@CT@R }
+  { r @{ \tl_use:c { c_@@_name_info_sep_ \l_@@_lang_tl _tl } } }
+\newcolumntype { \SJTU@CT@L }
+  { >{ \linespread { 0.75 } \normalfont } l }
+%    \end{macrocode}
+% \end{macro}
+%
+% 标题页页面样式，页脚添加资助基金信息。
+%    \begin{macrocode}
+\cs_new:Npn \ps@SJTU@fund
+  {
+    \ps@empty
+    \tl_set:Nn \@oddfoot
+      {
+        \hfil
+        \minipage [ t ] { \textwidth }
+          \centering \zihao { - 5 }
+          \clist_use:cn { l_@@_info_fund_ \l_@@_lang_tl _clist } { \par }
+        \endminipage
+        \hfil
+      }
+    \tl_set_eq:NN \@evenfoot \@oddfoot
+  }
+%    \end{macrocode}
+%
+% 样式 A 标题页元素实例。
+%    \begin{macrocode}
+\clist_map_inline:nn
+  {
+    { logo    }
+      {
+        content     =
+          {
+            \includegraphics [ width = 3 cm ]
+              { sjtu-vi-badge-reg-red.pdf }
+          }
+      } ,
+    { subject }
+      {
+        format      = \zihao { -2 } \setbaselineskip { 30 bp } ,
+        content     = \tl_use:c { l_@@_info_subject_ \l_@@_lang_tl _tl } ,
+        bottom-skip = \c_zero_dim plus 1 fill
+      } ,
+    { title   }
+      {
+        format      = \zihao { 2 } \setbaselineskip { 36 bp } \bfseries ,
+        content     = \tl_use:c { l_@@_info_display_title_ \l_@@_lang_tl _tl } ,
+        bottom-skip = 30 bp plus 1 fill
+      } ,
+    { info    }
+      {
+        format      = \zihao { 4 } \setbaselineskip { 30 bp } \heiti ,
+        content     = \@@_title_page_info_table:n
+                        { \SJTU@CT@W { s } \SJTU@CT@L } ,
+        bottom-skip = 30 bp
+      } ,
+    { date    }
+      {
+        format      = \zihao { 4 } \setbaselineskip { 30 bp } \bfseries ,
+        content     = \tl_use:c { l_@@_info_date_ \l_@@_lang_tl _tl } ,
+      }
+  }
+  { \@@_declare_element_instance:nnn { title a } #1 }
+%    \end{macrocode}
+%
+% 样式 A 标题页实例。
+%    \begin{macrocode}
+\@@_declare_page_instance:nnn { title a }
+  {
+    bookmark = \tl_use:c { c_@@_name_title_page_ \g_@@_lang_tl _tl } ,
+    style    = SJTU@fund ,
+    prefix   = title a ,
+    elements = { logo, subject, title, info, date }
+  }
+%    \end{macrocode}
+%
+% 样式 B 标题页元素实例。
+%    \begin{macrocode}
+\clist_map_inline:nn
+  {
+    { subject }
+      {
+        format      = \zihao { 4 } \setbaselineskip { 24 bp } \bfseries ,
+        content     = \tl_use:c { l_@@_info_subject_ \l_@@_lang_tl _tl } ,
+        bottom-skip = \c_zero_dim plus 1 fill
+      } ,
+    { title   }
+      {
+        format      = \zihao { -2 } \setbaselineskip { 30 bp } \bfseries ,
+        content     = \tl_use:c { l_@@_info_display_title_ \l_@@_lang_tl _tl } ,
+        bottom-skip = \c_zero_dim plus 1 fill
+      } ,
+    { info    }
+      {
+        format      = \zihao { 3 } \setbaselineskip { 30 bp } \bfseries ,
+        content     = \@@_title_page_info_table:n
+                        { \SJTU@CT@R \SJTU@CT@L } ,
+        bottom-skip = 30 bp plus 1 fill
+      } ,
+    { date    }
+      {
+        format      = \zihao { 3 } \setbaselineskip { 30 bp } ,
+        content     =
+          {
+            \tl_use:c { l_@@_info_department_ \l_@@_lang_tl _tl }
+            \skip_vertical:N \c_zero_skip
+            \tl_use:c { c_@@_name_univ_ \l_@@_lang_tl _tl }
+            \skip_vertical:N \c_zero_skip
+            \tl_use:c { c_@@_name_address_ \l_@@_lang_tl _tl }
+            \skip_vertical:N \c_zero_skip
+            \tl_use:c { l_@@_info_date_ \l_@@_lang_tl _tl }
+          }
+      }
+  }
+  { \@@_declare_element_instance:nnn { title b } #1 }
+%    \end{macrocode}
+%
+% 样式 B 标题页实例。
+%    \begin{macrocode}
+\@@_declare_page_instance:nnn { title b }
+  {
+    prefix   = title b ,
+    style    = SJTU@fund ,
+    elements = { subject, title, info, date }
+  }
+%    \end{macrocode}
+%
+% 中文标题页使用样式 A，其他语种使用样式 B。
+%    \begin{macrocode}
+\prop_const_from_keyval:Nn \c_@@_title_page_style_prop
+  {
+    zh = { title a } ,
+    en = { title b } ,
+    de = { title b } ,
+    ja = { title b }
+  }
+\clist_map_inline:Nn \g_@@_lang_clist
+  {
+    \prop_get:NnN \c_@@_title_page_style_prop {#1} \l_@@_tmp_tl
+    \DeclareInstanceCopy { sjtu / page } { title / #1 } { \l_@@_tmp_tl }
+  }
+%    \end{macrocode}
+%
+% \begin{macro}{\maketitle}
+% 生成标题页。
+%    \begin{macrocode}
+\RenewDocumentCommand \maketitle { }
+  {
+    \clist_map_inline:Nn \g_@@_lang_clist
+      { \UseInstance { sjtu / page } { title / ##1 } { ##1 } }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsubsection{原创性声明及使用授权书}
+%
+% \changes{v2.2.1}{2025/03/22}{添加原创性声明变体。}
+%
+% 声明及授权书文本。
+%    \begin{macrocode}
+\tl_const:Nn \c_@@_orig_decl_text_a_zh_tl
+  {
+    本人郑重声明：所呈交的学位论文，是本人在导师的指导下，独立进行研究工
+    作所取得的成果。
+    除文中已经注明引用的内容外，本论文不包含任何其他个人或集体已经发表或
+    撰写过的作品成果。
+    对本文的研究做出重要贡献的个人和集体，均已在文中以明确方式标明。
+    本人完全知晓本声明的法律后果由本人承担。
+  }
+\tl_const:Nn \c_@@_orig_decl_text_b_zh_tl
+  {
+    本人郑重声明：所呈交的学位论文，是本人在导师的指导下，独立进行研究工
+    作所取得的成果。
+    除文中已经注明引用的内容外，本论文不包含任何其他个人或集体已经发表或
+    撰写过的作品成果。
+    对本文的研究做出重要贡献的个人和集体，已在文中以适当方式予以致谢。
+    若在论文撰写过程中使用了人工智能工具，本人已遵循《上海交通大学关于在
+    教育教学中使用~ AI~ 的规范》，确保人工智能生成内容的应用场景、引用范
+    围及标注方式均符合规定，并杜绝学术不端行为。
+    本人完全知晓本声明的法律后果由本人承担。
+  }
+\tl_const:Nn \c_@@_auth_decl_text_zh_tl
+  {
+    本人同意学校保留并向国家有关部门或机构送交论文的复印件和电子版，允许
+    论文被查阅和借阅。 \par
+    \vskip 6 bp
+    \noindent
+    本学位论文属于： \par
+    { \c_@@_symbol_white_square_tl } \, \textbf { 公开论文 } \par
+    { \c_@@_symbol_white_square_tl } \, \textbf { 内部论文 }，
+      保密 \, { \c_@@_symbol_white_square_tl } \, 1 \, 年 \, /
+           \, { \c_@@_symbol_white_square_tl } \, 2 \, 年 \, /
+           \, { \c_@@_symbol_white_square_tl } \, 3 \, 年，
+      过保密期后适用本授权书。 \par
+    { \c_@@_symbol_white_square_tl } \, \textbf { 秘密论文 }，
+      保密 \, \underline { \hspace { 2 em } } \, 年（不超过~ 10~ 年），
+      过保密期后适用本授权书。 \par
+    { \c_@@_symbol_white_square_tl } \, \textbf { 机密论文 }，
+      保密 \, \underline { \hspace { 2 em } } \, 年（不超过~ 20~ 年），
+      过保密期后适用本授权书。 \par
+    \hspace { 6 em }（请在以上方框内选择打“ \ensuremath { \checkmark } ”）
+  }
+%    \end{macrocode}
+%
+% 签名框。
+%    \begin{macrocode}
+\tl_const:Nn \c_@@_signature_text_zh_tl
+  {
+    签名： \\
+    日期： \hspace { \stretch { 3 } } 年
+           \hspace { \stretch { 2 } } 月
+           \hspace { \stretch { 2 } } 日
+  }
+\cs_new_protected:Npn \@@_signature:N #1
+  {
+    \parbox [ t ] { 12 em }
+      { #1 \c_@@_signature_text_zh_tl }
+  }
+%    \end{macrocode}
+%
+% 声明及授权书元素实例。
+%    \begin{macrocode}
+\clist_map_inline:nn
+  {
+    { orig / title }
+      {
+        format      = \zihao { 3 } \setbaselineskip { 30 bp }
+                      \bfseries \heiti ,
+        content     =
+          {
+            \c_@@_name_univ_zh_tl
+            \skip_vertical:N \c_zero_skip
+            \c_@@_name_thesis_zh_tl
+            \c_@@_name_orig_decl_zh_tl
+          } ,
+        bottom-skip = 12 bp
+      },
+    { orig / text  }
+      {
+        format      = \zihao { -4 } \setbaselineskip { 24 bp } ,
+        bottom-skip = 24 bp ,
+        align       = normal
+      },
+    { orig / sign  }
+      {
+        format      = \zihao { 4 } \setbaselineskip { 30 bp } ,
+        content     =
+          {
+            \@@_signature:N \c_@@_name_decl_author_zh_tl
+            \skip_horizontal:n { 2 em } \hbox:n { }
+          } ,
+        bottom-skip = 24 bp plus 1 fill ,
+        align       = right
+      },
+    { auth / title }
+      {
+        format      = \zihao { 3 } \setbaselineskip { 30 bp }
+                      \bfseries \heiti ,
+        content     =
+          {
+            \c_@@_name_univ_zh_tl
+            \skip_vertical:N \c_zero_skip
+            \c_@@_name_thesis_zh_tl
+            \c_@@_name_auth_decl_zh_tl
+          } ,
+        bottom-skip = 12 bp
+      },
+    { auth / text  }
+      {
+        format      = \zihao { -4 } \setbaselineskip { 24 bp } ,
+        content     = \c_@@_auth_decl_text_zh_tl ,
+        bottom-skip = 24 bp ,
+        align       = normal
+      },
+    { auth / sign  }
+      {
+        format      = \zihao { 4 } \setbaselineskip { 30 bp } ,
+        content     =
+          {
+            \@@_signature:N \c_@@_name_decl_author_zh_tl
+            \hfill
+            \@@_signature:N \c_@@_name_decl_supervisor_zh_tl
+          } ,
+        bottom-skip = \c_zero_dim plus 1 fill ,
+        align       = normal
+      }
+  }
+  {
+    \@@_declare_element_instance:nnn { copyright } #1
+  }
+%    \end{macrocode}
+%
+% 声明及授权书模板实例。
+%    \begin{macrocode}
+\@@_declare_page_instance:nnn { copyright }
+  {
+    bookmark  = \tl_use:c { c_@@_name_declaration_ \g_@@_lang_tl _tl } ,
+    precode   = \newgeometry
+                  {
+                    margin        = 3.0 cm ,
+                    bindingoffset = 0.5 cm
+                  } ,
+    prefix    = copyright ,
+    elements  =
+      {
+        orig / title, orig / text, orig / sign,
+        auth / title, auth / text, auth / sign
+      }
+  }
+%    \end{macrocode}
+%
+% \begin{variable}{\l_@@_copyright_page_file_tl}
+%    \begin{macrocode}
+\tl_new:N \l_@@_copyright_page_file_tl
+%    \end{macrocode}
+% \end{variable}
+%
+% \changes{v2.3}{2026/02/22}{原创性声明变体默认值固定为样式 \opt{a}。}
+%    \begin{macrocode}
+\keys_define:nn { sjtu / private / copyright }
+  {
+    file .tl_set:N = \l_@@_copyright_page_file_tl ,
+    file .value_required:n = true ,
+    filename .meta:n = { file = #1 } ,
+    variant .choice: ,
+    variant .choices:nn =
+      { a, b }
+      {
+        \EditInstance { sjtu / element } { copyright / orig / text }
+          { content = \tl_use:c { c_@@_orig_decl_text_ #1 _zh_tl } }
+      } ,
+    variant  .initial:n = a
+  }
+%    \end{macrocode}
+%
+% \changes{v2.0}{2022/12/20}{不再自动载入 \pkg{pdfpages} 宏包。}
+%    \begin{macrocode}
+\msg_new:nnn { sjtutex } { require-pdfpages }
+  {
+    Add~'\token_to_str:N \usepackage{pdfpages}'~in~your~preamble \\
+    before~inserting~pages~of~external~PDF.
+  }
+%    \end{macrocode}
+%
+% \begin{macro}{\copyrightpage}
+% 生成声明及授权书。
+%    \begin{macrocode}
+\RenewDocumentCommand \copyrightpage { O{ } }
+  {
+    \bool_if:NF \g_@@_review_bool
+      {
+        \group_begin:
+          \keys_set_known:nnN { sjtu / private / copyright }
+            {#1} \l_@@_tmp_tl
+          \tl_if_empty:NTF \l_@@_copyright_page_file_tl
+            { \UseInstance { sjtu / page } { copyright } { zh } }
+            {
+              \cs_if_exist:NTF \includepdf
+                {
+                  \legacy_if:nTF { @openright }
+                    { \cleardoublepage } { \clearpage }
+                  \exp_args:Nnv \@@_pdf_bookmark:nn
+                    { 0 } { c_@@_name_declaration_ \g_@@_lang_tl _tl }
+                  \tl_set_rescan:NnV \l_@@_tmp_tl { } \l_@@_tmp_tl
+                  \exp_args:NNo \includepdf [ \l_@@_tmp_tl ]
+                    { \l_@@_copyright_page_file_tl }
+                }
+                {
+                  \msg_warning:nn { sjtutex } { require-pdfpages }
+                  \UseInstance { sjtu / page } { copyright } { zh }
+                }
+            }
+        \group_end:
+      }
+  }
+%</preset>
+%</thesis>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<class&thesis>\ProvideDocumentCommand \copyrightpage { O{ } } { }
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsection{文档组成}
+%
+% \changes{v2.2}{2024/12/20}{内置文档命令与环境修改为使用键值对参数，废弃对应的带星号版本。}
+%
+% \subsubsection{统一接口}
+%
+% 定义文档组成部分的统一键值对接口。
+%
+% \begin{variable}{\l_@@_heading_numbering_bool,\l_@@_heading_in_toc_bool,
+% \l_@@_heading_title_tl,\l_@@_heading_marking_tl}
+%    \begin{macrocode}
+%<*class>
+\bool_new:N \l_@@_heading_numbering_bool
+\bool_new:N \l_@@_heading_in_toc_bool
+\tl_new:N \l_@@_heading_title_tl
+\tl_new:N \l_@@_heading_marking_tl
+%    \end{macrocode}
+% \end{variable}
+%
+% 默认 \tn{mainmatter} 之后的章节标题加入目录。
+%    \begin{macrocode}
+%<*thesis>
+\AddToHook { cmd / mainmatter / after }
+  { \bool_set_true:N \l_@@_heading_in_toc_bool }
+%</thesis>
+%    \end{macrocode}
+%
+% \begin{macro}{intoc,notintoc,title,marking}
+%    \begin{macrocode}
+\keys_define:nn { sjtu / private }
+  {
+    intoc    .value_forbidden:n = true,
+    intoc    .groups:n = { heading } ,
+    intoc    .code:n = { \bool_set_true:N  \l_@@_heading_in_toc_bool } ,
+    notintoc .value_forbidden:n = true,
+    notintoc .groups:n = { heading } ,
+    notintoc .code:n = { \bool_set_false:N \l_@@_heading_in_toc_bool } ,
+    title    .tl_set:N = \l_@@_heading_title_tl ,
+    title    .groups:n = { heading } ,
+    marking  .tl_set:N = \l_@@_heading_marking_tl ,
+    marking  .groups:n = { heading }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\SJTU@heading,\@@_heading:nn,\@@_heading:VV,
+% \@@_make_heading:n}
+% 定义一个灵活的章节标题命令专门处理不同的需求。
+%    \begin{macrocode}
+\NewDocumentCommand \SJTU@heading { O{#2} m }
+  {
+    \bool_if:nTF
+      { \l_@@_heading_numbering_bool && \l_@@_heading_in_toc_bool }
+%<!article>      { \chapter [#1] {#2} }
+%<article>      { \section [#1] {#2} }
+      {
+%<!article>        \CTEX@chapter@break
+        \bool_if:NTF \l_@@_heading_in_toc_bool
+          {
+            \@@_phantom_section:
+%<!article>            \addcontentsline { toc } { chapter } {#1}
+%<article>            \addcontentsline { toc } { section } {#1}
+          }
+          { \@@_pdf_bookmark:nn { 0 } {#1} }
+%<!article>        \chapter* {#2}
+%<article>        \section* {#2}
+        \CTEX@gettitle {#1}
+        \@mkboth { \MakeUppercase {#1} } { \MakeUppercase {#1} }
+      }
+  }
+\cs_new_protected:Npn \@@_heading:nn #1#2
+  { \SJTU@heading [#1] {#2} }
+\cs_generate_variant:Nn \@@_heading:nn { VV }
+\cs_new_protected:Npn \@@_make_heading:n #1
+  {
+    \tl_set_eq:NN \l_@@_heading_marking_tl \c_novalue_tl
+    \keys_set_groups:nnn { sjtu / private } { heading } {#1}
+    \@@_heading:VV
+      \l_@@_heading_marking_tl \l_@@_heading_title_tl
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsubsection{摘要}
+%
+% \changes{v2.1}{2023/11/30}{新增 \opt{style/keywords-format} 选项。}
+% \begin{macro}{style/keywords-format}
+% 关键词排版样式。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / style }
+  {
+    keywords-format       .choice: ,
+    keywords-format / plain .code:n =
+      { \cs_set:Nn \@@_keywords_format:n { \noindent  { \bfseries ##1 } } } ,
+    keywords-format / hang  .code:n =
+      { \cs_set:Nn \@@_keywords_format:n { \@hangfrom { \bfseries ##1 } } } ,
+    keywords-format      .initial:n = { plain }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.0}{2023/03/17}{\env{abstract} 环境新增指定语言的可选参数。}
+% \changes{v2.1}{2023/11/29}{\env{abstract} 环境添加目录条目，
+% \env{abstract*} 环境对应修改为不添加目录条目。}
+% \begin{macro}{abstract}
+% 学位论文摘要环境。
+%    \begin{macrocode}
+%<*thesis>
+\DeclareDocumentEnvironment { abstract } { O{ } }
+  {
+    \@@_select_language:n {#1}
+    \tl_set_eq:Nc \l_@@_heading_title_tl
+      { c_@@_name_abstract_ \l_@@_lang_tl _tl }
+    \@@_make_heading:n {#1}
+  } { }
+%</thesis>
+%    \end{macrocode}
+%
+% 修复通用模板摘要段首缩进。
+%    \begin{macrocode}
+%<!thesis>\legacy_if:nT { @titlepage }
+%<!thesis>  { \AddToHook { cmd / abstract / after } { \par } }
+%</class>
+%    \end{macrocode}
+%
+% 学位论文模板摘要后添加关键词。
+%    \begin{macrocode}
+%<*preset>
+%<*thesis>
+\AddToHook { env / abstract / end }
+  {
+    \clist_if_empty:cF { l_@@_info_keywords_ \l_@@_lang_tl _clist }
+      {
+        \par \mode_leave_vertical: \par
+        \@@_keywords_format:n
+          {
+            \tl_use:c { c_@@_name_keywords_ \l_@@_lang_tl _tl }
+            \tl_use:c { c_@@_name_info_sep_ \l_@@_lang_tl _tl }
+          }
+        \clist_use:cv { l_@@_info_keywords_ \l_@@_lang_tl _clist }
+          { c_@@_name_item_sep_ \l_@@_lang_tl _tl }
+        \par
+      }
+  }
+%</thesis>
+%    \end{macrocode}
+%
+% 通用模板摘要后添加关键词。
+%    \begin{macrocode}
+%<*!thesis>
+\AddToHook { env / abstract / end }
+  {
+    \clist_if_empty:NF \l_@@_info_keywords_clist
+      {
+        \par \mode_leave_vertical: \par
+        \@@_keywords_format:n
+          {
+            \tl_use:c { c_@@_name_keywords_ \g_@@_lang_tl _tl }
+            \tl_use:c { c_@@_name_info_sep_ \g_@@_lang_tl _tl }
+          }
+        \clist_use:Nv \l_@@_info_keywords_clist
+          { c_@@_name_item_sep_ \g_@@_lang_tl _tl }
+        \par
+      }
+  }
+%</!thesis>
+%</preset>
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsubsection{目录列表}
+%
+% \changes{v2.1}{2023/11/29}{\tn{tableofcontents} 添加目录条目，
+% \tn{tableofcontents*} 对应修改为不添加目录条目。}
+% \begin{macro}{\tableofcontents}
+% 目录。
+%    \begin{macrocode}
+%<*class>
+\DeclareDocumentCommand \tableofcontents { O{ } }
+  {
+    \group_begin:
+      \@@_make_heading:n { title = \contentsname, #1 }
+      \@starttoc { toc }
+    \group_end:
+  }
+%</class>
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.1.2}{2024/03/31}{改用 \pkg{titletoc} 设置目录格式。}
+% \changes{v2.1.3}{2024/06/28}{更新目录样式。}
+%    \begin{macrocode}
+%<*preset>
+\tl_set:Nn \SJTU@leaders { \titlerule* [ 4bp ] { . } }
+\contentsmargin [ 2.55 em ] { 0 pt }
+%<article>\titlecontents { section }
+%<!article>\titlecontents { chapter }
+  [ 0 pt ] { \addvspace { 6 bp } \bfseries }
+  { \contentspush { \thecontentslabel \enskip } } { }
+  { \SJTU@leaders \thecontentspage }
+%<article>\titlecontents { subsection }
+%<!article>\titlecontents { section }
+  [ 2 em ] { }
+  { \contentspush { \thecontentslabel \enskip } } { }
+  { \SJTU@leaders \thecontentspage }
+%<article>\titlecontents { subsubsection }
+%<!article>\titlecontents { subsection }
+  [ 4 em ] { }
+  { \contentspush { \thecontentslabel \enskip } } { }
+  { \SJTU@leaders \thecontentspage }
+%</preset>
+%    \end{macrocode}
+%
+% \changes{v2.0.1}{2023/03/31}{插图、表格和算法等索引不缩进。}
+% \changes{v2.0.1}{2023/03/31}{调整插图、表格和算法等索引编号宽度。}
+% \begin{macro}[int]{\SJTU@listof}
+% 图表索引。
+%    \begin{macrocode}
+%<*class>
+\NewDocumentCommand \SJTU@listof { m m O{ } }
+  {
+    \group_begin:
+      \@@_make_heading:n { title = #2, #3 }
+      \exp_args:Nv \@starttoc { ext@ #1 }
+    \group_end:
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\listoffigures,\listoftables}
+%    \begin{macrocode}
+\RenewDocumentCommand \listoffigures { }
+  { \SJTU@listof { figure } { \listfigurename } }
+\RenewDocumentCommand \listoftables  { }
+  { \SJTU@listof { table  } { \listtablename  } }
+%</class>
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\SJTU@titlecontents}
+% 设置索引格式的辅助函数，参数 |#3| 为编号前缀，
+% 参数 |#4| 为编号统一宽度，不设置时取编号实际宽度。
+%    \begin{macrocode}
+%<*preset>
+\NewDocumentCommand \SJTU@titlecontents { m O{\csname ext@#1\endcsname} m o }
+  {
+    \IfNoValueTF {#4}
+      {
+        \titlecontents {#1}
+          [ 0 pt ] { }
+          { \contentspush { #3 \thecontentslabel \enskip } } { }
+          { \SJTU@leaders \thecontentspage }
+      }
+      {
+        \titlecontents {#1}
+          [#4] { }
+          { \contentslabel [ #3 \thecontentslabel ] {#4} }
+          { \hspace* { - #4 } }
+          { \SJTU@leaders \thecontentspage }
+      }
+    \contentsuse {#1} {#2}
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+%    \begin{macrocode}
+\SJTU@titlecontents { figure } { \figurename \space }
+\SJTU@titlecontents { table  } { \tablename  \space }
+%</preset>
+%    \end{macrocode}
+%
+% \subsubsection{预定义环境}
+%
+% \begin{macro}{abbreviation}
+% 缩略语对照表。
+%    \begin{macrocode}
+%<*thesis>
+%<*class>
+\NewDocumentEnvironment { abbreviation } { O{ } }
+  {
+    \bool_set_true:N \l_@@_heading_numbering_bool
+    \@@_make_heading:n { title = \SJTU@abbrname, #1 }
+    \tl_clear:N \SJTU@style@float@font
+  } { }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{nomenclature}
+% 符号对照表。
+%    \begin{macrocode}
+\NewDocumentEnvironment { nomenclature } { O{ } }
+  {
+    \bool_set_true:N \l_@@_heading_numbering_bool
+    \@@_make_heading:n { title = \SJTU@nomname, #1 }
+    \tl_clear:N \SJTU@style@float@font
+  } { }
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.0}{2023/03/17}{移除 \env{summary} 环境。}
+%
+% \begin{macro}{acknowledgements}
+% 致谢，盲审模式下隐藏致谢。
+%    \begin{macrocode}
+\NewDocumentEnvironment { acknowledgements } { O{ } +b }
+  {
+    \bool_if:NF \g_@@_review_bool
+      {
+        \@@_select_language:n {#1}
+        \@@_make_heading:n { title = \SJTU@ackname, #1 }
+        #2
+      }
+  } { }
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.2}{2024/12/08}{移除 \env{bibliolist} 环境的使用限制，
+% 默认重置计数，新增 \opt{resume} 选项。}
+% \begin{macro}{achievements,bibliolist,bibliolist*}
+% 发表论文与学术成果。
+%    \begin{macrocode}
+\newcounter { SJTU@bib }
+\bool_new:N \l_@@_bibliolist_resume_bool
+\keys_define:nn { sjtu / private / bibliolist }
+  {
+    resume .value_forbidden:n = true,
+    resume .code:n =
+      { \bool_set_true:N \l_@@_bibliolist_resume_bool }
+  }
+\msg_new:nnn { sjtutex } { empty-environment }
+  { Empty~'#1'~environment. }
+\NewDocumentEnvironment { @bibliolist } { m m }
+  {
+    \keys_set:nn { sjtu / private / bibliolist } {#1}
+    \cs_if_exist_use:N \bibfont
+    \list
+      {
+        \tl_if_blank:nTF {#2}
+          { \hfill }
+          { \@biblabel { \arabic{ SJTU@bib } } }
+      }
+      {
+        \tl_if_blank:nTF {#2}
+          {
+            \skip_if_exist:NTF \bibhang
+              { \dim_set_eq:NN \leftmargin \bibhang }
+              { \dim_set:Nn    \leftmargin { 1 em } }
+            \dim_set:Nn \itemindent { - \leftmargin }
+          }
+          {
+            \@@_dim_set_to_wd:Nn \labelwidth { \@biblabel {#2} }
+            \dim_set_eq:NN \leftmargin \labelwidth
+            \dim_add:Nn    \leftmargin { \labelsep }
+          }
+        \skip_if_exist:NTF \bibitemsep
+          {
+            \skip_set_eq:NN \itemsep \bibitemsep
+            \skip_if_exist:NT \bibparsep
+              { \skip_set_eq:NN \parsep \bibparsep }
+          }
+          {
+            \skip_if_exist:NT \bibsep
+              {
+                \skip_set_eq:NN \itemsep \bibsep
+                \skip_zero:N    \parsep
+              }
+          }
+        \@nmbrlisttrue
+        \tl_set:Nn \@listctr { SJTU@bib }
+        \tl_clear:N \p@SJTU@bib
+        \bool_if:NF \l_@@_bibliolist_resume_bool
+          { \setcounter { SJTU@bib } { 0 } }
+        \tl_set:Nn \theSJTU@bib { \arabic { SJTU@bib } }
+      }
+      \sloppy
+      \int_set:Nn \clubpenalty  { 4000 }
+      \int_set_eq:NN \@clubpenalty \clubpenalty
+      \int_set:Nn \widowpenalty { 4000 }
+      \char_set_sfcode:nn { `\. } { 1000 }
+  }
+  {
+    \tl_set:Nn \@noitemerr
+      { \msg_warning:nnn { sjtutex } { empty-environment } { bibliolist } }
+    \endlist
+  }
+\NewDocumentEnvironment { achievements } { O{ } }
+  {
+    \@@_select_language:n {#1}
+    \@@_make_heading:n { title = \SJTU@achvname, #1 }
+  } { }
+\NewDocumentEnvironment { bibliolist  } { O{ } m +b }
+  {
+    \bool_if:NF \g_@@_review_bool
+      {
+        \begin { @bibliolist } {#1} {#2}
+          #3
+        \end { @bibliolist }
+      }
+  } { }
+\NewDocumentEnvironment { bibliolist* } { O{ } m +b }
+  {
+    \bool_if:NT \g_@@_review_bool
+      {
+        \begin { @bibliolist } {#1} {#2}
+          #3
+        \end { @bibliolist }
+      }
+  } { }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{resume}
+% 简历。
+%    \begin{macrocode}
+\NewDocumentEnvironment { resume } { O{ } +b }
+  {
+    \bool_if:NF \g_@@_review_bool
+      {
+        \@@_select_language:n {#1}
+        \@@_make_heading:n { title = \SJTU@resumename, #1 }
+        #2
+      }
+  } { }
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.0}{2023/03/17}{\env{digest} 环境新增指定语言的可选参数。}
+% \begin{macro}{digest}
+% 大摘要。
+%    \begin{macrocode}
+\ProvideDocumentEnvironment { digest } { O{ } +b }
+  { } { }
+%</class>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*preset>
+\NewHook { sjtutex / digest }
+\RenewDocumentEnvironment { digest } { O{ } +b }
+  {
+    \AtEndDocument
+      {
+        \group_begin:
+          \@@_select_language:n { en, #1 }
+          \legacy_if:nTF { @openright }
+            { \cleardoublepage } { \clearpage }
+          \pagenumbering { roman }
+          \tl_gset:Nn \@@_the_page_tl { \arabic { page } }
+          \UseHook { sjtutex / digest }
+          \cs_gset_eq:NN \addcontentsline \use_none:nnn
+          \clist_map_inline:Nn \l_@@_counter_without_chapter_clist
+            {
+              \counterwithout {##1} { chapter }
+              \setcounter     {##1} { 0 }
+            }
+          \tl_set_eq:Nc \l_@@_heading_title_tl
+            { l_@@_info_display_title_ \l_@@_lang_tl _tl }
+          \@@_make_heading:n { marking = \SJTU@digestname, #1, notintoc }
+          #2
+        \group_end:
+      }
+  } { }
+%</preset>
+%</thesis>
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsection{设置接口}
+%
+% \begin{macro}{\sjtusetup}
+% 用户设置接口。
+% 盲审模式下不会设置敏感信息。
+%    \begin{macrocode}
+%<*class>
+%<!thesis>\NewDocumentCommand \sjtusetup { } { \keys_set:nn { sjtu } }
+%<thesis>\NewDocumentCommand \sjtusetup { } { \@@_setup:n }
+%    \end{macrocode}
+% \end{macro}
+%
+% \changes{v2.0}{2022/12/28}{重新制定 \opt{sjtu/style} 域中的接口。}
+% 定义元（meta）键值对。
+%    \begin{macrocode}
+\keys_define:nn { sjtu }
+  {
+    style .meta:nn = { sjtu / style } {#1} ,
+    info  .meta:nn = { sjtu / info  } {#1} ,
+    name  .meta:nn = { sjtu / name  } {#1}
+  }
+%    \end{macrocode}
+%
+% \changes{v2.3}{2026/01/08}{移除过时 \opt{sjtu/info} 键。}
+% 兼容 \cls{sjtuthesis} 旧接口。
+%    \begin{macrocode}
+%<*thesis>
+\keys_define:nn { sjtu / name }
+  {
+    abbreviation      .meta:n = { abbr  = {#1} } ,
+    nomenclature      .meta:n = { nom   = {#1} } ,
+    acknowledgements  .meta:n = { ack   = {#1} } ,
+    publications      .meta:n = { achv  = {#1} } ,
+    achievements      .meta:n = { achv  = {#1} }
+  }
+%</thesis>
+%    \end{macrocode}
+%
+% 载入预设文件。
+%    \begin{macrocode}
+\msg_new:nnn { sjtutex } { invalid-preset }
+  { Invalid~value~'preset~=~\g_@@_preset_tl'! }
+\str_if_eq:VnF \g_@@_preset_tl { none }
+  {
+    \file_if_exist:nTF { sjtu- \c_@@_class_tl -preset- \g_@@_preset_tl .def }
+      {
+        \ctex_file_input:n
+          { sjtu- \c_@@_class_tl -preset- \g_@@_preset_tl .def }
+      }
+      { \msg_error:nn { sjtutex } { invalid-preset } }
+  }
+%    \end{macrocode}
+%
+% \subsection{其他宏包的设置}
+%
+% \changes{v2.0.3}{2023/09/23}{移除 \pkg{listings} 宏包预设。}
+% 这些宏包并非格式要求，但是为了方便同学们使用，在这里进行简单设置。
+%
+% \subsubsection{\pkg{hyperref} 宏包}
+%
+%    \begin{macrocode}
+\ctex_at_end_package:nn { hyperref }
+  {
+    \hypersetup
+      {
+        linktoc            = all,
+        bookmarksdepth     = 2,
+        bookmarksnumbered  = true,
+        bookmarksopen      = true,
+        bookmarksopenlevel = 1,
+        unicode            = true,
+        psdextra           = true,
+        breaklinks         = true,
+        pdfdisplaydoctitle = true
+      }
+    \int_new:N \g_@@_bookmark_int
+    \cs_set_protected:Npn \@@_pdf_bookmark:nn #1#2
+      {
+        \phantomsection
+        \int_gincr:N \g_@@_bookmark_int
+        \pdfbookmark [#1] {#2}
+          { sjtubookmark. \int_use:N \g_@@_bookmark_int }
+      }
+    \cs_set_eq:NN \@@_phantom_section: \phantomsection
+    \DeclareExpandableDocumentCommand
+      { \@@_pdfstring_newline:w } { s o m } {#3}
+    \pdfstringdefDisableCommands
+      {
+        \cs_set_eq:NN \\       \@@_pdfstring_newline:w
+        \cs_set_eq:NN \hspace  \use_none:n
+        \cs_set_eq:NN \zihao   \use_none:n
+        \tl_set_eq:NN \quad    \c_empty_tl
+        \tl_set_eq:NN \qquad   \c_empty_tl
+      }
+    \ctex_after_end_preamble:n
+      {
+        \hypersetup
+          {
+            pdftitle    = \@title ,
+            pdfauthor   = \@author ,
+          }
+      }
+  }
+%</class>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*preset>
+\ctex_at_end_package:nn { hyperref }
+  {
+    \ctex_after_end_preamble:n
+      {
+        \hypersetup
+          {
+%<!thesis>            pdfsubject  = \l_@@_info_subject_tl ,
+%<!thesis>            pdfkeywords = \l_@@_info_keywords_clist
+%<thesis>            pdfsubject  = \l_@@_info_subject_zh_tl ,
+%<thesis>            pdfkeywords = \l_@@_info_keywords_zh_clist
+          }
+      }
+  }
+%</preset>
+%    \end{macrocode}
+%
+% \changes{v2.2}{2024/12/30}{使用 \pkg{pageslts} 宏包获取总页码。}
+% \subsubsection{\pkg{pageslts} 宏包}
+%
+%    \begin{macrocode}
+%<*class>
+\ctex_at_end_package:nn { pageslts }
+  {
+%<thesis>    \pagenumbering { Alph }
+%<!thesis>    \pagenumbering { arabic }
+    \tl_set:Nn \@@_the_last_page_tl
+      { \lastpageref { pagesLTS.\pagesLTS@pnc } }
+  }
+%</class>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*preset&thesis>
+\ctex_at_end_package:nn { pageslts }
+  {
+    \AddToHook { sjtutex / digest }
+      {
+        \tl_gset:Nn \@@_the_last_page_tl
+          { \lastpageref { pagesLTS.roman.local } }
+      }
+  }
+%</preset&thesis>
+%    \end{macrocode}
+%
+% \subsubsection{\pkg{threeparttable} 宏包}
+%
+%    \begin{macrocode}
+%<*class>
+\ctex_at_end_package:nn { threeparttable }
+  { \tl_put_right:Nn \TPTnoteSettings { \footnotesize } }
+%    \end{macrocode}
+%
+% \subsubsection{\pkg{longtable} 宏包}
+%
+%    \begin{macrocode}
+\ctex_at_end_package:nn { longtable }
+  { \AtBeginEnvironment { longtable } { \SJTU@style@float@font } }
+%</class>
+%    \end{macrocode}
+%
+% \changes{v2.1.1}{2024/03/21}{预定义的数学环境声明移至导言区末尾，
+% 且不会覆盖重名的已定义环境。}
+% \subsubsection{\pkg{amsthm} 宏包和 \pkg{ntheorem} 宏包}
+%
+% 预定义的数学环境，不包括证明环境 \env{proof}。
+%    \begin{macrocode}
+%<*scheme>
+\clist_map_inline:nn
+  {
+%<*zh>
+    { assumption  } { 假设        } ,
+    { axiom       } { 公理        } ,
+    { conjecture  } { 猜想        } ,
+    { corollary   } { 推论        } ,
+    { definition  } { 定义        } ,
+    { example     } { 例          } ,
+    { exercise    } { 练习        } ,
+    { lemma       } { 引理        } ,
+    { problem     } { 问题        } ,
+    { proposition } { 命题        } ,
+    { remark      } { 注          } ,
+    { solution    } { 解          } ,
+    { theorem     } { 定理        }
+%</zh>
+%<*en>
+    { assumption  } { Assumption  } ,
+    { axiom       } { Axiom       } ,
+    { conjecture  } { Conjecture  } ,
+    { corollary   } { Corollary   } ,
+    { definition  } { Definition  } ,
+    { example     } { Example     } ,
+    { exercise    } { Exercise    } ,
+    { lemma       } { Lemma       } ,
+    { problem     } { Problem     } ,
+    { proposition } { Proposition } ,
+    { remark      } { Remark      } ,
+    { solution    } { Solution    } ,
+    { theorem     } { Theorem     }
+%</en>
+%<*de>
+    { assumption  } { Annahme     } ,
+    { axiom       } { Axiom       } ,
+    { conjecture  } { Hypothese   } ,
+    { corollary   } { Korollar    } ,
+    { definition  } { Definition  } ,
+    { example     } { Beispiel    } ,
+    { exercise    } { Übung       } ,
+    { lemma       } { Lemma       } ,
+    { problem     } { Problem     } ,
+    { proposition } { Proposition } ,
+    { remark      } { Anmerkung   } ,
+    { solution    } { Lösung      } ,
+    { theorem     } { Theorem     }
+%</de>
+%<*ja>
+    { assumption  } { 仮定        } ,
+    { axiom       } { 公理        } ,
+    { conjecture  } { 予想        } ,
+    { corollary   } { 系          } ,
+    { definition  } { 定義        } ,
+    { example     } { 例          } ,
+    { exercise    } { 練習        } ,
+    { lemma       } { 補題        } ,
+    { problem     } { 問題        } ,
+    { proposition } { 命題        } ,
+    { remark      } { 注意        } ,
+    { solution    } { 解法        } ,
+    { theorem     } { 定理        }
+%</ja>
+  }
+%<zh>  { \@@_name_const:nnn { zh } #1 }
+%<en>  { \@@_name_const:nnn { en } #1 }
+%<de>  { \@@_name_const:nnn { de } #1 }
+%<ja>  { \@@_name_const:nnn { ja } #1 }
+%</scheme>
+%    \end{macrocode}
+%
+% 定义前会检测环境是否已经存在，避免覆盖用户的定义。
+%    \begin{macrocode}
+%<*class>
+\cs_new_protected:Nn \@@_new_theorems:
+  {
+    \clist_map_inline:nn
+      {
+        assumption, axiom, conjecture, corollary, definition, example,
+        exercise, lemma, problem, proposition, theorem
+      }
+      {
+        \cs_if_exist:cF {##1}
+          {
+            \exp_args:Nnv  \newtheorem  {##1}
+%<!article>              { c_@@_name_ ##1 _ \g_@@_lang_tl _tl } [ chapter ]
+%<article>              { c_@@_name_ ##1 _ \g_@@_lang_tl _tl }
+          }
+      }
+    \clist_map_inline:nn
+      { remark, solution }
+      {
+        \cs_if_exist:cF {##1}
+          {
+            \exp_args:NNnv \newtheorem* {##1}
+              { c_@@_name_ ##1 _ \g_@@_lang_tl _tl }
+          }
+      }
+  }
+%    \end{macrocode}
+%
+% \pkg{amsthm} 会定义 \tn{openbox}，为避免与一些宏包冲突，
+% 我们先保存 \tn{openbox}，然后取消定义。
+%    \begin{macrocode}
+\ctex_at_begin_package:nn { amsthm }
+  {
+    \cs_if_exist:NT \openbox
+      {
+        \cs_new_eq:NN \SJTU@orig@openbox \openbox
+        \cs_undefine:N \openbox
+      }
+  }
+\ctex_at_end_package:nn { amsthm }
+  {
+    \@@_cs_provide_eq:NN \QED \openbox
+    \cs_if_exist:NT \SJTU@orig@openbox
+      { \cs_set_eq:NN \openbox \SJTU@orig@openbox }
+    \tl_set:Nn \qedsymbol { \ensuremath { \QED } }
+    \RenewDocumentEnvironment { proof } { O{ \proofname } }
+      {
+        \par \pushQED { \qed }
+        \SJTU@style@thm@body@font \dim_zero:N \topsep
+        \trivlist
+        \item
+          [
+            \skip_horizontal:N \labelsep
+            \SJTU@style@thm@header@font #1 \@addpunct { \enskip }
+          ]
+        \ignorespaces
+      }
+      { \popQED \endtrivlist \@endpefalse }
+    \newtheoremstyle { sjtu }
+      { } { } { \SJTU@style@thm@body@font } { }
+      { \SJTU@style@thm@header@font } { } { \ccwd } { }
+    \@@_disable_package_load:n { ntheorem }
+    \ctex_at_end_preamble:n
+      {
+        \theoremstyle { sjtu }
+        \@@_new_theorems:
+      }
+  }
+%    \end{macrocode}
+%
+% \pkg{ntheorem} 宏包。
+%    \begin{macrocode}
+\ctex_at_end_package:nn { ntheorem }
+  {
+    \@@_disable_package_load:n { amsthm }
+    \ctex_at_end_preamble:n
+      {
+        \@@_cs_provide_eq:NN \QED \c_empty_tl
+        \theoremheaderfont { \SJTU@style@thm@header@font }
+        \theorembodyfont   { \SJTU@style@thm@body@font   }
+        \theoremseparator  { \enskip }
+        \theoremsymbol { \ensuremath { \QED } }
+        \qedsymbol     { \ensuremath { \QED } }
+        \cs_if_exist:NF \proof
+          { \newtheorem* { proof } { \proofname } }
+        \theoremsymbol { }
+        \@@_new_theorems:
+      }
+  }
+%    \end{macrocode}
+%
+% \changes{v2.1.1}{2024/03/22}{添加 \pkg{thmtools} 宏包支持。}
+% \subsubsection{\pkg{thmtools} 宏包}
+%
+% 使用 \pkg{titletoc} 包设置 \tn{listoftheorems} 的样式。
+%    \begin{macrocode}
+\ctex_at_end_package:nn { thmtools }
+  {
+    \cs_set:Npn \thmtlo@chaptervspacehack { }
+    \RenewDocumentCommand \listoftheorems { O{ } }
+      {
+        \group_begin:
+          \tl_set_eq:NN \l_@@_heading_marking_tl \c_novalue_tl
+          \keys_set_groups:nnnN { sjtu / private } { heading }
+            { title = \listtheoremname, #1 } \l_@@_tmp_tl
+          \tl_set_rescan:NnV \l_@@_tmp_tl { } \l_@@_tmp_tl
+          \@@_heading:VV
+            \l_@@_heading_marking_tl \l_@@_heading_title_tl
+          \exp_args:No \setlisttheoremstyle { \l_@@_tmp_tl }
+          \cs_set:Npn \contentsline ##1
+            { \use:c { thmt@contentsline@ ##1 } {##1} }
+          \clist_map_inline:Nn \thmt@allenvs
+            {
+              \tl_set:Nn \thmt@envname {##1}
+              \thmtlo@newentry
+            }
+          \@fileswfalse
+          \AddToHook { enddocument / afterlastpage }
+            {
+              \if@filesw
+                \@ifundefined { tf@loe }
+                  {
+                    \expandafter\newwrite\csname tf@loe\endcsname
+                    \immediate\openout \csname tf@loe\endcsname \jobname.loe\relax
+                  } { }
+              \fi
+            }
+          \@starttoc { loe }
+        \group_end:
+      }
+  }
+%</class>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*preset>
+\ctex_at_end_package:nn { thmtools }
+  {
+    \cs_set:Npn \thmtlo@newentry
+      {
+        \exp_args:NV \SJTU@titlecontents \thmt@envname [ loe ]
+          { } [ \thmt@listnumwidth ]
+      }
+  }
+%</preset>
+%    \end{macrocode}
+%
+% \subsubsection{\pkg{algorithm} 宏包和 \pkg{algorithm2e} 宏包}
+%
+% \pkg{algorithm} 宏包。
+%    \begin{macrocode}
+%<*class>
+\ctex_at_end_package:nn { algorithm }
+  {
+%<!article>    \SJTU@counterwithin { algorithm } { chapter }
+%<thesis>    \clist_put_right:Nn \l_@@_counter_without_chapter_clist { algorithm }
+    \floatname { algorithm } { \SJTU@algorithmname }
+    \tl_set:Nn \listalgorithmname { \SJTU@listalgorithmname }
+    \RenewDocumentCommand \listofalgorithms { }
+      { \SJTU@listof { algorithm } { \listalgorithmname } }
+  }
+%</class>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*preset>
+\ctex_at_end_package:nn { algorithm }
+  { \SJTU@titlecontents { algorithm } { \fname@algorithm \space } }
+%</preset>
+%    \end{macrocode}
+%
+% \pkg{algorithm2e} 宏包。
+%    \begin{macrocode}
+%<*class>
+%<!article>\ctex_at_begin_package:nn { algorithm2e }
+%<!article>  { \cs_set_eq:NN \SJTU@orig@at@chapter \@chapter }
+\ctex_at_end_package:nn { algorithm2e }
+  {
+%<!article>    \cs_set_eq:NN \@chapter \SJTU@orig@at@chapter
+%<!article>    \SJTU@counterwithin { algocf } { chapter }
+%<thesis>    \clist_put_right:Nn \l_@@_counter_without_chapter_clist { algocf }
+    \ctex_patch_cmd:Nnn \algocf@latexcaption
+      { \addcontentsline }
+      { \caption@iflist { \addcontentsline } { \@gobblethree } }
+    \SetAlgorithmName { \SJTU@algorithmname     }
+                      { \SJTU@algorithmname     }
+                      { \SJTU@listalgorithmname }
+    \SetAlgoCaptionSeparator { \enskip }
+    \RenewDocumentCommand \listofalgorithms { }
+      { \SJTU@listof { algocf } { \listalgorithmcfname } }
+  }
+%</class>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*preset>
+\ctex_at_end_package:nn { algorithm2e }
+  { \SJTU@titlecontents { algocf } { \algorithmcfname \space } }
+%</preset>
+%    \end{macrocode}
+%
+% \subsubsection{\pkg{nomencl} 宏包}
+%    \begin{macrocode}
+%<*class>
+\ctex_at_end_package:nn { nomencl }
+  { \tl_set:Nn \nomname { \SJTU@nomname } }
+%    \end{macrocode}
+%
+% \changes{v2.0.3}{2023/09/25}{添加 \pkg{siunitx} 本地化支持。}
+% \subsubsection{\pkg{translations} 宏包}
+%    \begin{macrocode}
+\ctex_at_end_package:nn { translations }
+  {
+    \DeclareLanguage { chinese }
+    \DeclareLanguageAlias { Chinese } { chinese }
+  }
+%    \end{macrocode}
+%
+% \subsubsection{\pkg{siunitx} 宏包}
+%    \begin{macrocode}
+\ctex_at_end_package:nn { siunitx }
+  {
+    \RequirePackage { translations }
+    \DeclareTranslation { Chinese  } { and } { 和 }
+    \DeclareTranslation { Japanese } { and } { と }
+    \DeclareTranslation { Chinese  }
+      { to~(numerical~range) } { \textasciitilde }
+    \DeclareTranslation { Japanese }
+      { to~(numerical~range) } { \textasciitilde }
+    \IfPackageAtLeastTF { siunitx } { 2021/05/17 } { }
+      {
+        \DeclareTranslation { English } { to~(numerical~range) } { to  }
+        \DeclareTranslation { German }  { to~(numerical~range) } { bis }
+        \keys_set:nn { siunitx }
+          {
+            list-final-separator =
+              {
+                \ifmmode \  \else \space \fi
+                \text { \GetTranslation { and } }
+                \ifmmode \  \else \space \fi
+              } ,
+            list-pair-separator  =
+              {
+                \ifmmode \  \else \space \fi
+                \text { \GetTranslation { and } }
+                \ifmmode \  \else \space \fi
+              } ,
+            range-phrase         =
+              {
+                \ifmmode \  \else \space \fi
+                \text { \GetTranslation { to~(numerical~range) } }
+                \ifmmode \  \else \space \fi
+              }
+          }
+      }
+  }
+%</class>
+%    \end{macrocode}
+%
+% \end{implementation}
+%
+% \Finale
+%
+\endinput

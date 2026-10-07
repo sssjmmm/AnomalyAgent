@@ -1,0 +1,21 @@
+#!/usr/bin/perl -w
+# Copyright 2012 Ben Hall  bhall@cs.queensu.ca
+# School of Computing, Queen's University
+# This program is free software, licensed under the GNU GPL, >=2.0.
+# This software comes with absolutely NO WARRANTY.
+#
+# Usage:  rename_enc fontdirectory fontabbreviation
+#
+# Grab font dir and font abbreviation from command line
+my $dir = $ARGV[0];
+my $font = $ARGV[1];
+@files = <fonts/enc/dvips/$dir/*.enc>;
+foreach $file (@files) {
+# print $file . "\n"; #echo file name for testing.
+  # rename each file with name of the form a_xxxxxx.enc 
+  #   to $font_xxxxxx.enc
+  $_ = $file;
+  $prefix = $font . "_";
+  s/a_/$prefix/;
+  `mv $file $_`;
+}

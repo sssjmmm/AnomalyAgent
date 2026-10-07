@@ -1,0 +1,48 @@
+% Paper result tables; scale both by exactly the localization scale.
+\newcommand{\PosterGeneration}{%
+\begingroup
+\fontencoding{T1}\fontfamily{LinuxLibertineT-TLF}\fontseries{m}\fontsize{9}{10.8}\selectfont
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{l|c|c}
+\toprule
+\textbf{Method} & \textbf{IS$\uparrow$} & \textbf{IC-L$\uparrow$} \\
+\midrule
+CutPaste & 1.76 & 0.22 \\
+DRAEM & 1.76 & 0.25 \\
+NSA & 1.44 & 0.26 \\
+RealNet & 1.64 & 0.22 \\
+AnomalyAny & 2.02 & \textbf{0.33} \\
+AnoStyler & 2.04 & \underline{0.32} \\
+AnoHybrid & \underline{2.06} & \underline{0.32} \\
+\midrule
+Gemini-img & 1.91 & 0.29 \\
+GPT-img & 1.77 & 0.29 \\
+Grok-img & 1.68 & 0.28 \\
+\midrule
+\rowcolor{cyan!5}
+\textbf{AnomalyAgent} & \textbf{2.10} & \textbf{0.33} \\
+\bottomrule
+\end{tabular}
+\endgroup}
+\newcommand{\PosterClassification}{%
+\begingroup
+\fontencoding{T1}\fontfamily{LinuxLibertineT-TLF}\fontseries{m}\fontsize{9}{10.8}\selectfont
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{\classificationstretch}
+\begin{tabular}{l|c}
+\toprule
+\textbf{Method} & \textbf{Accuracy $\uparrow$} \\
+\midrule
+AnoStyler & 32.2 \\
+AnoHybrid      & \underline{52.6} \\
+\midrule
+Gemini-img & 44.7 \\
+GPT-img & 40.5 \\
+Grok-img & 38.9 \\
+\midrule
+\rowcolor{cyan!5} 
+\textbf{AnomalyAgent}                & \textbf{57.0} \\
+\bottomrule
+\end{tabular}
+\endgroup}

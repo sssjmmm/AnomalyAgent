@@ -1,0 +1,11 @@
+2022-09-12
+
+  Deleted debugging command \ifxetex\XeTeXtracingfonts=1\fi from *.sty files.
+  
+2019-02-27
+
+  Added tnum feature to LinLibertine_RZI.otf.
+  Added lnum feature to LinBiolinum_RB.otf and LinBiolinum_RBO.otf.
+  Corrected onum substitution table in LinLibertine_RZI.otf and 
+    corresponding latex support files.
+  Revised libertine.sty accordingly.

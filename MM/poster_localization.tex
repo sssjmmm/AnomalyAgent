@@ -1,0 +1,54 @@
+% Split directly from the paper's localization table; values and bold retained.
+\newcommand{\PixelLocalizationTable}{%
+\begingroup
+\fontencoding{T1}\fontfamily{LinuxLibertineT-TLF}\fontseries{m}\fontsize{9}{10.8}\selectfont
+\setlength{\tabcolsep}{1.5pt}
+\renewcommand{\arraystretch}{1}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{l | ccc | ccc | ccc | ccc}
+\toprule
+\multicolumn{13}{c}{\textbf{Pixel-Level Performance}} \\
+\midrule
+\multirow{2}{*}{\textbf{Category}} & \multicolumn{3}{c|}{AnoHybrid} & \multicolumn{3}{c|}{Gemini-img} & \multicolumn{3}{c|}{GPT-img} & \multicolumn{3}{c}{\textbf{AnomalyAgent}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(lr){11-13}
+ & AUC & AP & \textit{F}\textsubscript{1} & AUC & AP & \textit{F}\textsubscript{1} & AUC & AP & \textit{F}\textsubscript{1} & AUC & AP & \textit{F}\textsubscript{1} \\
+\midrule
+bottle & 98.3 & \textbf{77.2} & \textbf{72.5} & 96.1 & 74.5 & 68.1 & 86.0 & 52.7 & 51.5 & \textbf{97.2} & 73.5 & 69.7 \\
+cable & 94.1 & 76.0 & \textbf{73.4} & 93.3 & 68.5 & 60.2 & 90.2 & 55.5 & 50.4 & \textbf{97.4} & \textbf{76.5} & 69.2 \\
+capsule & \textbf{98.4} & \textbf{51.7} & \textbf{54.6} & 96.0 & 44.0 & 47.3 & 88.3 & 33.2 & 34.5 & 96.6 & 46.0 & 49.7 \\
+carpet & 98.6 & 82.8 & 75.6 & 98.8 & 79.0 & 72.3 & 91.3 & 69.0 & 60.4 & \textbf{99.4} & \textbf{85.1} & \textbf{76.4} \\
+grid & \textbf{98.8} & \textbf{58.6} & \textbf{59.2} & 97.4 & 27.5 & 38.6 & 89.0 & 22.1 & 32.7 & 97.8 & 40.3 & 44.9 \\
+hazelnut & \textbf{99.6} & \textbf{89.4} & \textbf{82.6} & 96.7 & 81.1 & 77.4 & 90.3 & 78.3 & 70.2 & 99.4 & 86.4 & 80.1 \\
+leather & 99.6 & 72.7 & 67.1 & 99.4 & 72.8 & 68.3 & 93.9 & 69.4 & 65.6 & \textbf{99.7} & \textbf{80.3} & \textbf{73.9} \\
+metal nut & 98.8 & 93.5 & 87.0 & 97.5 & 90.6 & 83.6 & 86.2 & 58.5 & 58.6 & \textbf{99.3} & \textbf{95.4} & \textbf{88.5} \\
+pill & 99.3 & \textbf{94.9} & \textbf{88.4} & 99.1 & 82.7 & 72.7 & 88.0 & 65.1 & 60.3 & \textbf{99.5} & 84.0 & 80.4 \\
+screw & 77.0 & 7.8 & 6.4 & 97.6 & 10.5 & 17.3 & 94.7 & 21.6 & 29.9 & \textbf{98.4} & \textbf{55.4} & \textbf{57.8} \\
+tile & 99.3 & \textbf{94.6} & \textbf{87.4} & 97.3 & 92.6 & 80.5 & 94.3 & 59.0 & 59.9 & \textbf{99.3} & \textbf{94.6} & 85.7 \\
+toothbrush & 98.7 & 65.2 & 67.8 & \textbf{99.5} & \textbf{73.7} & \textbf{75.4} & 94.8 & 31.1 & 42.6 & 99.3 & 72.3 & 70.3 \\
+transistor & \textbf{98.1} & \textbf{80.8} & \textbf{74.2} & 90.6 & 62.1 & 59.9 & 88.2 & 60.3 & 54.7 & 90.5 & 63.7 & 62.1 \\
+wood & 95.8 & 70.7 & 64.8 & 95.8 & 78.5 & 72.8 & 82.2 & 45.6 & 49.0 & \textbf{97.5} & \textbf{79.8} & \textbf{74.0} \\
+zipper & \textbf{99.1} & \textbf{82.3} & \textbf{74.9} & 96.9 & 75.8 & 66.4 & 90.4 & 55.0 & 49.4 & 98.9 & 79.8 & 72.4 \\
+\midrule
+\textbf{Mean} & 96.9 & 72.9 & 69.1 & 96.8 & 67.6 & 64.1 & 89.9 & 51.8 & 51.3 & \textbf{98.0} & \textbf{74.2} & \textbf{70.3} \\
+\bottomrule
+\end{tabular}}%
+\endgroup}
+\newcommand{\ImageLocalizationTable}{%
+\begingroup
+\fontencoding{T1}\fontfamily{LinuxLibertineT-TLF}\fontseries{m}\fontsize{9}{10.8}\selectfont
+\setlength{\tabcolsep}{1.5pt}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{l | ccc | ccc | ccc | ccc}
+\toprule
+\multicolumn{13}{c}{\textbf{Image-Level Performance (Mean)}} \\
+\midrule
+& \multicolumn{3}{c|}{AnoHybrid} & \multicolumn{3}{c|}{Gemini-img} & \multicolumn{3}{c|}{GPT-img} & \multicolumn{3}{c}{\textbf{AnomalyAgent}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(lr){11-13}
+& AUC & AP & \textit{F}\textsubscript{1} & AUC & AP & \textit{F}\textsubscript{1} & AUC & AP & \textit{F}\textsubscript{1} & AUC & AP & \textit{F}\textsubscript{1} \\
+\midrule
+\textbf{Mean} & 94.3 & 96.9 & 95.7 & 96.6 & 98.2 & 95.1 & 95.7 & 97.5 & 94.0 & \textbf{98.5} & \textbf{99.3} & \textbf{97.3} \\
+\bottomrule
+\end{tabular}}%
+\endgroup}
